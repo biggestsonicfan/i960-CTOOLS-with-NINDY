@@ -14,9 +14,10 @@ Officially, the documentation for CTOOLS 5.0 states: "The NINDY monitor is no lo
 
 So far, I have not successfully compiled a NINDY binary.
 
-#GDB 5.3 and NINDY
+#GDB and NINDY
 
-GDB 5.3 is the latest version, that I am aware of, that will support a NINDY monitor. The "nindy-share" has a Makefile, but it is virtually uncompilable as it's coding was abandoned in favor or "remote-nindy.c", which in this release has been commented out entirely with "// OBSOLETE", however, it may still be compilable.
+In order to clone the most recent repository before NINDY and the i960 were declared "OBSOLETE", I cloned the following repo https://cvs.sonologic.net/gmc/gmpu-binutils-gdb.git and checkedout commit 6c0c456d8792d7a40fe94658d0975dc4c6c5289b.
 
+When configuring, make sure to target i960-intel-nindy.
 
-These three tools combine may allow access to the EV80960SX and QT960 Eval boards, but absolutely no guarantee or warranty is given or implied here.
+Minor adjustments will be needed to compile.
