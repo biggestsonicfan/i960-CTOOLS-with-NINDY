@@ -1,0 +1,3 @@
+[submodule "binutils-gdb"]
+	path = binutils-gdb
+	url = https://github.com/cglmrfreeman/binutils-gdb.git
