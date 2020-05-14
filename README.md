@@ -16,7 +16,7 @@ So far, I have not successfully compiled a NINDY binary.
 
 # GDB and NINDY Monitor
 
-In order to clone the most recent repository before NINDY and the i960 were declared "OBSOLETE", I cloned the following repo https://cvs.sonologic.net/gmc/gmpu-binutils-gdb.git and checkedout commit 6c0c456d8792d7a40fe94658d0975dc4c6c5289b. However, I have embedded a submodule which revered to this correct commit in this repo.
+In order to clone the most recent repository before NINDY and the i960 were declared "OBSOLETE", I cloned the following repo https://github.com/bminor/binutils-gdb and checked out commit 6c0c456d8792d7a40fe94658d0975dc4c6c5289b. However, I have embedded a submodule which revered to this correct commit in this repo with minor updates to reflect changes over the years that modern compilers need in order to compile gdb.
 
 When configuring, make sure to target i960-intel-nindy.
 
