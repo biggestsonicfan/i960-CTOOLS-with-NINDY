@@ -51,26 +51,9 @@ struct aout {		/* a.out header structure */
 /* The following are sizes of the above structures NOT INCLUDING any padding
  * added by the compiler for alignment of entries within arrays.
  */
-#define SHDR_UNPADDED_SIZE (sizeof(sectbuf[0].sec_name) \
-				+ sizeof(sectbuf[0].p_addr) \
-				+ sizeof(sectbuf[0].v_addr) \
-				+ sizeof(sectbuf[0].sec_size) \
-				+ sizeof(sectbuf[0].data_ptr) \
-				+ sizeof(sectbuf[0].reloc_ptr) \
-				+ sizeof(sectbuf[0].line_num_ptr) \
-				+ sizeof(sectbuf[0].num_reloc) \
-				+ sizeof(sectbuf[0].num_line) \
-				+ sizeof(sectbuf[0].flags) \
-				+ sizeof(sectbuf[0].sec_align))
+#define SHDR_UNPADDED_SIZE (sizeof(sectbuf[0].sec_name) + sizeof(sectbuf[0].p_addr) + sizeof(sectbuf[0].v_addr) + sizeof(sectbuf[0].sec_size) + sizeof(sectbuf[0].data_ptr) + sizeof(sectbuf[0].reloc_ptr) + sizeof(sectbuf[0].line_num_ptr) + sizeof(sectbuf[0].num_reloc) + sizeof(sectbuf[0].num_line) + sizeof(sectbuf[0].flags) + sizeof(sectbuf[0].sec_align))
 
-#define AOUT_UNPADDED_SIZE (sizeof(aoutbuf.magic_nmbr) \
-				+ sizeof(aoutbuf.version) \
-				+ sizeof(aoutbuf.text_size) \
-				+ sizeof(aoutbuf.data_size) \
-				+ sizeof(aoutbuf.bss_size) \
-				+ sizeof(aoutbuf.start_addr) \
-				+ sizeof(aoutbuf.text_begin) \
-				+ sizeof(aoutbuf.data_begin))
+#define AOUT_UNPADDED_SIZE (sizeof(aoutbuf.magic_nmbr) + sizeof(aoutbuf.version) + sizeof(aoutbuf.text_size) + sizeof(aoutbuf.data_size) + sizeof(aoutbuf.bss_size) + sizeof(aoutbuf.start_addr) + sizeof(aoutbuf.text_begin) + sizeof(aoutbuf.data_begin))
 
 
 int noerase;	/* should download erase Flash? */

@@ -247,8 +247,7 @@ int flsize;	  /* Flash size used for Flash download */
 	  	GASM( "0: cmpdeco 0,%1,%0; bl 0b" : "=d"(cnt) : "0"(cnt) );
 	}
 #else
-	asm
-	time(loops)
+	asm void time(int loops)
 	{
 		%reglit loops; tmpreg cnt; label loop;
 
