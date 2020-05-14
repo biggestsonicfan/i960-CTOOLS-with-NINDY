@@ -39,13 +39,7 @@ static struct {				/* FILE HEADER STRUCTURE	*/
 /* The size of the above structures NOT INCLUDING any padding
  * added by the compiler for alignment of entries within arrays.
  */
-#define FHDR_UNPADDED_SIZE (sizeof(filebuf.file_type) \
-				+ sizeof(filebuf.num_secs) \
-				+ sizeof(filebuf.time_date) \
-				+ sizeof(filebuf.symtbl_ptr) \
-				+ sizeof(filebuf.num_syms) \
-				+ sizeof(filebuf.opt_hdr) \
-				+ sizeof(filebuf.flags))
+#define FHDR_UNPADDED_SIZE (sizeof(filebuf.file_type) + sizeof(filebuf.num_secs) + sizeof(filebuf.time_date) + sizeof(filebuf.symtbl_ptr) + sizeof(filebuf.num_syms) + sizeof(filebuf.opt_hdr) + sizeof(filebuf.flags))
 
 /* COFF parser states
  */
