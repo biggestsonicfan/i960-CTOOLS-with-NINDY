@@ -21,6 +21,7 @@ So far, I have not successfully compiled a NINDY binary.
 
 In order to clone the most recent repository before NINDY and the i960 were declared "OBSOLETE", I cloned the following repo https://github.com/bminor/binutils-gdb and checked out commit 6c0c456d8792d7a40fe94658d0975dc4c6c5289b. However, I have embedded a submodule which revered to this correct commit in this repo with minor updates to reflect changes over the years that modern compilers need in order to compile gdb.
 
-When configuring, make sure to target i960-intel-nindy.
+When configuring, make sure to configure something like this:
+`CFLAGS=-std=gnu89 ./configure -target=i960-intel-nindy -prefix=/wherever/you/want/your/output`
 
 Minor adjustments will be needed to compile.
