@@ -1,0 +1,108 @@
+# 1 "i_handle.c" 9 1
+	.globl	_user_intr1
+	_user_intr1:
+	ret
+	.globl	_user_intr2
+	_user_intr2:
+	ret
+	.globl	_user_intr3
+	_user_intr3:
+	ret
+	.globl	_user_intr4
+	_user_intr4:
+	ret
+	.globl	_user_intr5
+	_user_intr5:
+	ret
+	.globl	_user_intr6
+	_user_intr6:
+	ret
+	.globl	_user_intr7
+	_user_intr7:
+	ret
+	.globl	_user_intr8
+	_user_intr8:
+	ret
+	.globl	_user_intr9
+	_user_intr9:
+	ret
+	.globl	_user_intr10
+	_user_intr10:
+	ret
+	.globl	_user_intr11
+	_user_intr11:
+	ret
+	.globl	_user_intr12
+	_user_intr12:
+	ret
+	.globl	_user_intr13
+	_user_intr13:
+	ret
+	.globl	_user_intr14
+	_user_intr14:
+	ret
+	.globl	_user_intr15
+	_user_intr15:
+	ret
+	.globl	_user_intr16
+	_user_intr16:
+	ret
+	.globl	_user_intr17
+	_user_intr17:
+	ret
+	.globl	_user_intr18
+	_user_intr18:
+	ret
+	.globl	_user_intr19
+	_user_intr19:
+	ret
+	.globl	_user_intr20
+	_user_intr20:
+	ret
+	.globl	_user_intr21
+	_user_intr21:
+	ret
+	.globl	_user_intr22
+	_user_intr22:
+	ret
+	.globl	_user_intr23
+	_user_intr23:
+	ret
+	.globl	_user_intr24
+	_user_intr24:
+	ret
+	.globl	_user_intr25
+	_user_intr25:
+	ret
+	.globl	_user_intr26
+	_user_intr26:
+	ret
+	.globl	_user_intr27
+	_user_intr27:
+	ret
+	.globl	_user_intr28
+	_user_intr28:
+	ret
+	.globl	_user_intr29
+	_user_intr29:
+	ret
+	.globl	_user_intr30
+	_user_intr30:
+	ret
+	.globl	_user_intr31
+	_user_intr31:
+	ret
+	.globl	_user_NMI
+	_user_NMI:
+	ldconst 64, r4
+	addo sp, r4, sp
+	stq g0, -64(sp)
+	stq g4, -48(sp)
+	stq g8, -32(sp)
+	stt g12, -16(sp)
+	call	_print_nmi
+	ldq -64(sp), g0
+	ldq -48(sp), g4
+	ldq -32(sp), g8
+	ldt -16(sp), g12
+	ret
