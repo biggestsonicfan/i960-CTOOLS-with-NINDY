@@ -3,6 +3,9 @@ A repo in which i960 CTOOLS and NINDY are mirrored and a work in progress for bi
 
 
 # CTOOLS 5.0 for i386 NetBSD
+The original source for these CTOOLS binaries came from a project hosted by Carnegie Mellon University. The original project information can be found here: https://www.cs.cmu.edu/afs/cs/project/cmcl/link.vcnectar/www/CreditNet.html
+
+The original binaries, mirrored here in this repo, can be found here: https://www.cs.cmu.edu/afs/cs/project/cmcl/link.vcnectar/gnu960/i386_nbsd1/bin/ with the documentation here: https://www.cs.cmu.edu/afs/cs/project/cmcl/link.vcnectar/gnu960/i386_nbsd1/html/tools/gnuhome.htm
 
 In order to run CTOOLS, you must either be on actual i386 hardware or, better yet, a virtual machine. It can be installed from the ISO located here: http://wiki.netbsd.org/ports/i386/
 
