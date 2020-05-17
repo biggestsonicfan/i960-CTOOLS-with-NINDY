@@ -23,5 +23,11 @@ SECTIONS
 
 cs1 = -(system_address_table + prcb_ptr + start_ip);
 
+_heap_size = 0x2000;
+_heap_base = (_end + 0xf) & ~0xf;
+_heap_end = _heap_base + _heap_size - 1;
+
+_stackbase = (_heap_end + 0x10) & ~0x0f;
+
 HLL ()
 FLOAT

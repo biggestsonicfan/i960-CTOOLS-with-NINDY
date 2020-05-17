@@ -34,7 +34,8 @@ static struct {
 /* This is added to be compatable with the ic960 v2.0+  */
 /* libraries.  Errno uses this in the new libraries.    */
 /********************************************************/
-struct _thread *_thread_ptr(void)
-{
-	return (&_thread_str.t);
-}
+/*struct _thread *_thread_ptr(void)*/
+/*{                                */
+/*	return (&_thread_str.t);   */
+/*}                                */
+/***********************************/
