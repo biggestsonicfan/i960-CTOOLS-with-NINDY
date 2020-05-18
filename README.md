@@ -12,12 +12,15 @@ In order to run CTOOLS, you must either be on actual i386 hardware, or better ye
 Once a machine is up and running, install git-base and mozilla-rootcerts in order to clone this repo. After the repo is cloned, install compat12 to be able to run the binaries. After using chmod +x the executables in the "bin" directory and "cc1.960" and "cpp.960 in the "lib" directory you should be good to run CTOOLS! You may want to enable sshd and connect via SSH to the machine for ease of access.
 
 # NINDY 3.01
-
+## Building from source:
 Officially, the documentation for CTOOLS 5.0 states: "The NINDY monitor is no longer supported. MON960 is the only supported target." However, this does not mean NINDY can not be compiled with CTOOLS 5.0.
 
 NINDY's compilation is coming along. See this repo's Issues for any problems which may occur during compilation. Some minor quirks needed to be made to successfully compile certain files, such as `i_handle.c`. Notes for these will be in the issues they caused for compilation.
 
 The easiest way to compile NINDY will to be having this repo cloned onto your NetBSD machine into a home directory. While this NINDY source was targed for Windows 95/DOS, I have included "makefile.ex" as example commands to compile, in the same order as the Windows 95/DOS batch files, each step of NINDY.
+
+## Grabbing the precompiled binary:
+A binary has been provided by intel in the 'roms' directory. As stated in the NINDY Manual burn the EPROMs and place them in the slots accordingly: `qt0.hex` in slot U33; `qt1.hex` in slot U34; `qt2.hex` in slot U43; `qt3.hex` in lot U44. Be sure the jumpers in the lower right corner of the QT960 board are jumpered: J22-J23 in and J24-J25 in. The board will now boot from the new EPROMs upon powerup.
 
 # GDB and NINDY Monitor
 
