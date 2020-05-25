@@ -22,6 +22,9 @@ The easiest way to compile NINDY will to be having this repo cloned onto your Ne
 ## Grabbing the precompiled binary:
 A binary has been provided by intel in the 'roms' directory. As stated in the NINDY Manual burn the EPROMs and place them in the slots accordingly: `qt0.hex` in slot U33; `qt1.hex` in slot U34; `qt2.hex` in slot U43; `qt3.hex` in lot U44. Be sure the jumpers in the lower right corner of the QT960 board are jumpered: J22-J23 in and J24-J25 in. The board will now boot from the new EPROMs upon powerup.
 
+## Untouched Source:
+For unmodified source code directly from the floppy disk, please see my other repository: https://github.com/cglmrfreeman/QT960-Schematics/tree/master/src/NINDY
+
 # GDB and NINDY Monitor
 
 In order to clone the most recent repository before NINDY and the i960 were declared "OBSOLETE", I cloned the following repo https://github.com/bminor/binutils-gdb and checked out commit 6c0c456d8792d7a40fe94658d0975dc4c6c5289b. However, I have embedded a submodule which revered to this correct commit in this repo with minor updates to reflect changes over the years that modern compilers need in order to compile gdb.
