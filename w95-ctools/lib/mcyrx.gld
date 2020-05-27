@@ -1,0 +1,7 @@
+gcc:-ARP
+
+crt:%{!crt:%[~]/lib/%{mpid:%{G:crtrp_e.o}%{!G:crtrp_p.o}}%{!mpid:%{G:crtrp_b.o}%{!G:crtrp.o}}}
+
+ld:%{!Ttext:-Ttext 0xA0008000}%{*: -defsym _heap_size=0x20000;_heap_base=(_end+0xf)&~0xf;_heap_end=_heap_base+_heap_size-1;_stackbase=(_heap_end+0x40)&~0x3f -defsym fpem_CA_AC=0x100}
+
+lib:%{!nostdlib:-lmn -lll}
