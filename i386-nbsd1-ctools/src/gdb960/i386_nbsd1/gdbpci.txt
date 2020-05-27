@@ -1,0 +1,184 @@
+/* $Header: /ffs/p1/dev/src/gdb960/common/RCS/gdbpci.txt,v 1.4 1995/11/06 10:39:37 cmorgan Exp $ */
+
+Scope
+=====
+This document describes the new version of gdb960 program available with
+the beta 2.4 release of mon960.
+
+
+New Gdb960 Features
+===================
+PCI communication and PCI download are now available for selected hosts
+and hardware.  Supported hosts are:  any DOS-based PC with a PCI bus
+and PCI-compliant BIOS.
+   
+PCI communication/download may be used with any MON960-based target that
+includes a PCI interface ported to the monitor's PCI communication
+API.  One such target distributed by Intel is the PCI 80960DP, which is
+a Cyclone evaluation baseboard with a PLX PCI 9060 PCI bus master
+interface chip installed.
+
+Note that the PCI 80960DP target requires a PC host with sufficient
+physical space to accept a full-sized PCI card.
+
+
+New PCI Options
+===============
+
+Switch              Semantics
+
+-pci                Selects a target connected to the host's PCI bus.  This
+                    option selects the target using an algorithm that
+                    searches for the first available PCI 80960DP.
+
+-pcib <bus_no> <dev_no> <func_no>
+                    Selects a target connected to the host's PCI bus.  The
+                    target PCI device is selected using an absolute PCI bus
+                    address.  All arguments are specified in hex.
+                    
+-pcic {io | mmap}   Configures PCI communications.  By default, gdb960
+                    always attempts to communicate with a PCI device via
+                    I/O space.  This switch permits the user to
+                    explicitly specify the interface.
+
+                       io ->   Communicate via I/O space (i.e., use in/out
+                               instructions to access the PCI device).
+                       mmap -> Communicate via memory mapped access.
+                    
+-pciv <vendor_id> <device_id>
+                    Selects a target connected to the host's PCI bus.  The
+                    target PCI device is selected by specifying a PCI vendor
+                    and device ID.  All arguments are specified in hex.
+                    This option selects the target using an algorithm that
+                    searches for the first available PCI device configured
+                    with the requested vendor_id and device_id.
+
+
+
+                        +++++++++++++++++++++
+                        + PCI Communication +
+                        +++++++++++++++++++++
+
+If your PC host and target meet the requirements listed above, you will
+probably want to take advantage of the increased host-to-target
+transfer rates available via PCI communication.  Set up PCI
+communication using the following steps:
+
+1) Turn off power to the PC.
+2) Install an appropriate target in an empty PCI bus slot in the PC host.
+3) Turn on power to the PC.
+
+
+Semantics
+=========
+You can use any of three methods to establish PCI communication with a 
+target:
+
+* To connect to a single PCI 80960DP target, use the -pci option.
+
+* To select one of n targets, all made by the same manufacturer, use the
+  -pcib option.
+
+* To connect to a target from a unique collection of hardware devices, 
+  select the target via its vendor and device ID, use the -pciv option.
+
+Once gdb960 has opened a PCI communication channel with a target, all
+target I/O transactions, including program download, are conducted via
+the PCI bus.
+
+
+Gdb960 PCI Communication Command Line Syntax
+============================================
+
+   gdb960 pci_comm_option [other options]... [application]
+
+
+Example
+=======
+> gdb960 -pci myprog
+(gdb960) run myarg
+
+    Explanation:  connect to the single PCI 80960DP target in the host PC
+    and download and execute myprog, passing myarg to main() as the lone
+    command line argument.
+
+> gdb960 -pcib 0 c 0 myprog
+(gdb960) run myarg
+
+    Explanation:  connect to the PCI target located at bus address 0 (bus#),
+    0xc (device#), 0 (function#) and download and execute myprog, passing
+    myarg to main() as the lone command line argument.
+
+
+                        +++++++++++++++++++++
+                        +    PCI Download   +
+                        +++++++++++++++++++++
+
+If your PC host and target support PCI communication, but application
+requirements make it undesirable for the monitor to tie up the PCI bus
+with I/O and various service requests (e.g., register dumps), then PCI
+download can be used to augment serial communication.  Set up PCI
+communication using the following steps:
+
+1) Turn off power to the PC.
+2) Install an appropriate target in an empty PCI bus slot in the PC host.
+3) Additionally, connect an RS-232 serial cable between the host and target.
+4) Turn on power to the PC.
+
+
+Semantics
+=========
+To establish the PCI download channel you may use any of the three
+methods previously described for opening a PCI communication channel.
+
+Note that the serial cable is used by the host to establish the initial
+connection with the target, to service interrupts and breaks, and to
+transfer all non-download data between host and target.  The PCI bus is
+used only to download programs to the target.
+
+
+Gdb960 PCI Download Command Line Syntax
+=======================================
+
+   gdb960 -r serial_port pci_comm_option [other options]... [application]
+
+
+Examples
+========
+> gdb960 -r com1 -pci myprog
+         
+    Explanation:  Debug the program myprog, downloading to the 
+    PCI 80960DP target currently controlled via COM1.
+
+> gdb960 -r com1 -pcib 0 c 0 myprog  
+
+    Explanation: Download myprog to the PCI target controlled via COM1 and
+    located at PCI bus address 0 (bus#), 0xc (device#), 0 (function#).
+
+> gdb960 -r com2 -pciv 8086 8 myprog  
+
+    Explanation:  Download myprog to a PCI target controlled
+    via COM2 and uses vendor ID 0x8086 and device ID 0x8.
+
+> gdb960 -r com2 -pci -parallel lpt1 myprog  
+
+    Explanation:  Error.  More than one download channel specified.
+
+
+Gdb960 Target Command Updated
+=============================
+The gdb960 "target" command supports all of the switches listed above and
+thus, permits the user to change his/her pci download or communication
+configuration once gdb960 has been invoked.
+
+
+PCI HW Resources Reserved By MON960
+===================================
+Target                  Resource(s)[%]
+
+Cyclone/PLX Baseboard   Mailbox registers 6 and 7 and doorbell bits 30 and
+                        31 in both the local-to-PCI and PCI-to-local 
+                        doorbell registers.
+
+[%] These HW resources are reserved for exclusive use by MON960 and should
+    not be modified in any way by programs executing on the target.

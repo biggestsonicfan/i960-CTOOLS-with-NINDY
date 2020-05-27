@@ -1,0 +1,281 @@
+
+
+/* Define gcc960 command line options to be accepted by ic960.
+
+   This file doesn't declare or define, in the C sense, any objects.
+   It references preprocessor macros that can be defined, before
+   including this file, to extract the appropriate information.
+   These macros are automatically #undef'd at the end of this file, so
+   this file can be included multiple times.
+ */
+
+#if !defined(TO_CPP)
+#define TO_CPP		1
+#endif
+
+#if !defined(TO_CC1)
+#define TO_CC1		2
+#endif
+
+#if !defined(TO_CC1PLUS)
+#define TO_CC1PLUS	4
+#endif
+
+#if defined(DEF_F_OPTION)
+
+/* DEF_F_OPTION defines all the -f options supported by ic960
+
+   The first argument is the name of the option without the -f and
+   without the optional "no-" prefix.
+
+   The second argument is a bit vector indicating whether the option should
+   be passed through to the preprocessor, C compiler and or C++ compiler.
+
+   The third argument is a string that is printed with the driver's -h output.
+ */
+
+#if 0
+/* -fasm doesn't work for ic960 because of the way 'asm' is implemented. */
+DEF_F_OPTION("asm", TO_CC1 | TO_CC1PLUS,
+"     asm            Treat 'asm', 'inline' and 'typeof' as keywords.")
+#endif
+
+DEF_F_OPTION("bbr", TO_CC1 | TO_CC1PLUS,
+"     bbr            Enable basic block rearrangement.")
+
+DEF_F_OPTION("build-db", TO_CC1 | TO_CC1PLUS,
+"     build-db       Build a program database, without source files.")
+
+DEF_F_OPTION("coalesce", TO_CC1 | TO_CC1PLUS,
+"     coalesce       Coalesce adjacent memory references.")
+
+DEF_F_OPTION("coerce", TO_CC1 | TO_CC1PLUS,
+"     coerce         Enable byte/short optimization.")
+
+DEF_F_OPTION("cond-mismatch", TO_CC1 | TO_CC1PLUS,
+"     cond-mismatch  Allow type mismatch in operands of the ?: operator.")
+
+DEF_F_OPTION("condxform", TO_CC1 | TO_CC1PLUS,
+"     condxform      Employ 80960 conditional instructions.")
+
+DEF_F_OPTION("constcomp", TO_CC1 | TO_CC1PLUS,
+"     constcomp      Enable constant compression.")
+
+DEF_F_OPTION("constprop", TO_CC1 | TO_CC1PLUS,
+"     constprop      Enable constant propagation and folding.")
+
+DEF_F_OPTION("copyprop", TO_CC1 | TO_CC1PLUS,
+"     copyprop       Enable copy propagation.")
+
+DEF_F_OPTION("cse-follow-jumps", TO_CC1 | TO_CC1PLUS,
+"     cse-follow-jumps  Enable a limited form of global CSE.")
+
+DEF_F_OPTION("cse-skip-blocks", TO_CC1 | TO_CC1PLUS,
+"     cse-skip-blocks   Enable a limited form of global CSE.")
+
+DEF_F_OPTION("db", TO_CC1 | TO_CC1PLUS,
+"     db             Build a database for program-wide optimizations.")
+
+DEF_F_OPTION("expensive-optimizations", TO_CC1 | TO_CC1PLUS,
+"     expensive-optimizations  Enable some minor optimizations.")
+
+DEF_F_OPTION("float-store", TO_CC1 | TO_CC1PLUS,
+"     float-store    Use floating point registers and perform FP CSE.")
+
+DEF_F_OPTION("force-addr", TO_CC1 | TO_CC1PLUS,
+"     force-addr     Place address constants in registers before use.")
+
+DEF_F_OPTION("glob-alias", TO_CC1 | TO_CC1PLUS,
+"     glob-alias     Use program-wide alias analysis.")
+
+DEF_F_OPTION("glob-inline", TO_CC1 | TO_CC1PLUS,
+"     glob-inline    Enable program-wide inlining.")
+
+DEF_F_OPTION("glob-sram", TO_CC1 | TO_CC1PLUS,
+"     glob-sram      Enable program-wide SRAM usage.")
+
+DEF_F_OPTION("int-alias-ptr", TO_CC1 | TO_CC1PLUS,
+"     int-alias-ptr  Pointers may be aliased by 4 byte integers.")
+
+DEF_F_OPTION("int-alias-real", TO_CC1 | TO_CC1PLUS,
+"     int-alias-real Floating point objects may be aliased by 4 byte integers.")
+
+DEF_F_OPTION("int-alias-short", TO_CC1 | TO_CC1PLUS,
+"     int-alias-short 2 byte integers may be aliased by 4 byte integers.")
+
+DEF_F_OPTION("keep-inline-functions", TO_CC1 | TO_CC1PLUS,
+"     keep-inline-functions  Emit out-of-line code for inlined functions.")
+
+DEF_F_OPTION("marry_mem", TO_CC1 | TO_CC1PLUS,
+"     marry_mem      Rejoin multi-word moves split by -fsplit_mem.")
+
+DEF_F_OPTION("peephole", TO_CC1 | TO_CC1PLUS,
+"     peephole       Enable peephole optimizations.")
+
+DEF_F_OPTION("prof", TO_CC1 | TO_CC1PLUS,
+"     prof           Insert profile instrumentation code.")
+
+#if 0
+/* Don't encourage direct use of these.  They are used indirectly
+   via -q.  If needed directly, use -Wc,....
+ */
+DEF_F_OPTION("prof-db", TO_CC1 | TO_CC1PLUS,
+"     prof-db          Obsolete profile instrumentation.")
+
+DEF_F_OPTION("prof-instrument", TO_CC1 | TO_CC1PLUS,
+"     prof-instrument  Obsolete profile instrumentation.")
+
+DEF_F_OPTION("prof-use", TO_CC1 | TO_CC1PLUS,
+"     prof-use         Use runtime profile for optimization.")
+#endif
+
+DEF_F_OPTION("rerun-cse-after-loop", TO_CC1 | TO_CC1PLUS,
+"     rerun-cse-after-loop  Reiterate CSE after loop optimization.")
+
+DEF_F_OPTION("schedule-insns", TO_CC1 | TO_CC1PLUS,
+"     schedule-insns   Perform pre-register-allocation scheduling.")
+
+DEF_F_OPTION("schedule-insns2", TO_CC1 | TO_CC1PLUS,
+"     schedule-insns2  Perform post-register-allocation scheduling.")
+
+DEF_F_OPTION("shadow-globals", TO_CC1 | TO_CC1PLUS,
+"     shadow-globals Shadow memory locations in registers.")
+
+DEF_F_OPTION("shadow-mem", TO_CC1 | TO_CC1PLUS,
+"     shadow-mem     Like shadow-globals, but more thorough.")
+
+#if 0
+/* Obsolete */
+DEF_F_OPTION("shared-data", TO_CC1 | TO_CC1PLUS,
+"     shared-data    Make .data and .bss shared sections.")
+#endif
+
+DEF_F_OPTION("space-opt", TO_CC1 | TO_CC1PLUS,
+"     space-opt      Optimize for memory space.")
+
+DEF_F_OPTION("split_mem", TO_CC1 | TO_CC1PLUS,
+"     split_mem      Split multi-word moves for copy propagation.")
+
+DEF_F_OPTION("strength-reduce", TO_CC1 | TO_CC1PLUS,
+"     strength-reduce  Enable loop strength reduction.")
+
+DEF_F_OPTION("thread-jumps", TO_CC1 | TO_CC1PLUS,
+"     thread-jumps   Enable an advanced branch optimization.")
+
+DEF_F_OPTION("unroll-all-loops", TO_CC1 | TO_CC1PLUS,
+"     unroll-all-loops  Unroll all loops.")
+
+DEF_F_OPTION("unroll-loops", TO_CC1 | TO_CC1PLUS,
+"     unroll-loops   Unroll loops where deemed beneficial.")
+
+DEF_F_OPTION("verbose-asm", TO_CC1 | TO_CC1PLUS,
+"     verbose-asm    Emit explanatory assembly language comments.")
+
+DEF_F_OPTION("volatile", TO_CC1 | TO_CC1PLUS,
+"     volatile       Treat indirect memory references as volatile.")
+
+DEF_F_OPTION("volatile-global", TO_CC1 | TO_CC1PLUS,
+"     volatile-global  Treat all memory references as volatile.")
+
+DEF_F_OPTION("writable-strings", TO_CC1 | TO_CC1PLUS,
+"     writable-strings  Place string literals in .data.")
+#endif
+
+
+#if defined(DEF_W_OPTION)
+
+/* DEF_W_OPTION defines all the -W diagnostic options supported by ic960.
+   Note that -Wall has no -Wno-all form, and neither does -Wid-clash-<len>.
+
+   The first argument is the name of the option without the -W and
+   without the optional "no-" prefix.
+
+   The second argument is a bit vector indicating whether the option should
+   be passed through to the preprocessor, C compiler and or C++ compiler.
+
+   The third argument is a string that is printed with the driver's -h output.
+ */
+
+DEF_W_OPTION("aggregate-return", TO_CC1 | TO_CC1PLUS,
+"     aggregate-return  Warn if any functions return structs or unions.")
+
+DEF_W_OPTION("all", TO_CC1 | TO_CC1PLUS,
+"     all            Enable several useful warnings.  Has no '-Wno-all' form.")
+
+DEF_W_OPTION("cast-align", TO_CC1 | TO_CC1PLUS,
+"     cast-align     Warn if a pointer cast may not have required alignment.")
+
+DEF_W_OPTION("cast-qual", TO_CC1 | TO_CC1PLUS,
+"     cast-qual      Warn if a pointer cast removes a type qualifier.")
+
+DEF_W_OPTION("char-subscripts", TO_CC1 | TO_CC1PLUS,
+"     char-subscripts  Warn if an array subscript has type 'char'.")
+
+DEF_W_OPTION("comment", TO_CPP,
+"     comment        Warn whenever /* occurs within a comment.")
+
+DEF_W_OPTION("conversion", TO_CC1 | TO_CC1PLUS,
+"     conversion     Warn if a prototyped parameter causes a different\n                    conversion than if not prototyped.")
+
+DEF_W_OPTION("error", TO_CC1 | TO_CC1PLUS,
+"     error          Treat all warnings as errors.")
+
+DEF_W_OPTION("format", TO_CC1 | TO_CC1PLUS,
+"     format         Check types of printf family arguments at compile time.")
+
+/* Note:  id-clash-n must be handled specially, since n can vary. */
+DEF_W_OPTION("id-clash-", TO_CC1 | TO_CC1PLUS,
+"     id-clash-n     Warn if two identifiers match in the first n characters.")
+
+DEF_W_OPTION("implicit", TO_CC1 | TO_CC1PLUS,
+"     implicit       Warn if a function is used before being declared.")
+
+DEF_W_OPTION("missing-braces", TO_CC1 | TO_CC1PLUS,
+"     missing-braces Warn if an aggregate initializer is not fully braced.")
+
+DEF_W_OPTION("missing-prototypes", TO_CC1 | TO_CC1PLUS,
+"     missing-prototypes  Warn if a function is defined before it is prototyped.")
+
+DEF_W_OPTION("nested-externs", TO_CC1 | TO_CC1PLUS,
+"     nested-externs Warn if an extern declaration is seen within a function.")
+
+DEF_W_OPTION("parentheses", TO_CC1 | TO_CC1PLUS,
+"     parentheses    Warn if parentheses are suggested around an expression.")
+
+DEF_W_OPTION("pointer-arith", TO_CC1 | TO_CC1PLUS,
+"     pointer-arith  Warn if the size of a function type or type void is used.")
+
+DEF_W_OPTION("redundant-decls", TO_CC1 | TO_CC1PLUS,
+"     redundant-decls  Warn if an object is declared twice in the same scope.")
+
+DEF_W_OPTION("return-type", TO_CC1 | TO_CC1PLUS,
+"     return-type    Warn if any function implicitly returns 'int', and if\n                    a non-void function does not return a value.")
+
+DEF_W_OPTION("shadow", TO_CC1 | TO_CC1PLUS,
+"     shadow         Warn if a local variable shadows another local variable.")
+
+DEF_W_OPTION("strict-prototypes", TO_CC1 | TO_CC1PLUS,
+"     strict-prototypes  Warn if a function is declared without a prototype.")
+
+DEF_W_OPTION("switch", TO_CC1 | TO_CC1PLUS,
+"     switch         Warn if a switch statement on an enumeration type\n                    does not have a case for each enumerator.")
+
+DEF_W_OPTION("traditional", TO_CPP | TO_CC1 | TO_CC1PLUS,
+"     traditional    Warn about constructs that behave differently under\n                    traditional C and ANSI C.")
+
+DEF_W_OPTION("trigraphs", TO_CPP,
+"     trigraphs      Warn if any trigraphs are encountered.")
+
+DEF_W_OPTION("uninitialized", TO_CC1 | TO_CC1PLUS,
+"     uninitialized  Warn if use of an uninitialized local variable is detected.")
+
+DEF_W_OPTION("unused", TO_CC1 | TO_CC1PLUS,
+"     unused         Warn about objects that are never used.")
+
+DEF_W_OPTION("write-strings", TO_CC1 | TO_CC1PLUS,
+"     write-strings  Warn if string constants are used in a writable context.")
+
+#endif
+
+#undef DEF_F_OPTION
+#undef DEF_W_OPTION

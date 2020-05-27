@@ -1,0 +1,114 @@
+#*******************************************************************************
+# 
+# Copyright (c) 1993 Intel Corporation
+# 
+# Intel hereby grants you permission to copy, modify, and distribute this
+# software and its documentation.  Intel grants this permission provided
+# that the above copyright notice appears in all copies and that both the
+# copyright notice and this permission notice appear in supporting
+# documentation.  In addition, Intel grants this permission provided that
+# you prominently mark as "not part of the original" any modifications
+# made to this software or documentation, and that the name of Intel
+# Corporation not be used in advertising or publicity pertaining to
+# distribution of the software or the documentation without specific,
+# written prior permission.
+# 
+# Intel Corporation provides this AS IS, WITHOUT ANY WARRANTY, EXPRESS OR
+# IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY
+# OR FITNESS FOR A PARTICULAR PURPOSE.  Intel makes no guarantee or
+# representations regarding the use of, or the results of the use of,
+# the software and documentation in terms of correctness, accuracy,
+# reliability, currentness, or otherwise; and you rely on the software,
+# documentation and results solely at your own risk.
+#
+# IN NO EVENT SHALL INTEL BE LIABLE FOR ANY LOSS OF USE, LOSS OF BUSINESS,
+# LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES
+# OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
+# PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
+# 
+#*******************************************************************************
+
+MK		= $(MAKE) -f makelibs.dos IC=$(IC)
+
+
+%if "$(IC)" == ""
+	IC	= gcc960
+%endif
+
+LIB_DEBUG	=
+X960BASE	=
+%if $(IC) == gcc960
+	AR	= gar960
+	AS	= gas960e
+	OPT	= -O4 $(LIB_DEBUG) -fsigned-char -mic3.0-compat -mstrict-align -mpic
+	X960BASE= $(G960BASE)
+%elif $(IC) == ic960
+	AR	= arc960
+	AS	= gas960e
+	OPT	= -O2 $(LIB_DEBUG) -Wc,-mstrict-align -Gpc
+	X960BASE= $(I960BASE)
+%else
+%	abort "IC must be ic960 or gcc960"
+%endif
+
+%if "$(X960BASE)" == ""
+%	abort "Define I960BASE for ic960 or G960BASE for gcc960"
+%endif
+
+LIB_INSTALL	=
+%if "$(LIB_INSTALL)" == ""
+	LIB_INSTALL=$(X960BASE)\lib
+%endif
+
+IDIR		= -I$(X960BASE)\src\include
+EXTRACT		= $(AR) -xo
+FORMAT		= -Felf
+EXTRA		=
+CFLAGS		= $(ARCH) $(OPT) $(FORMAT) $(EXTRA) $(IDIR) $(VERB)
+AS_OPT		=
+ASFLAGS		= $(ARCH) $(AS_OPT)
+ARFLAGS		= -r
+VERB		=
+
+OBJS		=
+
+.SUFFIXES:
+.SUFFIXES:	.o .as .c
+
+all:
+
+install:
+	%if ! %dir($(LIB_INSTALL))
+		mkdir $(LIB_INSTALL)
+	%endif
+	copy cycx.ld	$(LIB_INSTALL)\cycx.ld
+	copy cycx.ld	$(LIB_INSTALL)\cycxp.ld
+	copy cycx.ld	$(LIB_INSTALL)\cycxb.ld
+	copy cycxfls.ld	$(LIB_INSTALL)\cycxfls.ld
+	copy cycxfls.ld	$(LIB_INSTALL)\cycxpfls.ld
+	copy cycxfls.ld	$(LIB_INSTALL)\cycxbfls.ld
+	copy cycx.ld	$(LIB_INSTALL)\cyjx.ld
+	copy cycx.ld	$(LIB_INSTALL)\cyjxp.ld
+	copy cycx.ld	$(LIB_INSTALL)\cyjxb.ld
+	copy cycxfls.ld	$(LIB_INSTALL)\cyjxfls.ld
+	copy cycxfls.ld	$(LIB_INSTALL)\cyjxpfls.ld
+	copy cycxfls.ld	$(LIB_INSTALL)\cyjxbfls.ld
+	copy cycx.ld	$(LIB_INSTALL)\cyhx.ld
+	copy cycxfls.ld	$(LIB_INSTALL)\cyhxfls.ld
+	copy cykx.ld	$(LIB_INSTALL)\cykx.ld
+	copy cykx.ld	$(LIB_INSTALL)\cykxp.ld
+	copy cykx.ld	$(LIB_INSTALL)\cysx.ld
+	copy cykx.ld	$(LIB_INSTALL)\cysxp.ld
+	copy mcycx.gld	$(LIB_INSTALL)\mcycx.gld
+	copy mcycxfls.gld	$(LIB_INSTALL)\mcycxfls.gld
+	copy mcyjx.gld	$(LIB_INSTALL)\mcyjx.gld
+	copy mcyjxfls.gld	$(LIB_INSTALL)\mcyjxfls.gld
+	copy mcyhx.gld	$(LIB_INSTALL)\mcyhx.gld
+	copy mcyhxfls.gld	$(LIB_INSTALL)\mcyhxfls.gld
+	copy mcykx.gld	$(LIB_INSTALL)\mcykx.gld
+	copy mcysx.gld	$(LIB_INSTALL)\mcysx.gld
+
+clean:
+	if exist *.a del *.a
+	if exist *.o del *.o
+

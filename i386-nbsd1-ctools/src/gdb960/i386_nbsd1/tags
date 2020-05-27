@@ -1,0 +1,2201 @@
+ABOUT_TO_RETURN	tm-i960.h	/^#define ABOUT_TO_RETURN(ip) (read_memory_integer(i/
+ADDR_BITS_REMOVE	defs.h	/^#define ADDR_BITS_REMOVE(addr) (addr)$/
+ADDR_BITS_SET	tm-i960.h	/^#define ADDR_BITS_SET(addr) (addr)$/
+ADD_PSYMBOL_ADDR_TO_LIST	symfile.h	/^#define	ADD_PSYMBOL_ADDR_TO_LIST(name, namelength,/
+ADD_PSYMBOL_TO_LIST	symfile.h	/^#define	ADD_PSYMBOL_TO_LIST(name, namelength, name/
+ADD_PSYMBOL_VT_TO_LIST	symfile.h	/^#define	ADD_PSYMBOL_VT_TO_LIST(NAME,NAMELENGTH,NAM/
+ALLOCATE_CPLUS_STRUCT_TYPE	gdbtypes.h	/^#define ALLOCATE_CPLUS_STRUCT_TYPE(type) allocate_/
+ALL_BREAKPOINTS	breakpoint.c	/^#define ALL_BREAKPOINTS(b)  for (b = breakpoint_ch/
+ALL_BREAKPOINTS_SAFE	breakpoint.c	/^#define ALL_BREAKPOINTS_SAFE(b,tmp)	\\$/
+ALL_MSYMBOLS	objfiles.h	/^#define	ALL_MSYMBOLS(objfile, m) \\$/
+ALL_OBJFILES	objfiles.h	/^#define	ALL_OBJFILES(obj) \\$/
+ALL_OBJFILES_SAFE	objfiles.h	/^#define	ALL_OBJFILES_SAFE(obj,nxt) \\$/
+ALL_OBJFILE_MSYMBOLS	objfiles.h	/^#define	ALL_OBJFILE_MSYMBOLS(objfile, m) \\$/
+ALL_OBJFILE_PSYMTABS	objfiles.h	/^#define	ALL_OBJFILE_PSYMTABS(objfile, p) \\$/
+ALL_OBJFILE_SYMTABS	objfiles.h	/^#define	ALL_OBJFILE_SYMTABS(objfile, s) \\$/
+ALL_PSYMTABS	objfiles.h	/^#define	ALL_PSYMTABS(objfile, p) \\$/
+ALL_SYMTABS	objfiles.h	/^#define	ALL_SYMTABS(objfile, s) \\$/
+ANOFFSET	symtab.h	/^#define	ANOFFSET(secoff, whichone)	(secoff->offset/
+AOUTHDR	coff-i960.h	75
+ASYNC_STRUCT	ser-go32.c	46
+AUX_GET_ANY	coff-ecoff.h	/^#define AUX_GET_ANY(bigend, ax, field) \\$/
+AUX_GET_COUNT	coff-ecoff.h	/^#define AUX_GET_COUNT(bigend, ax)	AUX_GET_ANY ((bi/
+AUX_GET_DNHIGH	coff-ecoff.h	/^#define	AUX_GET_DNHIGH(bigend, ax)	AUX_GET_ANY ((b/
+AUX_GET_DNLOW	coff-ecoff.h	/^#define	AUX_GET_DNLOW(bigend, ax)	AUX_GET_ANY ((bi/
+AUX_GET_ISS	coff-ecoff.h	/^#define AUX_GET_ISS(bigend, ax)		AUX_GET_ANY ((big/
+AUX_GET_ISYM	coff-ecoff.h	/^#define	AUX_GET_ISYM(bigend, ax)	AUX_GET_ANY ((big/
+AUX_GET_WIDTH	coff-ecoff.h	/^#define AUX_GET_WIDTH(bigend, ax)	AUX_GET_ANY ((bi/
+AUX_PUT_ANY	coff-ecoff.h	/^#define AUX_PUT_ANY(bigend, val, ax, field) \\$/
+AUX_PUT_COUNT	coff-ecoff.h	/^#define AUX_PUT_COUNT(bigend, val, ax) \\$/
+AUX_PUT_DNHIGH	coff-ecoff.h	/^#define AUX_PUT_DNHIGH(bigend, val, ax) \\$/
+AUX_PUT_DNLOW	coff-ecoff.h	/^#define AUX_PUT_DNLOW(bigend, val, ax) \\$/
+AUX_PUT_ISS	coff-ecoff.h	/^#define AUX_PUT_ISS(bigend, val, ax) \\$/
+AUX_PUT_ISYM	coff-ecoff.h	/^#define AUX_PUT_ISYM(bigend, val, ax) \\$/
+AUX_PUT_WIDTH	coff-ecoff.h	/^#define AUX_PUT_WIDTH(bigend, val, ax) \\$/
+BASETYPE_VIA_PUBLIC	gdbtypes.h	/^#define BASETYPE_VIA_PUBLIC(thistype, index) (!TYP/
+BASETYPE_VIA_VIRTUAL	gdbtypes.h	/^#define BASETYPE_VIA_VIRTUAL(thistype, index) \\$/
+BITMASK	i960-tdep.c	/^#define BITMASK(pos, width) (((0x1 << (width)) - 1/
+BLOCK	dwarfread.c	281
+BLOCKVECTOR	symtab.h	/^#define BLOCKVECTOR(symtab)	(symtab)->blockvector$/
+BLOCKVECTOR_BLOCK	symtab.h	/^#define BLOCKVECTOR_BLOCK(blocklist,n) (blocklist)/
+BLOCKVECTOR_NBLOCKS	symtab.h	/^#define BLOCKVECTOR_NBLOCKS(blocklist) (blocklist)/
+BLOCK_ABSTRACT_INSTANCE	symtab.h	/^#define BLOCK_ABSTRACT_INSTANCE(bl) (bl)->abstract/
+BLOCK_END	symtab.h	/^#define BLOCK_END(bl)		(bl)->endaddr$/
+BLOCK_FUNCTION	symtab.h	/^#define BLOCK_FUNCTION(bl)	(bl)->function$/
+BLOCK_GCC_COMPILED	symtab.h	/^#define BLOCK_GCC_COMPILED(bl)	(bl)->gcc_compile_f/
+BLOCK_NSYMS	symtab.h	/^#define BLOCK_NSYMS(bl)		(bl)->nsyms$/
+BLOCK_SHOULD_SORT	symtab.h	/^#define BLOCK_SHOULD_SORT(bl) ((bl)->nsyms >= 40 &/
+BLOCK_START	symtab.h	/^#define BLOCK_START(bl)		(bl)->startaddr$/
+BLOCK_SUPERBLOCK	symtab.h	/^#define BLOCK_SUPERBLOCK(bl)	(bl)->superblock$/
+BLOCK_SYM	symtab.h	/^#define BLOCK_SYM(bl, n)	(bl)->sym[n]$/
+BTYPE	coff-internal.h	/^#define BTYPE(x)	((x) & N_BTMASK)$/
+BYTES_TO_EXP_ELEM	expression.h	/^#define BYTES_TO_EXP_ELEM(bytes) \\$/
+B_BYTES	gdbtypes.h	/^#define	B_BYTES(x)	( 1 + ((x)>>3) )$/
+B_CLR	gdbtypes.h	/^#define B_CLR(a,x)	((a)[(x)>>3] &= ~(1 << ((x)&7))/
+B_CLRALL	gdbtypes.h	/^#define	B_CLRALL(a,x)	memset ((a), 0, B_BYTES(x))$/
+B_SET	gdbtypes.h	/^#define B_SET(a,x)	((a)[(x)>>3] |= (1 << ((x)&7)))/
+B_TST	gdbtypes.h	/^#define B_TST(a,x)	((a)[(x)>>3] & (1 << ((x)&7)))$/
+CANNOT_STORE_REGISTER	findvar.c	/^#define CANNOT_STORE_REGISTER(regno) 0$/
+CHECKBUF	ch-exp.c	/^#define CHECKBUF(size) \\$/
+CHILD_PREPARE_TO_STORE	xm-sparc.h	/^#define CHILD_PREPARE_TO_STORE() read_register_byt/
+COERCE_ARRAY	value.h	/^#define COERCE_ARRAY(arg)    \\$/
+COERCE_ENUM	value.h	/^#define COERCE_ENUM(arg)    \\$/
+COERCE_REF	value.h	/^#define COERCE_REF(arg)    \\$/
+COMPLETION_LIST_ADD_SYMBOL	symtab.c	/^#define COMPLETION_LIST_ADD_SYMBOL(symbol, sym_tex/
+CORE_ADDR	defs.h	43
+DBFOFF	dwarfread.c	/^#define DBFOFF(p) (((struct dwfinfo *)((p)->read_s/
+DBLENGTH	dwarfread.c	/^#define DBLENGTH(p) (((struct dwfinfo *)((p)->read/
+DBROFF	dwarfread.c	/^#define DBROFF(p) (((struct dwfinfo *)((p)->read_s/
+DBX_PARM_SYMBOL_CLASS	tm-i960.h	/^#define	DBX_PARM_SYMBOL_CLASS(type) (((int) type =/
+DBX_STRINGTAB	gdb-stabs.h	/^#define DBX_STRINGTAB(o)	(DBX_SYMFILE_INFO(o)->str/
+DBX_STRINGTAB_SIZE	gdb-stabs.h	/^#define DBX_STRINGTAB_SIZE(o)	(DBX_SYMFILE_INFO(o)/
+DBX_SYMBOL_SIZE	gdb-stabs.h	/^#define DBX_SYMBOL_SIZE(o)	(DBX_SYMFILE_INFO(o)->s/
+DBX_SYMCOUNT	gdb-stabs.h	/^#define DBX_SYMCOUNT(o)		(DBX_SYMFILE_INFO(o)->sym/
+DBX_SYMFILE_INFO	gdb-stabs.h	/^#define DBX_SYMFILE_INFO(o)	((struct dbx_symfile_i/
+DBX_SYMTAB_OFFSET	gdb-stabs.h	/^#define DBX_SYMTAB_OFFSET(o)	(DBX_SYMFILE_INFO(o)-/
+DBX_TEXT_SECT	gdb-stabs.h	/^#define DBX_TEXT_SECT(o)	(DBX_SYMFILE_INFO(o)->tex/
+DECREF	coff-internal.h	/^#define DECREF(x) ((((x)>>N_TSHIFT)&~N_BTMASK)|((x/
+DEFUN	ansidecl.h	/^#define	DEFUN(name, arglist, args)	name(args)$/
+DEFUN_VOID	ansidecl.h	/^#define	DEFUN_VOID(name)		name(void)$/
+DESTRUCTOR_PREFIX_P	symtab.h	/^#define DESTRUCTOR_PREFIX_P(NAME) \\$/
+DIE_ID	dwarf2read.c	/^#define DIE_ID(die) (die ? dwarf_dieoffset(die) : /
+DIE_NAME	dwarf2read.c	/^#define DIE_NAME(die) ((die && dwarf_diename(die))/
+DIE_REF	dwarfread.c	182
+DISABLE_UNSETTABLE_BREAK	solib.h	/^#define DISABLE_UNSETTABLE_BREAK(addr)	solib_addre/
+DO_REGISTERS_INFO	infcmd.c	/^#define DO_REGISTERS_INFO(regnum, fp) do_registers/
+DUMP_EXPRESSION	expression.h	/^#define DUMP_EXPRESSION(exp,file,note) dump_expres/
+ECOFF_IS_STAB	coff-ecoff.h	/^#define ECOFF_IS_STAB(sym) (((sym)->index & 0xFFF0/
+ECOFF_MARK_STAB	coff-ecoff.h	/^#define ECOFF_MARK_STAB(code) ((code)+CODE_MASK)$/
+ECOFF_UNMARK_STAB	coff-ecoff.h	/^#define ECOFF_UNMARK_STAB(code) ((code)-CODE_MASK)/
+ELF32_R_INFO	elf-common.h	/^#define ELF32_R_INFO(s,t)	(((s) << 8) + ((t) & 0xf/
+ELF32_R_SYM	elf-common.h	/^#define ELF32_R_SYM(i)		((i) >> 8)$/
+ELF32_R_TYPE	elf-common.h	/^#define ELF32_R_TYPE(i)		((i) & 0xff)$/
+ELF64_R_INFO	elf-common.h	/^#define ELF64_R_INFO(s,t)	(((bfd_vma) (s) << 32) +/
+ELF64_R_SYM	elf-common.h	/^#define ELF64_R_SYM(i)		((i) >> 32)$/
+ELF64_R_TYPE	elf-common.h	/^#define ELF64_R_TYPE(i)		((i) & 0xffffffff)$/
+ELF_ST_BIND	elf-common.h	/^#define ELF_ST_BIND(val)		(((unsigned int)(val)) >/
+ELF_ST_INFO	elf-common.h	/^#define ELF_ST_INFO(bind,type)		(((bind) << 4) + (/
+ELF_ST_TYPE	elf-common.h	/^#define ELF_ST_TYPE(val)		((val) & 0xF)$/
+EXFUN	ansidecl.h	/^#define	EXFUN(name, proto)		name proto$/
+EXP_ELEM_TO_BYTES	expression.h	/^#define EXP_ELEM_TO_BYTES(elements) \\$/
+EXTERNAL_NAME	coffread.c	/^#define	EXTERNAL_NAME(string, abfd) \\$/
+EXTRACT_FIELD	i960-tdep.c	/^#define EXTRACT_FIELD(val, pos, width) ((val) >> (/
+EXTRACT_RETURN_VALUE	tm-i960.h	/^#define EXTRACT_RETURN_VALUE(TYPE,REGBUF,VALBUF) e/
+Elf32_Conflict	elf-mips.h	129
+Elf32_External_Dyn	elf-external.h	182
+Elf32_External_Ehdr	elf-external.h	51
+Elf32_External_Phdr	elf-external.h	81
+Elf32_External_RegInfo	elf-mips.h	191
+Elf32_External_Rel	elf-external.h	155
+Elf32_External_Rela	elf-external.h	161
+Elf32_External_Shdr	elf-external.h	107
+Elf32_External_Sym	elf-external.h	131
+Elf32_External_gptab	elf-mips.h	171
+Elf32_Lib	elf-mips.h	116
+Elf32_RegInfo	elf-mips.h	183
+Elf32_gptab	elf-mips.h	155
+Elf64_External_Dyn	elf-external.h	190
+Elf64_External_Ehdr	elf-external.h	68
+Elf64_External_Phdr	elf-external.h	92
+Elf64_External_Rel	elf-external.h	166
+Elf64_External_Rela	elf-external.h	172
+Elf64_External_Shdr	elf-external.h	120
+Elf64_External_Sym	elf-external.h	140
+Elf_External_Note	elf-external.h	149
+Elf_Internal_Dyn	elf-internal.h	169
+Elf_Internal_Ehdr	elf-internal.h	55
+Elf_Internal_Note	elf-internal.h	131
+Elf_Internal_Phdr	elf-internal.h	75
+Elf_Internal_Rel	elf-internal.h	141
+Elf_Internal_Rela	elf-internal.h	152
+Elf_Internal_Shdr	elf-internal.h	99
+Elf_Internal_Sym	elf-internal.h	117
+FILE	dis-asm.h	12
+FILE_STRING_OFFSET	dbxread.c	/^#define FILE_STRING_OFFSET(p) (SYMLOC(p)->file_str/
+FIX_CALL_DUMMY	tm-i960.h	/^#define FIX_CALL_DUMMY(dummyname, SIP_IG, fun, NAR/
+FMT_CODE	elf-dwarf.h	/^#define FMT_CODE(_FUNDAMENTAL_TYPE_P, _UB_CONST_P,/
+FORM_FROM_ATTR	dwarfread.c	/^#define FORM_FROM_ATTR(attr)	((attr) & 0xF)	\/* Imp/
+FP_REGISTER_ADDR	xm-hp300hpux.h	/^#define FP_REGISTER_ADDR(u, regno)					\\$/
+FRAME	frame.h	38
+FRAMELESS_FUNCTION_INVOCATION	tm-i960.h	/^#define FRAMELESS_FUNCTION_INVOCATION(FI, FRAMELES/
+FRAME_ADDR	frame.h	51
+FRAME_ARGS_ADDRESS	tm-i960.h	/^#define FRAME_ARGS_ADDRESS(fi) 	\\$/
+FRAME_ARGS_ADDRESS_CORRECT	tm-i960.h	/^#define	FRAME_ARGS_ADDRESS_CORRECT(fi)	(frame_args/
+FRAME_CHAIN	tm-i960.h	/^#define FRAME_CHAIN(thisframe) \\$/
+FRAME_CHAIN_COMBINE	blockframe.c	/^#define	FRAME_CHAIN_COMBINE(chain, thisframe) (cha/
+FRAME_CHAIN_VALID	frame.h	/^#define FRAME_CHAIN_VALID(chain, thisframe)	\\$/
+FRAME_FIND_SAVED_REGS	tm-i960.h	/^#define FRAME_FIND_SAVED_REGS(frame_info_addr, sr)/
+FRAME_FP	frame.h	/^#define FRAME_FP(fr)	((fr)->frame)$/
+FRAME_INFO_ID	frame.h	/^#define FRAME_INFO_ID(f)	(f)$/
+FRAME_LOCALS_ADDRESS	tm-i960.h	/^#define FRAME_LOCALS_ADDRESS(fi)	(fi)->frame$/
+FRAME_NUM_ARGS	tm-i960.h	/^#define FRAME_NUM_ARGS(numargs, fi)	(numargs = -1)/
+FRAME_SAVED_PC	tm-i960.h	/^#define FRAME_SAVED_PC(frame) \\$/
+GDB_FILE	defs.h	241
+GDB_INIT_DISASSEMBLE_INFO	dis-asm.h	/^#define GDB_INIT_DISASSEMBLE_INFO(INFO, STREAM) \\$/
+GET_BYTE	ser-go32.c	/^#define GET_BYTE(x)     ( dosmemget((x),1,&bb), bb/
+GET_LONG	ser-go32.c	/^#define GET_LONG(x)     ( dosmemget((x),4,&sl), sl/
+GET_LONGJMP_TARGET	infrun.c	/^#define GET_LONGJMP_TARGET(PC_ADDR) 0$/
+GET_WORD	ser-go32.c	/^GET_WORD (x)$/
+GMU_SANITY	i960-tdep.c	/^#define GMU_SANITY() if (!mon960_connected()) \\$/
+HAVE_CPLUS_STRUCT	gdbtypes.h	/^#define HAVE_CPLUS_STRUCT(type) \\$/
+HDI_CALL	i960-tdep.c	/^#define HDI_CALL(a) ((a) == OK ? OK : \\$/
+HDI_SANITY	remote-hdi.c	/^#define HDI_SANITY() \\$/
+HDI_SANITY_WITH_RTN	remote-hdi.c	/^#define HDI_SANITY_WITH_RTN(x) \\$/
+I960BADMAG	coff-i960.h	/^#define I960BADMAG(x) (((x).f_magic!=I960ROMAGIC) /
+IGNORE_FIRST_LINK_MAP_ENTRY	solib.c	/^#define IGNORE_FIRST_LINK_MAP_ENTRY(x) (0)$/
+IGNORE_SYMBOL	dbxread.c	/^#define IGNORE_SYMBOL(type)  (type == (int)N_NSYMS/
+INIT_CPLUS_SPECIFIC	gdbtypes.h	/^#define INIT_CPLUS_SPECIFIC(type) \\$/
+INIT_DISASSEMBLE_INFO	dis-asm.h	/^#define INIT_DISASSEMBLE_INFO(INFO, STREAM) \\$/
+INIT_EXTRA_FRAME_INFO	tm-i960.h	/^#define INIT_EXTRA_FRAME_INFO(fromleaf, fi) ((fi)-/
+INIT_FRAME_PC	blockframe.c	/^#define INIT_FRAME_PC(fromleaf, prev) \\$/
+INIT_STACK	xm-hp300hpux.h	/^#define INIT_STACK(beg, end)  \\$/
+INVALID_FLOAT	tm-i960.h	/^#define INVALID_FLOAT(p, len) (0)$/
+IN_SIGTRAMP	inferior.h	/^#    define IN_SIGTRAMP(pc, name) \\$/
+IN_SOLIB_TRAMPOLINE	infrun.c	/^#define IN_SOLIB_TRAMPOLINE(pc,name)	0$/
+ISARY	coff-internal.h	/^#define ISARY(x)	(((x) & N_TMASK) == (DT_ARY << N_/
+ISATTY	top.c	/^#define ISATTY(FP)	(isatty (fileno (FP)))$/
+ISFCN	coff-internal.h	/^#define ISFCN(x)	(((x) & N_TMASK) == (DT_FCN << N_/
+ISPTR	coff-internal.h	/^#define ISPTR(x)	(((x) & N_TMASK) == (DT_PTR << N_/
+ISTAG	coff-internal.h	/^#define ISTAG(x)	((x)==C_STRTAG||(x)==C_UNTAG||(x)/
+IS_BALNAME	bout.h	/^#define IS_BALNAME(x)	(N_BALNAME == (x))$/
+IS_CALLNAME	bout.h	/^#define IS_CALLNAME(x)	(N_CALLNAME == (x))$/
+IS_OTHER	bout.h	/^#define IS_OTHER(x)	((x)>0 && (x) <=32)$/
+LA_PRINT_CHAR	language.h	/^#define LA_PRINT_CHAR(ch, stream) \\$/
+LA_PRINT_STRING	language.h	/^#define LA_PRINT_STRING(stream, string, length, fo/
+LA_PRINT_TYPE	language.h	/^#define LA_PRINT_TYPE(type,varstring,stream,show,l/
+LA_VALUE_PRINT	language.h	/^#define LA_VALUE_PRINT(val,stream,fmt,pretty) \\$/
+LA_VAL_PRINT	language.h	/^#define LA_VAL_PRINT(type,valaddr,addr,stream,fmt,/
+LDSYMLEN	dbxread.c	/^#define LDSYMLEN(p) (((struct symloc *)((p)->read_/
+LDSYMOFF	dbxread.c	/^#define LDSYMOFF(p) (((struct symloc *)((p)->read_/
+LINETABLE	symtab.h	/^#define LINETABLE(symtab)	(symtab)->linetable$/
+LM_ADDR	solib.c	/^#define LM_ADDR(so) ((so) -> lm.lm_addr)$/
+LM_NAME	solib.c	/^#define LM_NAME(so) ((so) -> lm.lm_name)$/
+LM_NEXT	solib.c	/^#define LM_NEXT(so) ((so) -> lm.lm_next)$/
+LNFOFF	dwarfread.c	/^#define LNFOFF(p) (((struct dwfinfo *)((p)->read_s/
+L_LNNO32	coffread.c	/^#define L_LNNO32(lp) ((lp)->l_lnno)$/
+MAKEVA_ARG	xm-pa.h	/^#define MAKEVA_ARG(list, argaddr, argsize) \\$/
+MAKEVA_END	xm-pa.h	/^#define MAKEVA_END(list) \\$/
+MAKEVA_START	xm-pa.h	/^#define MAKEVA_START(list) \\$/
+MAX_OF_TYPE	gdbtypes.h	/^#define	MAX_OF_TYPE(t)	\\$/
+MEMA_OFFSET	i960-tdep.c	/^#define MEMA_OFFSET(insn) EXTRACT_FIELD (insn, 0, /
+MEM_SRCDST	i960-tdep.c	/^#define MEM_SRCDST(insn)  EXTRACT_FIELD (insn, 19,/
+METHOD_PTR_FROM_VOFFSET	value.h	/^#define METHOD_PTR_FROM_VOFFSET(OFFSET) (0x8000000/
+METHOD_PTR_IS_VIRTUAL	value.h	/^#define METHOD_PTR_IS_VIRTUAL(ADDR)  ((ADDR) & 0x8/
+METHOD_PTR_TO_VOFFSET	value.h	/^#define METHOD_PTR_TO_VOFFSET(ADDR) (~0x80000000 &/
+MIN	target.c	/^#define MIN(A, B) (((A) <= (B)) ? (A) : (B))$/
+MIN_OF_TYPE	gdbtypes.h	/^#define MIN_OF_TYPE(t)	\\$/
+MSYMBOL_INFO	symtab.h	/^#define MSYMBOL_INFO(msymbol)		(msymbol)->info$/
+MSYMBOL_TYPE	symtab.h	/^#define MSYMBOL_TYPE(msymbol)		(msymbol)->type$/
+Md2xt	d2xt.c	/^main ()$/
+Mmain	main.c	/^main (argc, argv)$/
+Mmv2dos	mv2dos.c	/^main (argc, argv)$/
+Mregex	regex.c	/^main (argc, argv)$/
+NEXT_PROLOGUE_INSN	i960-tdep.c	/^#define NEXT_PROLOGUE_INSN(addr, lim, pword1, pwor/
+N_BADMAG	aout-aout64.h	/^#define N_BADMAG(x)	  (N_MAGIC(x) != OMAGIC		\\$/
+N_BSSADDR	aout-aout64.h	/^#define N_BSSADDR(x)	(N_DATADDR(x) + (x).a_data)$/
+N_DATADDR	aout-aout64.h	/^#define N_DATADDR(x) \\$/
+N_DATOFF	aout-aout64.h	/^#define N_DATOFF(x) \\$/
+N_DISK_BLOCK_SIZE	aout-aout64.h	/^#define N_DISK_BLOCK_SIZE(x) \\$/
+N_DRELOFF	aout-aout64.h	/^#define N_DRELOFF(x)	( N_TRELOFF(x) + (x).a_trsize/
+N_DROFF	bout.h	/^#define N_DROFF(x)	( N_TROFF(x) + (x).a_trsize )$/
+N_HEADER_IN_TEXT	aout-aout64.h	/^#define N_HEADER_IN_TEXT(x) (((x).a_entry & (PAGE_/
+N_IS_QMAGIC	aout-aout64.h	/^#define N_IS_QMAGIC(x) (N_MAGIC (x) == QMAGIC)$/
+N_MAGIC	aout-aout64.h	/^     N_MAGIC(x) != ZMAGIC ? EXEC_BYTES_SIZE : \\$/
+N_SEGSIZE	aout-aout64.h	/^#define	N_SEGSIZE(x)	SEGMENT_SIZE$/
+N_SHARED_LIB	aout-aout64.h	/^#define N_SHARED_LIB(x) ((x).a_entry < TEXT_START_/
+N_STROFF	aout-aout64.h	/^#define N_STROFF(x)	( N_SYMOFF(x) + (x).a_syms )$/
+N_SYMOFF	aout-aout64.h	/^#define N_SYMOFF(x)	( N_DRELOFF(x) + (x).a_drsize /
+N_TRELOFF	aout-aout64.h	/^#define N_TRELOFF(x)	( N_DATOFF(x) + (x).a_data )$/
+N_TROFF	bout.h	/^#define N_TROFF(x)	( N_DATOFF(x) + (x).a_data )$/
+N_TXTADDR	aout-aout64.h	/^#define N_TXTADDR(x) \\$/
+N_TXTOFF	aout-aout64.h	/^#define N_TXTOFF(x)	\\$/
+N_TXTSIZE	aout-aout64.h	/^#define	N_TXTSIZE(x) \\$/
+OOPSY	inflow.c	/^#define	OOPSY(what)	\\$/
+OPNAME_PREFIX_P	symtab.h	/^#define OPNAME_PREFIX_P(NAME) \\$/
+PARAMS	ansidecl.h	/^#define PARAMS(paramlist)		paramlist$/
+PATFETCH	regex.c	/^#define PATFETCH(c) \\$/
+PATFETCH_RAW	regex.c	/^#define PATFETCH_RAW(c) \\$/
+PATPUSH	regex.c	/^#define PATPUSH(ch) (*b++ = (char) (ch))$/
+PC_IN_CALL_DUMMY	inferior.h	/^#define PC_IN_CALL_DUMMY(pc, sp, frame_address) \\$/
+PRINT_LITERAL_FORM	language.h	/^#define PRINT_LITERAL_FORM(c) \\$/
+PROTO	ansidecl.h	/^#define PROTO(type, name, arglist)	type name argli/
+PSYMBOL_CLASS	symtab.h	/^#define PSYMBOL_CLASS(psymbol)		(psymbol)->class$/
+PSYMBOL_NAMESPACE	symtab.h	/^#define PSYMBOL_NAMESPACE(psymbol)	(psymbol)->name/
+PSYMTAB_TO_SYMTAB	symtab.h	/^#define	PSYMTAB_TO_SYMTAB(pst)  \\$/
+PUSH_ARGUMENTS	tm-i960.h	/^#define PUSH_ARGUMENTS(nargs, args, sp, struct_ret/
+REGISTER_ADDR	xm-hp300hpux.h	/^#define REGISTER_ADDR(u_ar0, regno)					\\$/
+REGISTER_BYTE	tm-i960.h	/^#define REGISTER_BYTE(N) ( (N) < FP0_REGNUM ? \\$/
+REGISTER_CONVERTIBLE	tm-i960.h	/^#define REGISTER_CONVERTIBLE(N) ((N) >= FP0_REGNUM/
+REGISTER_CONVERT_TO_RAW	tm-i960.h	/^#define REGISTER_CONVERT_TO_RAW(TYPE,REGNUM,FROM,T/
+REGISTER_CONVERT_TO_VIRTUAL	tm-i960.h	/^#define REGISTER_CONVERT_TO_VIRTUAL(REGNUM,TYPE,FR/
+REGISTER_IN_WINDOW_P	tm-i960.h	/^#define REGISTER_IN_WINDOW_P(regnum)	((regnum) <= /
+REGISTER_RAW_SIZE	tm-i960.h	/^#define REGISTER_RAW_SIZE(N)		( (N) < FP0_REGNUM ?/
+REGISTER_VIRTUAL_SIZE	tm-i960.h	/^#define REGISTER_VIRTUAL_SIZE(N)	( (N) < FP0_REGNU/
+REGISTER_VIRTUAL_TYPE	tm-i960.h	/^#define REGISTER_VIRTUAL_TYPE(N) ((N) < FP0_REGNUM/
+REG_SRC1	i960-tdep.c	/^#define REG_SRC1(insn)    EXTRACT_FIELD (insn, 0, /
+REG_SRC2	i960-tdep.c	/^#define REG_SRC2(insn)    EXTRACT_FIELD (insn, 14,/
+REG_SRCDST	i960-tdep.c	/^#define REG_SRCDST(insn)  EXTRACT_FIELD (insn, 19,/
+REG_STRUCT_HAS_ADDR	stabsread.c	/^#define REG_STRUCT_HAS_ADDR(gcc_p,type) 0$/
+SAVED_PC_AFTER_CALL	tm-i960.h	/^#define SAVED_PC_AFTER_CALL(frame) (saved_pc_after/
+SAVESTRING	remote-hdi.c	/^#define SAVESTRING(x) savestring((x),strlen(x))$/
+SDB_REG_TO_REGNUM	coffread.c	/^# define SDB_REG_TO_REGNUM(value)     (value)$/
+SDB_TYPE	coffread.c	/^#define SDB_TYPE(type) (BTYPE(type) | (type & N_TM/
+SERIAL_CLOSE	serial.h	/^#define SERIAL_CLOSE(SERIAL_T) gdb_serial_close(SE/
+SERIAL_FDOPEN	serial.h	/^#define SERIAL_FDOPEN(FD) serial_fdopen(FD)$/
+SERIAL_FLUSH_INPUT	serial.h	/^#define SERIAL_FLUSH_INPUT(SERIAL_T)\\$/
+SERIAL_FLUSH_OUTPUT	serial.h	/^#define SERIAL_FLUSH_OUTPUT(SERIAL_T) \\$/
+SERIAL_GET_TTY_STATE	serial.h	/^#define SERIAL_GET_TTY_STATE(SERIAL_T) (SERIAL_T)-/
+SERIAL_NOFLUSH_SET_TTY_STATE	serial.h	/^#define SERIAL_NOFLUSH_SET_TTY_STATE(SERIAL_T, NEW/
+SERIAL_OPEN	serial.h	/^#define SERIAL_OPEN(NAME) gdb_serial_open(NAME)$/
+SERIAL_PRINT_TTY_STATE	serial.h	/^#define SERIAL_PRINT_TTY_STATE(SERIAL_T, TTYSTATE)/
+SERIAL_RAW	serial.h	/^#define SERIAL_RAW(SERIAL_T) (SERIAL_T)->ops->go_r/
+SERIAL_READCHAR	serial.h	/^#define SERIAL_READCHAR(SERIAL_T, TIMEOUT) ((SERIA/
+SERIAL_SEND_BREAK	serial.h	/^#define SERIAL_SEND_BREAK(SERIAL_T) \\$/
+SERIAL_SETBAUDRATE	serial.h	/^#define SERIAL_SETBAUDRATE(SERIAL_T, RATE) ((SERIA/
+SERIAL_SET_TTY_STATE	serial.h	/^#define SERIAL_SET_TTY_STATE(SERIAL_T, TTYSTATE) (/
+SERIAL_UN_FDOPEN	serial.h	/^#define SERIAL_UN_FDOPEN(SERIAL_T) (free (SERIAL_T/
+SERIAL_WRITE	serial.h	/^#define SERIAL_WRITE(SERIAL_T, STRING, LEN) ((SERI/
+SETUP_ARBITRARY_FRAME	tm-i960.h	/^#define SETUP_ARBITRARY_FRAME(argc, argv) setup_ar/
+SET_BYTE	ser-go32.c	/^#define SET_BYTE(x,y)   { char _buf = y;dosmemput(/
+SET_SIGS	infrun.c	/^#define SET_SIGS(nsigs,sigs,flags) \\$/
+SET_TOP_LEVEL	main.c	/^#define SET_TOP_LEVEL() \\$/
+SET_TYPE_FIELD_IGNORE	gdbtypes.h	/^#define SET_TYPE_FIELD_IGNORE(thistype, n) \\$/
+SET_TYPE_FIELD_PRIVATE	gdbtypes.h	/^#define SET_TYPE_FIELD_PRIVATE(thistype, n) \\$/
+SET_TYPE_FIELD_PROTECTED	gdbtypes.h	/^#define SET_TYPE_FIELD_PROTECTED(thistype, n) \\$/
+SET_TYPE_FIELD_VIRTUAL	gdbtypes.h	/^#define SET_TYPE_FIELD_VIRTUAL(thistype, n) \\$/
+SET_WORD	ser-go32.c	/^#define SET_WORD(x,y)   { short _buf = y;dosmemput/
+SIGN_EXTEND_CHAR	regex.c	/^#define SIGN_EXTEND_CHAR(c) ((signed char) (c))$/
+SKIP_PROLOGUE	tm-i960.h	/^#define SKIP_PROLOGUE(ip)	{ ip = skip_prologue (ip/
+SKIP_TRAMPOLINE_CODE	infrun.c	/^#define	SKIP_TRAMPOLINE_CODE(pc)	0$/
+SOLIB_ADD	solib.h	/^#define SOLIB_ADD(filename, from_tty, targ) \\$/
+SOLIB_CREATE_INFERIOR_HOOK	solib.h	/^#define SOLIB_CREATE_INFERIOR_HOOK(PID)	solib_crea/
+STABS_CONTINUE	stabsread.c	/^#define STABS_CONTINUE(pp)				\\$/
+STAB_REG_TO_REGNUM	stabsread.h	/^#define STAB_REG_TO_REGNUM(VALUE) (VALUE)$/
+STORE_RETURN_VALUE	tm-i960.h	/^#define STORE_RETURN_VALUE(TYPE,VALBUF) \\$/
+STORE_STRUCT_RETURN	tm-i960.h	/^#define STORE_STRUCT_RETURN(ADDR, SP) \\$/
+STRCMP	defs.h	/^#define STRCMP(a,b) (*(a) == *(b) ? strcmp ((a), (/
+STREQ	defs.h	/^#define STREQ(a,b) (*(a) == *(b) ? !strcmp ((a), (/
+STREQN	defs.h	/^#define STREQN(a,b,c) (*(a) == *(b) ? !strncmp ((a/
+STRING_OFFSET	dbxread.c	/^#define STRING_OFFSET(p) (SYMLOC(p)->string_offset/
+SWAP_SYMBOL	dbxread.c	/^#define SWAP_SYMBOL(symp, abfd) \\$/
+SWAP_TARGET_AND_HOST	findvar.c	/^#define SWAP_TARGET_AND_HOST(buffer,len)$/
+SYMBOL_ABSTRACT_ORIGIN	symtab.h	/^#define SYMBOL_ABSTRACT_ORIGIN(symbol)	(symbol)->a/
+SYMBOL_BASEREG	symtab.h	/^#define SYMBOL_BASEREG(symbol)		(symbol)->aux_valu/
+SYMBOL_BLOCK_VALUE	symtab.h	/^#define SYMBOL_BLOCK_VALUE(symbol)	(symbol)->ginfo/
+SYMBOL_CHILL_DEMANGLED_NAME	symtab.h	/^#define SYMBOL_CHILL_DEMANGLED_NAME(symbol)				\\$/
+SYMBOL_CLASS	symtab.h	/^#define SYMBOL_CLASS(symbol)		(symbol)->class$/
+SYMBOL_CLASS_INDIRECT	symtab.h	/^#define SYMBOL_CLASS_INDIRECT(symbol, pc) \\$/
+SYMBOL_CPLUS_DEMANGLED_NAME	symtab.h	/^#define SYMBOL_CPLUS_DEMANGLED_NAME(symbol)	\\$/
+SYMBOL_DEMANGLED_NAME	symtab.h	/^#define SYMBOL_DEMANGLED_NAME(symbol)					\\$/
+SYMBOL_INIT_DEMANGLED_NAME	symtab.h	/^#define SYMBOL_INIT_DEMANGLED_NAME(symbol,obstack)/
+SYMBOL_INIT_LANGUAGE_SPECIFIC	symtab.h	/^#define SYMBOL_INIT_LANGUAGE_SPECIFIC(symbol,langu/
+SYMBOL_INLINE_LIST	symtab.h	/^#define SYMBOL_INLINE_LIST(symbol)	(symbol)->inlin/
+SYMBOL_LANGUAGE	symtab.h	/^#define SYMBOL_LANGUAGE(symbol)		(symbol)->ginfo.l/
+SYMBOL_LINE	symtab.h	/^#define SYMBOL_LINE(symbol)		(symbol)->line$/
+SYMBOL_LINKAGE_NAME	symtab.h	/^#define SYMBOL_LINKAGE_NAME(symbol)					\\$/
+SYMBOL_MATCHES_NAME	symtab.h	/^#define SYMBOL_MATCHES_NAME(symbol, name)				\\$/
+SYMBOL_MATCHES_REGEXP	symtab.h	/^#define SYMBOL_MATCHES_REGEXP(symbol)					\\$/
+SYMBOL_NAME	symtab.h	/^#define SYMBOL_NAME(symbol)		(symbol)->ginfo.name$/
+SYMBOL_NAMESPACE	symtab.h	/^#define SYMBOL_NAMESPACE(symbol)	(symbol)->namespa/
+SYMBOL_OFFSET	dbxread.c	/^#define SYMBOL_OFFSET(p) (SYMLOC(p)->symbol_offset/
+SYMBOL_SECTION	symtab.h	/^#define SYMBOL_SECTION(symbol)		(symbol)->ginfo.se/
+SYMBOL_SIZE	dbxread.c	/^#define SYMBOL_SIZE(p) (SYMLOC(p)->symbol_size)$/
+SYMBOL_SOURCE_NAME	symtab.h	/^#define SYMBOL_SOURCE_NAME(symbol)					\\$/
+SYMBOL_TYPE	symtab.h	/^#define SYMBOL_TYPE(symbol)		(symbol)->type$/
+SYMBOL_VALUE	symtab.h	/^#define SYMBOL_VALUE(symbol)		(symbol)->ginfo.valu/
+SYMBOL_VALUE_ADDRESS	symtab.h	/^#define SYMBOL_VALUE_ADDRESS(symbol)	(symbol)->gin/
+SYMBOL_VALUE_BYTES	symtab.h	/^#define SYMBOL_VALUE_BYTES(symbol)	(symbol)->ginfo/
+SYMBOL_VALUE_CHAIN	symtab.h	/^#define SYMBOL_VALUE_CHAIN(symbol)	(symbol)->ginfo/
+SYMLOC	dbxread.c	/^#define SYMLOC(p) ((struct symloc *)((p)->read_sym/
+SYNTAX	regex.c	/^#define SYNTAX(c) re_syntax_table[c]$/
+TAGBITS	coff-i960.h	59
+TAGPTR	coff-i960.h	/^#define TAGPTR(aout) ((TAGBITS *) (&(aout.tagentri/
+TARGET_CAN_USE_HARDWARE_WATCHPOINT	breakpoint.c	/^#define TARGET_CAN_USE_HARDWARE_WATCHPOINT(TYPE,CN/
+TARGET_FT_LONG_SIZE	dwarfread.c	/^#define TARGET_FT_LONG_SIZE(objfile)	(TARGET_LONG_/
+TARGET_FT_POINTER_SIZE	dwarfread.c	/^#define TARGET_FT_POINTER_SIZE(objfile)	(TARGET_PT/
+TYPE_ALLOC	gdbtypes.h	/^#define TYPE_ALLOC(t,size)  \\$/
+TYPE_ARG_TYPES	gdbtypes.h	/^#define TYPE_ARG_TYPES(thistype) (thistype)->type_/
+TYPE_BASECLASS	gdbtypes.h	/^#define TYPE_BASECLASS(thistype,index) (thistype)-/
+TYPE_BASECLASS_BITPOS	gdbtypes.h	/^#define TYPE_BASECLASS_BITPOS(thistype,index) (thi/
+TYPE_BASECLASS_NAME	gdbtypes.h	/^#define TYPE_BASECLASS_NAME(thistype,index) (thist/
+TYPE_CODE	gdbtypes.h	/^#define TYPE_CODE(thistype) (thistype)->code$/
+TYPE_CPLUS_SPECIFIC	gdbtypes.h	/^#define TYPE_CPLUS_SPECIFIC(thistype) (thistype)->/
+TYPE_DOMAIN_TYPE	gdbtypes.h	/^#define TYPE_DOMAIN_TYPE(thistype) (thistype)->vpt/
+TYPE_DUMMY_RANGE	gdbtypes.h	/^#define TYPE_DUMMY_RANGE(type) ((type)->vptr_field/
+TYPE_FIELD	gdbtypes.h	/^#define TYPE_FIELD(thistype, n) (thistype)->fields/
+TYPE_FIELDS	gdbtypes.h	/^#define TYPE_FIELDS(thistype) (thistype)->fields$/
+TYPE_FIELD_BITPOS	gdbtypes.h	/^#define TYPE_FIELD_BITPOS(thistype, n) (thistype)-/
+TYPE_FIELD_BITSIZE	gdbtypes.h	/^#define TYPE_FIELD_BITSIZE(thistype, n) (thistype)/
+TYPE_FIELD_IGNORE	gdbtypes.h	/^#define TYPE_FIELD_IGNORE(thistype, n) \\$/
+TYPE_FIELD_IGNORE_BITS	gdbtypes.h	/^#define TYPE_FIELD_IGNORE_BITS(thistype) \\$/
+TYPE_FIELD_NAME	gdbtypes.h	/^#define TYPE_FIELD_NAME(thistype, n) (thistype)->f/
+TYPE_FIELD_PACKED	gdbtypes.h	/^#define TYPE_FIELD_PACKED(thistype, n) (thistype)-/
+TYPE_FIELD_PRIVATE	gdbtypes.h	/^#define TYPE_FIELD_PRIVATE(thistype, n) \\$/
+TYPE_FIELD_PRIVATE_BITS	gdbtypes.h	/^#define TYPE_FIELD_PRIVATE_BITS(thistype) \\$/
+TYPE_FIELD_PROTECTED	gdbtypes.h	/^#define TYPE_FIELD_PROTECTED(thistype, n) \\$/
+TYPE_FIELD_PROTECTED_BITS	gdbtypes.h	/^#define TYPE_FIELD_PROTECTED_BITS(thistype) \\$/
+TYPE_FIELD_STATIC	gdbtypes.h	/^#define TYPE_FIELD_STATIC(thistype, n) ((thistype)/
+TYPE_FIELD_STATIC_PHYSNAME	gdbtypes.h	/^#define TYPE_FIELD_STATIC_PHYSNAME(thistype, n) ((/
+TYPE_FIELD_TYPE	gdbtypes.h	/^#define TYPE_FIELD_TYPE(thistype, n) (thistype)->f/
+TYPE_FIELD_VALUE	gdbtypes.h	/^#define TYPE_FIELD_VALUE(thistype, n) (* (int*) &(/
+TYPE_FIELD_VIRTUAL	gdbtypes.h	/^#define TYPE_FIELD_VIRTUAL(thistype, n) \\$/
+TYPE_FIELD_VIRTUAL_BITS	gdbtypes.h	/^#define TYPE_FIELD_VIRTUAL_BITS(thistype) \\$/
+TYPE_FLAGS	gdbtypes.h	/^#define TYPE_FLAGS(thistype) (thistype)->flags$/
+TYPE_FN_FIELD	gdbtypes.h	/^#define TYPE_FN_FIELD(thisfn, n) (thisfn)[n]$/
+TYPE_FN_FIELDLIST	gdbtypes.h	/^#define TYPE_FN_FIELDLIST(thistype, n) TYPE_CPLUS_/
+TYPE_FN_FIELDLIST1	gdbtypes.h	/^#define TYPE_FN_FIELDLIST1(thistype, n) TYPE_CPLUS/
+TYPE_FN_FIELDLISTS	gdbtypes.h	/^#define TYPE_FN_FIELDLISTS(thistype) TYPE_CPLUS_SP/
+TYPE_FN_FIELDLIST_LENGTH	gdbtypes.h	/^#define TYPE_FN_FIELDLIST_LENGTH(thistype, n) TYPE/
+TYPE_FN_FIELDLIST_NAME	gdbtypes.h	/^#define TYPE_FN_FIELDLIST_NAME(thistype, n) TYPE_C/
+TYPE_FN_FIELDS	gdbtypes.h	/^#define TYPE_FN_FIELDS(thistype) TYPE_CPLUS_SPECIF/
+TYPE_FN_FIELD_ARGS	gdbtypes.h	/^#define TYPE_FN_FIELD_ARGS(thisfn, n) TYPE_ARG_TYP/
+TYPE_FN_FIELD_CONST	gdbtypes.h	/^#define TYPE_FN_FIELD_CONST(thisfn, n) ((thisfn)[n/
+TYPE_FN_FIELD_FCONTEXT	gdbtypes.h	/^#define TYPE_FN_FIELD_FCONTEXT(thisfn, n) ((thisfn/
+TYPE_FN_FIELD_PHYSNAME	gdbtypes.h	/^#define TYPE_FN_FIELD_PHYSNAME(thisfn, n) (thisfn)/
+TYPE_FN_FIELD_PRIVATE	gdbtypes.h	/^#define TYPE_FN_FIELD_PRIVATE(thisfn, n) ((thisfn)/
+TYPE_FN_FIELD_PROTECTED	gdbtypes.h	/^#define TYPE_FN_FIELD_PROTECTED(thisfn, n) ((thisf/
+TYPE_FN_FIELD_STATIC_P	gdbtypes.h	/^#define TYPE_FN_FIELD_STATIC_P(thisfn, n) ((thisfn/
+TYPE_FN_FIELD_STUB	gdbtypes.h	/^#define TYPE_FN_FIELD_STUB(thisfn, n) ((thisfn)[n]/
+TYPE_FN_FIELD_TYPE	gdbtypes.h	/^#define TYPE_FN_FIELD_TYPE(thisfn, n) (thisfn)[n]./
+TYPE_FN_FIELD_VIRTUAL_P	gdbtypes.h	/^#define TYPE_FN_FIELD_VIRTUAL_P(thisfn, n) ((thisf/
+TYPE_FN_FIELD_VOFFSET	gdbtypes.h	/^#define TYPE_FN_FIELD_VOFFSET(thisfn, n) ((thisfn)/
+TYPE_FN_FIELD_VOLATILE	gdbtypes.h	/^#define TYPE_FN_FIELD_VOLATILE(thisfn, n) ((thisfn/
+TYPE_FUNCTION_TYPE	gdbtypes.h	/^#define TYPE_FUNCTION_TYPE(thistype) (thistype)->f/
+TYPE_HIGH_BOUND	gdbtypes.h	/^#define TYPE_HIGH_BOUND(range_type) TYPE_FIELD_BIT/
+TYPE_LENGTH	gdbtypes.h	/^#define TYPE_LENGTH(thistype) (thistype)->length$/
+TYPE_LOW_BOUND	gdbtypes.h	/^#define TYPE_LOW_BOUND(range_type) TYPE_FIELD_BITP/
+TYPE_NAME	gdbtypes.h	/^#define TYPE_NAME(thistype) (thistype)->name$/
+TYPE_NFIELDS	gdbtypes.h	/^#define TYPE_NFIELDS(thistype) (thistype)->nfields/
+TYPE_NFN_FIELDS	gdbtypes.h	/^#define TYPE_NFN_FIELDS(thistype) TYPE_CPLUS_SPECI/
+TYPE_NFN_FIELDS_TOTAL	gdbtypes.h	/^#define TYPE_NFN_FIELDS_TOTAL(thistype) TYPE_CPLUS/
+TYPE_N_BASECLASSES	gdbtypes.h	/^#define TYPE_N_BASECLASSES(thistype) TYPE_CPLUS_SP/
+TYPE_OBJFILE	gdbtypes.h	/^#define TYPE_OBJFILE(thistype) (thistype)->objfile/
+TYPE_POINTER_TYPE	gdbtypes.h	/^#define TYPE_POINTER_TYPE(thistype) (thistype)->po/
+TYPE_REFERENCE_TYPE	gdbtypes.h	/^#define TYPE_REFERENCE_TYPE(thistype) (thistype)->/
+TYPE_TAG_NAME	gdbtypes.h	/^#define TYPE_TAG_NAME(type) ((type)->tag_name)$/
+TYPE_TARGET_TYPE	gdbtypes.h	/^#define TYPE_TARGET_TYPE(thistype) (thistype)->tar/
+TYPE_TYPE_SPECIFIC	gdbtypes.h	/^#define	TYPE_TYPE_SPECIFIC(thistype) (thistype)->t/
+TYPE_UNSIGNED	gdbtypes.h	/^#define TYPE_UNSIGNED(thistype) ((thistype)->flags/
+TYPE_VPTR_BASETYPE	gdbtypes.h	/^#define TYPE_VPTR_BASETYPE(thistype) (thistype)->v/
+TYPE_VPTR_FIELDNO	gdbtypes.h	/^#define TYPE_VPTR_FIELDNO(thistype) (thistype)->vp/
+UNSET_SIGS	infrun.c	/^#define UNSET_SIGS(nsigs,sigs,flags) \\$/
+USE_STRUCT_CONVENTION	values.c	/^#define USE_STRUCT_CONVENTION(gcc_p, type)\\$/
+U_FPSTATE	xm-i386v32.h	/^#define U_FPSTATE(u) u.u_fps.u_fpstate$/
+VALUE_ADDRESS	value.h	/^#define VALUE_ADDRESS(val) (val)->location.address/
+VALUE_BITPOS	value.h	/^#define VALUE_BITPOS(val) (val)->bitpos$/
+VALUE_BITSIZE	value.h	/^#define VALUE_BITSIZE(val) (val)->bitsize$/
+VALUE_CONTENTS	value.h	/^#define VALUE_CONTENTS(val) ((void)(VALUE_LAZY(val/
+VALUE_CONTENTS_RAW	value.h	/^#define VALUE_CONTENTS_RAW(val) ((char *) (val)->a/
+VALUE_FRAME	value.h	/^#define VALUE_FRAME(val) ((val)->frame_addr)$/
+VALUE_FRAME_REGNUM	value.h	/^#define VALUE_FRAME_REGNUM(val) ((val)->location.r/
+VALUE_INTERNALVAR	value.h	/^#define VALUE_INTERNALVAR(val) (val)->location.int/
+VALUE_LAZY	value.h	/^#define VALUE_LAZY(val) (val)->lazy$/
+VALUE_LVAL	value.h	/^#define VALUE_LVAL(val) (val)->lval$/
+VALUE_NEXT	value.h	/^#define VALUE_NEXT(val) (val)->next$/
+VALUE_OFFSET	value.h	/^#define VALUE_OFFSET(val) (val)->offset$/
+VALUE_OPTIMIZED_OUT	value.h	/^#define VALUE_OPTIMIZED_OUT(val) ((val)->optimized/
+VALUE_REGNO	value.h	/^#define VALUE_REGNO(val) (val)->regno$/
+VALUE_REPEATED	value.h	/^#define VALUE_REPEATED(val) (val)->repeated$/
+VALUE_REPETITIONS	value.h	/^#define VALUE_REPETITIONS(val) (val)->repetitions$/
+VALUE_TYPE	value.h	/^#define VALUE_TYPE(val) (val)->type$/
+VTBL_PREFIX_P	symtab.h	/^#define VTBL_PREFIX_P(NAME) \\$/
+WCOREDUMP	wait.h	/^#define WCOREDUMP(w)	(((w)&0200) != 0)$/
+WEXITSTATUS	wait.h	/^#define WEXITSTATUS(w)	(((w) >> 8) & 0377) \/* same/
+WIFEXITED	wait.h	/^#define WIFEXITED(w)	(((w)&0377) == 0)$/
+WIFSIGNALED	wait.h	/^#define WIFSIGNALED(w)	(((w)&0377) != 0177 && ((w)/
+WIFSTOPPED	wait.h	/^#define WIFSTOPPED(w)	((w)&0x40)$/
+WSETEXIT	wait.h	/^#define WSETEXIT(w,status) ((w) = (0 | ((status) </
+WSETSTOP	wait.h	/^#define WSETSTOP(w,sig)	   ((w) = (0177 | ((sig) </
+WTERMSIG	wait.h	/^#define WTERMSIG(w)	((w) & 0177)$/
+YYBACKUP	c-exp.c	/^#define YYBACKUP( newtoken, newvalue )\\$/
+YYRECOVERING	c-exp.c	/^#define YYRECOVERING()	(!!yyerrflag)$/
+YYSTYPE	c-exp.c	87
+__INT_TO_PTR	obstack.h	/^#define __INT_TO_PTR(P) ((P) + (char *)0)$/
+__PTR_TO_INT	obstack.h	/^#define __PTR_TO_INT(P) ((P) - (char *)0)$/
+__define_stab	aout-stab_gnu.h	/^#define __define_stab(NAME, CODE, STRING) NAME=COD/
+_dump_symtab	elfread.c	/^_dump_symtab(numsyms, symbol_table, str)$/
+_initialize_blockframe	blockframe.c	/^_initialize_blockframe ()$/
+_initialize_breakpoint	breakpoint.c	/^_initialize_breakpoint ()$/
+_initialize_buildsym	buildsym.c	/^_initialize_buildsym ()$/
+_initialize_c_language	c-lang.c	/^_initialize_c_language ()$/
+_initialize_chill_language	ch-lang.c	/^_initialize_chill_language ()$/
+_initialize_coffread	coffread.c	/^_initialize_coffread ()$/
+_initialize_command	command.c	/^_initialize_command ()$/
+_initialize_complaints	complaints.c	/^_initialize_complaints ()$/
+_initialize_copying	copying.c	/^_initialize_copying ()$/
+_initialize_core	core.c	/^_initialize_core()$/
+_initialize_cp_valprint	cp-valprint.c	/^_initialize_cp_valprint ()$/
+_initialize_dbxread	dbxread.c	/^_initialize_dbxread ()$/
+_initialize_demangler	demangle.c	/^_initialize_demangler ()$/
+_initialize_dwarf2read	dwarf2read.c	/^_initialize_dwarf2read()$/
+_initialize_elfread	elfread.c	/^_initialize_elfread ()$/
+_initialize_exec	exec.c	/^_initialize_exec()$/
+_initialize_gdbtypes	gdbtypes.c	/^_initialize_gdbtypes ()$/
+_initialize_i960_tdep	i960-tdep.c	/^_initialize_i960_tdep ()$/
+_initialize_infcmd	infcmd.c	/^_initialize_infcmd ()$/
+_initialize_inflow	inflow.c	/^_initialize_inflow ()$/
+_initialize_infrun	infrun.c	/^_initialize_infrun ()$/
+_initialize_language	language.c	/^_initialize_language()$/
+_initialize_maint_cmds	maint.c	/^_initialize_maint_cmds ()$/
+_initialize_mon960	remote-hdi.c	/^_initialize_mon960 ()$/
+_initialize_nindy	remote-nindy.c	/^_initialize_nindy ()$/
+_initialize_parse	parse.c	/^_initialize_parse ()$/
+_initialize_printcmd	printcmd.c	/^_initialize_printcmd ()$/
+_initialize_procfs	procfs.c	/^_initialize_procfs ()$/
+_initialize_remote	remote.c	/^_initialize_remote ()$/
+_initialize_ser_go32	ser-go32.c	/^_initialize_ser_go32 ()$/
+_initialize_ser_hardwire	ser-unix.c	/^_initialize_ser_hardwire ()$/
+_initialize_ser_tcp	ser-tcp.c	/^_initialize_ser_tcp ()$/
+_initialize_serial	serial.c	/^_initialize_serial ()$/
+_initialize_solib	solib.c	/^_initialize_solib()$/
+_initialize_source	source.c	/^_initialize_source ()$/
+_initialize_stabsread	stabsread.c	/^_initialize_stabsread ()$/
+_initialize_stack	stack.c	/^_initialize_stack ()$/
+_initialize_symfile	symfile.c	/^_initialize_symfile ()$/
+_initialize_symmisc	symmisc.c	/^_initialize_symmisc ()$/
+_initialize_symtab	symtab.c	/^_initialize_symtab ()$/
+_initialize_targets	target.c	/^_initialize_targets ()$/
+_initialize_thread	thread.c	/^_initialize_thread ()$/
+_initialize_typeprint	typeprint.c	/^_initialize_typeprint ()$/
+_initialize_utils	utils.c	/^_initialize_utils ()$/
+_initialize_valarith	valarith.c	/^_initialize_valarith ()$/
+_initialize_valprint	valprint.c	/^_initialize_valprint ()$/
+_initialize_values	values.c	/^_initialize_values ()$/
+_obstack_begin	obstack.h	/^extern int _obstack_begin (struct obstack *, int, /
+_obstack_begin_1	obstack.h	/^extern int _obstack_begin_1 (struct obstack *, int/
+access_value_history	values.c	/^access_value_history (num)$/
+add_abbrev_cmd	command.c	/^add_abbrev_cmd (name, class, fun, doc, list)$/
+add_abbrev_prefix_cmd	command.c	/^add_abbrev_prefix_cmd (name, class, fun, doc, pref/
+add_abstract_symbol_to_list	dwarf2read.c	/^add_abstract_symbol_to_list (symbol, die)$/
+add_alias_cmd	command.c	/^add_alias_cmd (name, oldname, class, abbrev_flag, /
+add_bincl_to_list	dbxread.c	/^add_bincl_to_list (pst, name, instance)$/
+add_cmd	command.c	/^add_cmd (name, class, fun, doc, list)$/
+add_com	top.c	/^add_com (name, class, fun, doc)$/
+add_com_alias	top.c	/^add_com_alias (name, oldname, class, abbrev_flag)$/
+add_enum_psymbol	dwarf2read.c	/^add_enum_psymbol (die)$/
+add_fd	procfs.c	/^add_fd (pi)$/
+add_info	top.c	/^add_info (name, fun, doc)$/
+add_info_alias	top.c	/^add_info_alias (name, oldname, abbrev_flag)$/
+add_language	language.c	/^add_language (lang)$/
+add_new_header_file	dbxread.c	/^add_new_header_file (name, instance)$/
+add_old_header_file	dbxread.c	/^add_old_header_file (name, instance)$/
+add_param_to_type	symtab.c	/^add_param_to_type (type,sym)$/
+add_partial_symbol	dwarf2read.c	/^add_partial_symbol (die)$/
+add_prefix_cmd	command.c	/^add_prefix_cmd (name, class, fun, doc, prefixlist,/
+add_psymbol_addr_to_list	symfile.c	/^add_psymbol_addr_to_list (name, namelength, namesp/
+add_psymbol_to_list	symfile.c	/^add_psymbol_to_list (name, namelength, namespace, /
+add_set_cmd	command.c	/^add_set_cmd (name, class, var_type, var, doc, list/
+add_shared_symbol_files_command	symfile.c	/^add_shared_symbol_files_command  (args, from_tty)$/
+add_show_from_set	command.c	/^add_show_from_set (setcmd, list)$/
+add_symbol_file_command	symfile.c	/^add_symbol_file_command (args, from_tty)$/
+add_symbol_to_list	buildsym.c	/^add_symbol_to_list (symbol, listhead)$/
+add_symtab_fns	symfile.c	/^add_symtab_fns (sf)$/
+add_target	target.c	/^add_target (t)$/
+add_this_object_header_file	dbxread.c	/^add_this_object_header_file (i)$/
+add_thread	thread.c	/^add_thread (pid)$/
+add_to_objfile_sections	objfiles.c	/^add_to_objfile_sections (abfd, asect, objfile_p_ch/
+add_to_section_table	exec.c	/^add_to_section_table (abfd, asect, table_pp_char)$/
+add_undefined_type	stabsread.c	/^add_undefined_type (type)$/
+address_info	printcmd.c	/^address_info (exp, from_tty)$/
+address_info_1	printcmd.c	/^address_info_1(sym, pc)$/
+all_registers_info	infcmd.c	/^all_registers_info (addr_exp, from_tty)$/
+alloc_type	gdbtypes.c	/^alloc_type (objfile)$/
+alloc_utype	dwarf2read.c	/^alloc_utype (die, utypep)$/
+allocate_cplus_struct_type	gdbtypes.c	/^allocate_cplus_struct_type (type)$/
+allocate_objfile	objfiles.c	/^allocate_objfile (abfd, mapped)$/
+allocate_psymtab	symfile.c	/^allocate_psymtab (filename, objfile)$/
+allocate_repeat_value	values.c	/^allocate_repeat_value (type, count)$/
+allocate_space_in_inferior	valops.c	/^allocate_space_in_inferior (len)$/
+allocate_stacks	c-exp.c	/^static int allocate_stacks() {$/
+allocate_stub_method	gdbtypes.c	/^allocate_stub_method (type)$/
+allocate_symtab	symfile.c	/^allocate_symtab (filename, objfile)$/
+allocate_value	values.c	/^allocate_value (type)$/
+ambiguous_line_spec	source.c	/^ambiguous_line_spec (sals)$/
+annotate_arg_begin	annotate.c	/^annotate_arg_begin ()$/
+annotate_arg_end	annotate.c	/^annotate_arg_end ()$/
+annotate_arg_name_end	annotate.c	/^annotate_arg_name_end ()$/
+annotate_arg_value	annotate.c	/^annotate_arg_value (type)$/
+annotate_array_section_begin	annotate.c	/^annotate_array_section_begin (index, elttype)$/
+annotate_array_section_end	annotate.c	/^annotate_array_section_end ()$/
+annotate_breakpoint	annotate.c	/^annotate_breakpoint (num)$/
+annotate_breakpoints_headers	annotate.c	/^annotate_breakpoints_headers ()$/
+annotate_breakpoints_table	annotate.c	/^annotate_breakpoints_table ()$/
+annotate_breakpoints_table_end	annotate.c	/^annotate_breakpoints_table_end ()$/
+annotate_display_begin	annotate.c	/^annotate_display_begin ()$/
+annotate_display_end	annotate.c	/^annotate_display_end ()$/
+annotate_display_expression	annotate.c	/^annotate_display_expression ()$/
+annotate_display_expression_end	annotate.c	/^annotate_display_expression_end ()$/
+annotate_display_format	annotate.c	/^annotate_display_format ()$/
+annotate_display_number_end	annotate.c	/^annotate_display_number_end ()$/
+annotate_display_value	annotate.c	/^annotate_display_value ()$/
+annotate_elt	annotate.c	/^annotate_elt ()$/
+annotate_elt_rep	annotate.c	/^annotate_elt_rep (repcount)$/
+annotate_elt_rep_end	annotate.c	/^annotate_elt_rep_end ()$/
+annotate_error	annotate.c	/^annotate_error ()$/
+annotate_error_begin	annotate.c	/^annotate_error_begin ()$/
+annotate_exited	annotate.c	/^annotate_exited (exitstatus)$/
+annotate_field	annotate.c	/^annotate_field (num)$/
+annotate_field_begin	annotate.c	/^annotate_field_begin (type)$/
+annotate_field_end	annotate.c	/^annotate_field_end ()$/
+annotate_field_name_end	annotate.c	/^annotate_field_name_end ()$/
+annotate_field_value	annotate.c	/^annotate_field_value ()$/
+annotate_frame_address	annotate.c	/^annotate_frame_address ()$/
+annotate_frame_address_end	annotate.c	/^annotate_frame_address_end ()$/
+annotate_frame_args	annotate.c	/^annotate_frame_args ()$/
+annotate_frame_begin	annotate.c	/^annotate_frame_begin (level, pc)$/
+annotate_frame_end	annotate.c	/^annotate_frame_end ()$/
+annotate_frame_function_name	annotate.c	/^annotate_frame_function_name ()$/
+annotate_frame_source_begin	annotate.c	/^annotate_frame_source_begin ()$/
+annotate_frame_source_end	annotate.c	/^annotate_frame_source_end ()$/
+annotate_frame_source_file	annotate.c	/^annotate_frame_source_file ()$/
+annotate_frame_source_file_end	annotate.c	/^annotate_frame_source_file_end ()$/
+annotate_frame_source_line	annotate.c	/^annotate_frame_source_line ()$/
+annotate_frame_where	annotate.c	/^annotate_frame_where ()$/
+annotate_frames_invalid	annotate.c	/^annotate_frames_invalid ()$/
+annotate_function_call	annotate.c	/^annotate_function_call ()$/
+annotate_quit	annotate.c	/^annotate_quit ()$/
+annotate_record	annotate.c	/^annotate_record ()$/
+annotate_signal	annotate.c	/^annotate_signal ()$/
+annotate_signal_handler_caller	annotate.c	/^annotate_signal_handler_caller ()$/
+annotate_signal_name	annotate.c	/^annotate_signal_name ()$/
+annotate_signal_name_end	annotate.c	/^annotate_signal_name_end ()$/
+annotate_signal_string	annotate.c	/^annotate_signal_string ()$/
+annotate_signal_string_end	annotate.c	/^annotate_signal_string_end ()$/
+annotate_signalled	annotate.c	/^annotate_signalled ()$/
+annotate_source	annotate.c	/^annotate_source (filename, line, character, mid, p/
+annotate_starting	annotate.c	/^annotate_starting ()$/
+annotate_stopped	annotate.c	/^annotate_stopped ()$/
+annotate_value_begin	annotate.c	/^annotate_value_begin (type)$/
+annotate_value_end	annotate.c	/^annotate_value_end ()$/
+annotate_value_history_begin	annotate.c	/^annotate_value_history_begin (histindex, type)$/
+annotate_value_history_end	annotate.c	/^annotate_value_history_end ()$/
+annotate_value_history_value	annotate.c	/^annotate_value_history_value ()$/
+annotate_watchpoint	annotate.c	/^annotate_watchpoint (num)$/
+aplink_command	i960-tdep.c	/^aplink_command (args, from_tty)$/
+aplink_enable_command	i960-tdep.c	/^aplink_enable_command (args, from_tty)$/
+aplink_reset_command	i960-tdep.c	/^aplink_reset_command (args, from_tty)$/
+aplink_switch_command	i960-tdep.c	/^aplink_switch_command (args, from_tty)$/
+aplink_wait_command	i960-tdep.c	/^aplink_wait_command (args, from_tty)$/
+aplink_wait_reset_action	i960-tdep.c	/^aplink_wait_reset_action(args, action)$/
+aptr	ser-go32.c	/^aptr (p)$/
+args_info	stack.c	/^args_info (ignore, from_tty)$/
+attach_command	infcmd.c	/^attach_command (args, from_tty)$/
+attach_fields_to_type	stabsread.c	/^attach_fields_to_type (fip, type, objfile)$/
+attach_fn_fields_to_type	stabsread.c	/^attach_fn_fields_to_type (fip, type)$/
+attribute_size	dwarfread.c	/^attribute_size (attr)$/
+awatch_command	breakpoint.c	/^static void awatch_command (arg, from_tty)$/
+backtrace_command	stack.c	/^backtrace_command (count_exp, from_tty)$/
+backtrace_limit_info	stack.c	/^backtrace_limit_info (arg, from_tty)$/
+baseclass_addr	values.c	/^baseclass_addr (type, index, valaddr, valuep, errp/
+baseclass_offset	values.c	/^baseclass_offset (type, index, arg, offset)$/
+basicdieinfo	dwarfread.c	/^basicdieinfo (dip, diep, objfile)$/
+begin_line	utils.c	/^begin_line ()$/
+bfd_lookup_symbol	solib.c	/^bfd_lookup_symbol (abfd, symname)$/
+bfd_vma	dis-asm.h	95
+binop	dwarf2read.c	/^binop (op)$/
+binop_result_type	language.c	/^binop_result_type (v1, v2)$/
+binop_type_check	language.c	/^binop_type_check(arg1,arg2,op)$/
+binop_user_defined_p	valarith.c	/^binop_user_defined_p (op, arg1, arg2)$/
+block_depth	symmisc.c	/^block_depth (block)$/
+block_for_pc	blockframe.c	/^block_for_pc (pc)$/
+block_function	symtab.c	/^block_function (bl)$/
+block_innermost_frame	blockframe.c	/^block_innermost_frame (block)$/
+blockvector_for_pc	blockframe.c	/^blockvector_for_pc (pc, pindex)$/
+boolean_type	language.c	/^boolean_type (type)$/
+bpstat	breakpoint.h	204
+bpstat_alloc	breakpoint.c	/^bpstat_alloc (b, cbs)$/
+bpstat_clear	breakpoint.c	/^bpstat_clear (bsp)$/
+bpstat_clear_actions	breakpoint.c	/^bpstat_clear_actions (bs)$/
+bpstat_copy	breakpoint.c	/^bpstat_copy (bs)$/
+bpstat_do_actions	breakpoint.c	/^bpstat_do_actions (bsp)$/
+bpstat_explains_signal	breakpoint.h	/^#define bpstat_explains_signal(bs) ((bs) != NULL)$/
+bpstat_find_breakpoint	breakpoint.c	/^bpstat_find_breakpoint(bsp, breakpoint)$/
+bpstat_num	breakpoint.c	/^bpstat_num (bsp)$/
+bpstat_print	breakpoint.c	/^bpstat_print (bs)$/
+bpstat_should_step	breakpoint.c	/^bpstat_should_step ()$/
+bpstat_stop_status	breakpoint.c	/^bpstat_stop_status (pc, frame_address, not_a_break/
+bpstat_what	breakpoint.c	/^bpstat_what (bs)$/
+break_command	breakpoint.c	/^break_command (arg, from_tty)$/
+break_command_1	breakpoint.c	/^break_command_1 (arg, flag, from_tty)$/
+breakpoint_1	breakpoint.c	/^breakpoint_1 (bnum, allflag)$/
+breakpoint_auto_delete	breakpoint.c	/^breakpoint_auto_delete (bs)$/
+breakpoint_auto_delete_contents	infcmd.c	/^breakpoint_auto_delete_contents (arg)$/
+breakpoint_clear_ignore_counts	breakpoint.c	/^breakpoint_clear_ignore_counts ()$/
+breakpoint_cond_eval	breakpoint.c	/^breakpoint_cond_eval (exp)$/
+breakpoint_here_p	breakpoint.c	/^breakpoint_here_p (pc)$/
+breakpoint_init_inferior	breakpoint.c	/^breakpoint_init_inferior ()$/
+breakpoint_re_set	breakpoint.c	/^breakpoint_re_set ()$/
+breakpoint_re_set_one	breakpoint.c	/^breakpoint_re_set_one (bint)$/
+breakpoint_thread_match	breakpoint.c	/^breakpoint_thread_match (pc, pid)$/
+breakpoints_changed	annotate.c	/^breakpoints_changed ()$/
+breakpoints_info	breakpoint.c	/^breakpoints_info (bnum_exp, from_tty)$/
+build_canonical_line_spec	symtab.c	/^build_canonical_line_spec (sal, symname, canonical/
+build_helplist	maint.c	/^build_helplist(cp, prefix)$/
+build_libdwarf_section_list	dwarf2read.c	/^build_libdwarf_section_list (abfd, sectp, sect_lis/
+build_objfile_section_table	objfiles.c	/^build_objfile_section_table (objfile)$/
+build_section_table	exec.c	/^build_section_table (some_bfd, start, end)$/
+buildsym_init	buildsym.c	/^buildsym_init ()$/
+buildsym_new_init	buildsym.c	/^buildsym_new_init ()$/
+byteswap	utils.c	/^byteswap(buffer, len)$/
+byteswap_within_buffer	utils.c	/^byteswap_within_buffer(buf, bytecount)$/
+byteswap_within_word	utils.c	/^byteswap_within_word(buf)$/
+c_create_fundamental_type	c-lang.c	/^c_create_fundamental_type (objfile, typeid)$/
+c_print_type	c-typeprint.c	/^c_print_type (type, varstring, stream, show, level/
+c_printchar	c-lang.c	/^c_printchar (c, stream)$/
+c_printstr	c-lang.c	/^c_printstr (stream, string, length, force_ellipses/
+c_type_print_args	c-typeprint.c	/^c_type_print_args (type, stream)$/
+c_type_print_base	c-typeprint.c	/^c_type_print_base (type, stream, show, level)$/
+c_type_print_varspec_prefix	c-typeprint.c	/^c_type_print_varspec_prefix (type, stream, show, p/
+c_type_print_varspec_suffix	c-typeprint.c	/^c_type_print_varspec_suffix (type, stream, show, p/
+c_typedef_print	c-typeprint.c	/^c_typedef_print (type, new, stream)$/
+c_val_print	c-valprint.c	/^c_val_print (type, valaddr, address, stream, forma/
+c_value_print	c-valprint.c	/^c_value_print (val, stream, format, pretty)$/
+call_command	printcmd.c	/^call_command (exp, from_tty)$/
+call_function_by_hand	valops.c	/^call_function_by_hand (function, nargs, args)$/
+can_dereference	gdbtypes.c	/^can_dereference (t)$/
+can_use_hardware_watchpoint	breakpoint.c	/^can_use_hardware_watchpoint (v)$/
+cashier_psymtab	symfile.c	/^cashier_psymtab (pst)$/
+catch_breakpoint	breakpoint.c	/^catch_breakpoint (name)$/
+catch_command	breakpoint.c	/^catch_command (arg, from_tty)$/
+catch_command_1	breakpoint.c	/^catch_command_1 (arg, tempflag, from_tty)$/
+catch_errors	top.c	/^catch_errors (func, args, errstring, mask)$/
+catch_info	stack.c	/^catch_info (ignore, from_tty)$/
+cd_command	top.c	/^cd_command (dir, from_tty)$/
+char	dis-asm.h	12
+character_type	language.c	/^character_type (type)$/
+check_args	i960-tdep.c	/^static int check_args(nargs, args)$/
+check_duplicates	breakpoint.c	/^check_duplicates (address)$/
+check_field	valops.c	/^check_field (arg1, name)$/
+check_field_in	valops.c	/^check_field_in (type, name)$/
+check_host	i960-tdep.c	/^check_host()$/
+check_stub_method	gdbtypes.c	/^check_stub_method (type, i, j)$/
+check_stub_type	gdbtypes.c	/^check_stub_type (type)$/
+child_terminal_info	inflow.c	/^child_terminal_info (args, from_tty)$/
+chill_create_fundamental_type	ch-lang.c	/^chill_create_fundamental_type (objfile, typeid)$/
+chill_demangle	ch-lang.c	/^chill_demangle (mangled)$/
+chill_print_type	ch-typeprint.c	/^chill_print_type (type, varstring, stream, show, l/
+chill_print_value_fields	ch-valprint.c	/^chill_print_value_fields (type, valaddr, stream, f/
+chill_printchar	ch-lang.c	/^chill_printchar (c, stream)$/
+chill_printstr	ch-lang.c	/^chill_printstr (stream, string, length, force_elli/
+chill_type_print_base	ch-typeprint.c	/^chill_type_print_base (type, stream, show, level)$/
+chill_val_print	ch-valprint.c	/^chill_val_print (type, valaddr, address, stream, f/
+cleanup	remote-nindy.c	/^cleanup(dummy)$/
+cleanup_executing_breakpoints	breakpoint.c	/^cleanup_executing_breakpoints (ignore)$/
+cleanup_target	target.c	/^cleanup_target (t)$/
+cleanup_tty	serial.c	/^cleanup_tty(ttystate)$/
+cleanup_undefined_types	stabsread.c	/^cleanup_undefined_types ()$/
+clear_breakpoint_hit_counts	breakpoint.c	/^clear_breakpoint_hit_counts ()$/
+clear_command	breakpoint.c	/^clear_command (arg, from_tty)$/
+clear_complaints	complaints.c	/^clear_complaints (sym_reading, noisy)$/
+clear_displays	printcmd.c	/^clear_displays ()$/
+clear_internalvars	values.c	/^clear_internalvars ()$/
+clear_momentary_breakpoints	breakpoint.c	/^clear_momentary_breakpoints ()$/
+clear_pc_function_cache	blockframe.c	/^clear_pc_function_cache()$/
+clear_proceed_status	infrun.c	/^clear_proceed_status ()$/
+clear_sigint_trap	inflow.c	/^clear_sigint_trap()$/
+clear_sigio_trap	inflow.c	/^clear_sigio_trap ()$/
+clear_solib	solib.c	/^clear_solib()$/
+clear_symtab_users	symfile.c	/^clear_symtab_users ()$/
+clear_symtab_users_once	symfile.c	/^clear_symtab_users_once ()$/
+clear_value_history	values.c	/^clear_value_history ()$/
+close_exec_file	core.c	/^close_exec_file ()$/
+close_proc_file	procfs.c	/^close_proc_file (pip)$/
+cmd_show_list	command.c	/^cmd_show_list (list, from_tty, prefix)$/
+cmd_types	command.h	28
+cobr	i960-dis.c	/^cobr( memaddr, word1 )$/
+coff_alloc_type	coffread.c	/^coff_alloc_type (index)$/
+coff_end_symtab	coffread.c	/^coff_end_symtab (objfile)$/
+coff_getfilename	coffread.c	/^coff_getfilename (aux_entry)$/
+coff_locate_sections	coffread.c	/^coff_locate_sections (ignore_abfd, sectp, csip)$/
+coff_lookup_type	coffread.c	/^coff_lookup_type (index)$/
+coff_new_init	coffread.c	/^coff_new_init (ignore)$/
+coff_read_enum_type	coffread.c	/^coff_read_enum_type (index, length, lastsym)$/
+coff_read_struct_type	coffread.c	/^coff_read_struct_type (index, length, lastsym)$/
+coff_record_line	coffread.c	/^coff_record_line (line, col, pc)$/
+coff_start_symtab	coffread.c	/^coff_start_symtab ()$/
+coff_symfile_finish	coffread.c	/^coff_symfile_finish (objfile)$/
+coff_symfile_init	coffread.c	/^coff_symfile_init (objfile)$/
+coff_symfile_offsets	coffread.c	/^coff_symfile_offsets (objfile, addr)$/
+coff_symfile_read	coffread.c	/^coff_symfile_read (objfile, section_offsets, mainl/
+coffstab_build_psymtabs	dbxread.c	/^coffstab_build_psymtabs (objfile, section_offsets,/
+com_bfr	ser-go32.c	/^#define com_bfr(n)	iov[n]+3$/
+com_ier	ser-go32.c	/^#define com_ier(n)	iov[n]+1$/
+com_ifr	ser-go32.c	/^#define com_ifr(n)	iov[n]+2$/
+com_lsr	ser-go32.c	/^#define com_lsr(n)	iov[n]+5$/
+com_mcr	ser-go32.c	/^#define com_mcr(n)	iov[n]+4$/
+com_msr	ser-go32.c	/^#define com_msr(n)	iov[n]+6$/
+com_rb	ser-go32.c	/^#define com_rb(n)	iov[n]$/
+com_tb	ser-go32.c	/^#define com_tb(n)	iov[n]$/
+command_line_input	top.c	/^command_line_input (prrompt, repeat, annotation_su/
+command_loop	top.c	/^command_loop ()$/
+command_loop_marker	top.c	/^command_loop_marker (foo)$/
+commands_command	breakpoint.c	/^commands_command (arg, from_tty)$/
+common_block_end	stabsread.c	/^common_block_end (objfile)$/
+common_block_start	stabsread.c	/^common_block_start (name, objfile)$/
+common_mem_control_set	i960-tdep.c	/^common_mem_control_set (routine, args, from_tty)$/
+compact_minimal_symbols	minsyms.c	/^compact_minimal_symbols (msymbol, mcount)$/
+compare_line_numbers	buildsym.c	/^compare_line_numbers (ln1p, ln2p)$/
+compare_minimal_symbols	minsyms.c	/^compare_minimal_symbols (fn1p, fn2p)$/
+compare_psymbols	symfile.c	/^compare_psymbols (s1p, s2p)$/
+compare_symbols	symfile.c	/^compare_symbols (s1p, s2p)$/
+complain	complaints.c	/^complain (struct complaint *complaint, ...)$/
+complete_command	top.c	/^complete_command (arg, from_tty)$/
+complete_on_cmdlist	command.c	/^complete_on_cmdlist (list, text, word)$/
+complete_symtab	coffread.c	/^complete_symtab (name, start_addr, size)$/
+completedieinfo	dwarfread.c	/^completedieinfo (dip, objfile)$/
+completion_list_add_name	symtab.c	/^completion_list_add_name (symname, sym_text, sym_t/
+condition_command	breakpoint.c	/^condition_command (arg, from_tty)$/
+connect_command	serial.c	/^connect_command (args, fromtty)$/
+const	c-lang.c	/^struct type ** const (c_builtin_types[]) = $/
+contained_in	symtab.c	/^contained_in (a, b)$/
+continue_command	infcmd.c	/^continue_command (proc_count_exp, from_tty)$/
+copy_name	parse.c	/^copy_name (token)$/
+core_file_command	core.c	/^core_file_command (filename, from_tty)$/
+cp_is_vtbl_member	cp-valprint.c	/^cp_is_vtbl_member(type)$/
+cp_is_vtbl_ptr_type	cp-valprint.c	/^cp_is_vtbl_ptr_type(type)$/
+cp_print_class_member	cp-valprint.c	/^cp_print_class_member (valaddr, domain, stream, pr/
+cp_print_class_method	cp-valprint.c	/^cp_print_class_method (valaddr, type, stream)$/
+cp_print_value_fields	cp-valprint.c	/^cp_print_value_fields (type, valaddr, stream, form/
+cp_type_print_derivation_info	c-typeprint.c	/^cp_type_print_derivation_info (stream, type)$/
+cp_type_print_method_args	c-typeprint.c	/^cp_type_print_method_args (args, prefix, varstring/
+cplus_print_value	cp-valprint.c	/^cplus_print_value (type, valaddr, stream, format, /
+cplusplus_hint	symtab.c	/^cplusplus_hint (name)$/
+create_array_type	gdbtypes.c	/^create_array_type (result_type, element_type, rang/
+create_fundamental_type	language.h	/^#define create_fundamental_type(objfile,typeid) \\$/
+create_longjmp_breakpoint	breakpoint.c	/^create_longjmp_breakpoint(func_name)$/
+create_name	dwarf2read.c	/^create_name (name, obstackp)$/
+create_new_frame	blockframe.c	/^create_new_frame (addr, pc)$/
+create_procinfo	procfs.c	/^create_procinfo (pid)$/
+create_range_type	gdbtypes.c	/^create_range_type (result_type, index_type, low_bo/
+create_set_type	gdbtypes.c	/^create_set_type (result_type, domain_type)$/
+create_string_type	gdbtypes.c	/^create_string_type (result_type, range_type)$/
+ctrl	i960-dis.c	/^ctrl( memaddr, word1 )$/
+ctrlbrk_handler	top.c	/^ctrlbrk_handler()$/
+dbig_endian	d2xt.c	/^static int dbig_endian ()$/
+dbl_to_edbl	d2xt.c	/^dbl_to_edbl (f)$/
+dbx_alloc_type	stabsread.c	/^dbx_alloc_type (typenums, objfile)$/
+dbx_lookup_type	stabsread.c	/^dbx_lookup_type (typenums)$/
+dbx_new_init	dbxread.c	/^dbx_new_init (ignore)$/
+dbx_next_symbol_text	dbxread.c	/^dbx_next_symbol_text ()$/
+dbx_psymtab_to_symtab	dbxread.c	/^dbx_psymtab_to_symtab (pst)$/
+dbx_psymtab_to_symtab_1	dbxread.c	/^dbx_psymtab_to_symtab_1 (pst)$/
+dbx_symfile_finish	dbxread.c	/^dbx_symfile_finish (objfile)$/
+dbx_symfile_init	dbxread.c	/^dbx_symfile_init (objfile)$/
+dbx_symfile_offsets	dbxread.c	/^dbx_symfile_offsets (objfile, addr)$/
+dbx_symfile_read	dbxread.c	/^dbx_symfile_read (objfile, section_offsets, mainli/
+dcache_alloc	remote-nindy.c	/^dcache_alloc ()$/
+dcache_fetch	remote-nindy.c	/^dcache_fetch (addr)$/
+dcache_flush	remote-nindy.c	/^dcache_flush ()$/
+dcache_hit	remote-nindy.c	/^dcache_hit (addr)$/
+dcache_init	remote-nindy.c	/^dcache_init ()$/
+dcache_poke	remote-nindy.c	/^dcache_poke (addr, data)$/
+dcache_value	remote-nindy.c	/^dcache_value (db, addr)$/
+decode_array_element_type	dwarfread.c	/^decode_array_element_type (scan)$/
+decode_base_type	coffread.c	/^decode_base_type (cs, c_type, aux)$/
+decode_die_type	dwarf2read.c	/^decode_die_type (die, notice_empty_type)$/
+decode_format	printcmd.c	/^decode_format (string_ptr, oformat, osize)$/
+decode_function_type	coffread.c	/^decode_function_type (cs, c_type, aux)$/
+decode_fund_type	dwarfread.c	/^decode_fund_type (fundtype)$/
+decode_integer_literal	ch-exp.c	/^decode_integer_literal (valptr, tokptrptr)$/
+decode_integer_value	ch-exp.c	/^decode_integer_value (base, tokptrptr, ivalptr)$/
+decode_line_1	symtab.c	/^decode_line_1 (argptr, funfirstline, expand_inline/
+decode_line_2	symtab.c	/^decode_line_2 (sym_arr, nelts, funfirstline, canon/
+decode_line_numbers	dwarf2read.c	/^decode_line_numbers ()$/
+decode_line_spec	symtab.c	/^decode_line_spec (string, funfirstline, expand_inl/
+decode_line_spec_1	breakpoint.c	/^decode_line_spec_1 (string, funfirstline, expand_i/
+decode_mod_fund_type	dwarfread.c	/^decode_mod_fund_type (typedata)$/
+decode_mod_u_d_type	dwarfread.c	/^decode_mod_u_d_type (typedata)$/
+decode_modified_type	dwarfread.c	/^decode_modified_type (modifiers, modcount, mtype)$/
+decode_subscript_data_item	dwarfread.c	/^decode_subscript_data_item (scan, end)$/
+decode_type	coffread.c	/^decode_type (cs, c_type, aux)$/
+deduce_language_from_filename	symfile.c	/^deduce_language_from_filename (filename)$/
+default_terminal_info	target.c	/^default_terminal_info (args, from_tty)$/
+define_command	top.c	/^define_command (comname, from_tty)$/
+define_symbol	stabsread.c	/^define_symbol (valu, string, desc, type, objfile)$/
+delete_breakpoint	breakpoint.c	/^delete_breakpoint (bpt)$/
+delete_breakpoint_current_contents	infrun.c	/^delete_breakpoint_current_contents (arg)$/
+delete_catch	breakpoint.c	/^delete_catch (args)$/
+delete_catch_breakpoint	breakpoint.c	/^delete_catch_breakpoint ()$/
+delete_cmd	command.c	/^delete_cmd (name, list)$/
+delete_command	breakpoint.c	/^delete_command (arg, from_tty)$/
+delete_display	printcmd.c	/^delete_display (num)$/
+describe_other_breakpoints	breakpoint.c	/^describe_other_breakpoints (pc)$/
+destructor_name_p	valops.c	/^destructor_name_p (name, type)$/
+detach_command	infcmd.c	/^detach_command (args, from_tty)$/
+directory_command	source.c	/^directory_command (dirname, from_tty)$/
+dis_asm_memory_error	core.c	/^dis_asm_memory_error (status, memaddr, info)$/
+dis_asm_print_address	core.c	/^dis_asm_print_address (addr, info)$/
+dis_asm_read_memory	core.c	/^dis_asm_read_memory (memaddr, myaddr, len, info)$/
+disable	ser-go32.c	/^#define disable() asm("cli")$/
+disable_break	solib.c	/^disable_break ()$/
+disable_breakpoint	breakpoint.c	/^disable_breakpoint (bpt)$/
+disable_catch	breakpoint.c	/^disable_catch (args)$/
+disable_catch_breakpoint	breakpoint.c	/^disable_catch_breakpoint ()$/
+disable_command	breakpoint.c	/^disable_command (args, from_tty)$/
+disable_current_display	printcmd.c	/^disable_current_display ()$/
+disable_display	printcmd.c	/^disable_display (num)$/
+disable_display_command	printcmd.c	/^disable_display_command (args, from_tty)$/
+disable_longjmp_breakpoint	breakpoint.c	/^disable_longjmp_breakpoint()$/
+disassemble_command	printcmd.c	/^disassemble_command (arg, from_tty)$/
+disassemble_info	dis-asm.h	85
+disassembler_ftype	dis-asm.h	94
+discard_cleanups	utils.c	/^discard_cleanups (old_chain)$/
+discard_minimal_symbols	minsyms.c	/^discard_minimal_symbols (foo)$/
+disconnect	top.c	/^disconnect (signo)$/
+display_command	printcmd.c	/^display_command (exp, from_tty)$/
+display_info	printcmd.c	/^display_info (ignore, from_tty)$/
+do_attach	procfs.c	/^do_attach (pid)$/
+do_cleanups	utils.c	/^do_cleanups (old_chain)$/
+do_detach	procfs.c	/^do_detach (signal)$/
+do_displays	printcmd.c	/^do_displays ()$/
+do_examine	printcmd.c	/^do_examine (fmt, addr)$/
+do_nothing	top.c	/^do_nothing (signo)$/
+do_one_display	printcmd.c	/^do_one_display (d)$/
+do_registers_info	infcmd.c	/^do_registers_info (regnum, fpregs)$/
+do_setshow_command	command.c	/^do_setshow_command (arg, from_tty, c)$/
+document_command	top.c	/^document_command (comname, from_tty)$/
+dont_repeat	top.c	/^dont_repeat ()$/
+dos_async_init	ser-go32.c	/^dos_async_init (port)$/
+dos_async_ready	ser-go32.c	/^dos_async_ready ()$/
+dos_async_rx	ser-go32.c	/^dos_async_rx ()$/
+dos_async_tx	ser-go32.c	/^dos_async_tx (c)$/
+dosasync_read	ser-go32.c	/^dosasync_read (fd, buf, len, timeout)$/
+dosasync_write	ser-go32.c	/^dosasync_write (fd, buf, len)$/
+double_to_extended	d2x.c	/^void double_to_extended(d,x)$/
+down_command	stack.c	/^down_command (count_exp, from_tty)$/
+down_silently_command	stack.c	/^down_silently_command (count_exp, from_tty)$/
+dstop	i960-dis.c	/^dstop( mode, reg, fp )$/
+dump_expression	expprint.c	/^dump_expression (exp, stream, note)$/
+dump_fn_fieldlists	gdbtypes.c	/^dump_fn_fieldlists (type, spaces)$/
+dump_gmu_cmd_cache_hdr	i960-tdep.c	/^dump_gmu_cmd_cache_hdr()$/
+dump_gmu_cmd_cache_reg	i960-tdep.c	/^dump_gmu_cmd_cache_reg(num, type, str)$/
+dump_gmu_detect_hdr	i960-tdep.c	/^dump_gmu_detect_hdr()$/
+dump_gmu_protect_hdr	i960-tdep.c	/^dump_gmu_protect_hdr()$/
+dump_gmu_reg	i960-tdep.c	/^dump_gmu_reg(num, type, reg)$/
+dump_mallinfo	top.c	/^dump_mallinfo()$/
+dump_msymbols	symmisc.c	/^dump_msymbols (objfile, outfile)$/
+dump_objfile	symmisc.c	/^dump_objfile (objfile)$/
+dump_pci_addr	remote-hdi.c	/^dump_pci_addr(connect_verb)$/
+dump_psymtab	symmisc.c	/^dump_psymtab (objfile, psymtab, outfile)$/
+dump_symtab	symmisc.c	/^dump_symtab (objfile, symtab, outfile)$/
+dump_value	values.c	/^dump_value(val, stream, note)$/
+dwarf2_build_psymtabs	dwarf2read.c	/^dwarf2_build_psymtabs (objfile, section_offsets, m/
+dwarf2_errhand	dwarf2read.c	/^dwarf2_errhand (error_desc)$/
+dwarf2_eval_location	dwarf2read.c	/^dwarf2_eval_location (sym, pc)$/
+dwarf2_eval_location_list	dwarf2read.c	/^dwarf2_eval_location_list (sym, loclist, pc)$/
+dwarf2_print_stacktop	dwarf2read.c	/^dwarf2_print_stacktop()$/
+dwarf_attr_const_value	dwarf2read.c	/^dwarf_attr_const_value(die, sym)$/
+dwarf_build_psymtabs	dwarfread.c	/^dwarf_build_psymtabs (objfile, section_offsets, ma/
+dwarf_fundamental_type	dwarfread.c	/^dwarf_fundamental_type (objfile, typeid)$/
+dwarf_print_location_list	dwarf2read.c	/^dwarf_print_location_list(sym)$/
+dwarf_psymtab_to_symtab	dwarf2read.c	/^dwarf_psymtab_to_symtab (pst)$/
+dwarf_read_array_type	dwarfread.c	/^dwarf_read_array_type (dip)$/
+ea	i960-dis.c	/^ea( memaddr, mode, reg2, reg3, word1, word2 )$/
+echo_command	top.c	/^echo_command (text, from_tty)$/
+edbl_to_dbl	d2xt.c	/^edbl_to_dbl (p)$/
+elf_interpreter	elfread.c	/^elf_interpreter (abfd)$/
+elf_locate_base	solib.c	/^elf_locate_base ()$/
+elf_locate_sections	elfread.c	/^elf_locate_sections (ignore_abfd, sectp, eip)$/
+elf_new_init	elfread.c	/^elf_new_init (ignore)$/
+elf_symfile_finish	elfread.c	/^elf_symfile_finish (objfile)$/
+elf_symfile_init	elfread.c	/^elf_symfile_init (ignore)$/
+elf_symfile_offsets	elfread.c	/^elf_symfile_offsets (objfile, addr)$/
+elf_symfile_read	elfread.c	/^elf_symfile_read (objfile, section_offsets, mainli/
+elf_symtab_read	elfread.c	/^elf_symtab_read (abfd, addr, objfile, dynamic)$/
+elfstab_build_psymtabs	dbxread.c	/^elfstab_build_psymtabs (objfile, section_offsets, /
+elfstab_offset_sections	elfread.c	/^elfstab_offset_sections (objfile, pst)$/
+emit_char	c-lang.c	/^emit_char (c, stream, quoter)$/
+empty_sfunc	command.c	/^empty_sfunc (args, from_tty, c)$/
+enable	ser-go32.c	/^#define enable() asm("sti")$/
+enable_break	solib.c	/^enable_break ()$/
+enable_breakpoint	breakpoint.c	/^enable_breakpoint (bpt)$/
+enable_catch	breakpoint.c	/^enable_catch (args)$/
+enable_catch_breakpoint	breakpoint.c	/^enable_catch_breakpoint ()$/
+enable_command	breakpoint.c	/^enable_command (args, from_tty)$/
+enable_delete_breakpoint	breakpoint.c	/^enable_delete_breakpoint (bpt)$/
+enable_delete_command	breakpoint.c	/^enable_delete_command (args, from_tty)$/
+enable_display	printcmd.c	/^enable_display (args, from_tty)$/
+enable_longjmp_breakpoint	breakpoint.c	/^enable_longjmp_breakpoint()$/
+enable_once_breakpoint	breakpoint.c	/^enable_once_breakpoint (bpt)$/
+enable_once_command	breakpoint.c	/^enable_once_command (args, from_tty)$/
+end_arglist	parse.c	/^end_arglist ()$/
+end_psymtab	dbxread.c	/^end_psymtab (pst, include_list, num_includes, capp/
+end_stabs	stabsread.c	/^void end_stabs ()$/
+end_symtab	buildsym.c	/^end_symtab (end_addr, sort_pending, sort_linevec, /
+enter_linenos	coffread.c	/^enter_linenos (file_offset, first_line, last_line)/
+entry_point_address	symfile.c	/^entry_point_address()$/
+enum_type	dwarfread.c	/^enum_type (dip, objfile)$/
+environ_vector	environ.c	/^environ_vector (e)$/
+environment_info	infcmd.c	/^environment_info (var, from_tty)$/
+errnoname	procfs.c	/^errnoname (errnum)$/
+error	regex.c	/^error (string)$/
+error_begin	utils.c	/^error_begin ()$/
+error_no_arg	top.c	/^error_no_arg (why)$/
+error_type	stabsread.c	/^error_type (pp)$/
+evaluate_expression	eval.c	/^evaluate_expression (exp)$/
+evaluate_subexp	eval.c	/^evaluate_subexp (expect_type, exp, pos, noside)$/
+evaluate_subexp_for_address	eval.c	/^evaluate_subexp_for_address (exp, pos, noside)$/
+evaluate_subexp_for_sizeof	eval.c	/^evaluate_subexp_for_sizeof (exp, pos)$/
+evaluate_subexp_with_coercion	eval.c	/^evaluate_subexp_with_coercion (exp, pos, noside)$/
+evaluate_type	eval.c	/^evaluate_type (exp)$/
+examine_prologue	i960-tdep.c	/^examine_prologue (ip, limit, frame_addr, fsr, fram/
+exec_close	exec.c	/^exec_close (quitting)$/
+exec_file_command	exec.c	/^exec_file_command (args, from_tty)$/
+exec_files_info	exec.c	/^exec_files_info (t)$/
+execute_command	top.c	/^execute_command (p, from_tty)$/
+execute_user_command	top.c	/^execute_user_command (c, args)$/
+expand_canonical_line_spec	symtab.c	/^expand_canonical_line_spec (sals, canonical)$/
+expand_numeric_line_spec	symtab.c	/^expand_numeric_line_spec (sal, funfirstline, canon/
+expand_symbolic_line_spec	symtab.c	/^expand_symbolic_line_spec (sym, funfirstline)$/
+explicit_lookup_type	dbxread.c	/^explicit_lookup_type (real_filenum, index)$/
+extend_psymbol_list	symmisc.c	/^extend_psymbol_list (listp, objfile)$/
+extended_to_double	d2x.c	/^void extended_to_double(x,d)$/
+extract_address	findvar.c	/^extract_address (addr, len)$/
+extract_floating	findvar.c	/^extract_floating (addr, len)$/
+extract_return_value	i960-tdep.c	/^void extract_return_value(t,RB,VB)$/
+extract_signed_integer	findvar.c	/^extract_signed_integer (addr, len)$/
+extract_unsigned_integer	findvar.c	/^extract_unsigned_integer (addr, len)$/
+fatal	utils.c	/^fatal (char *string, ...)$/
+fatal_dump_core	utils.c	/^fatal_dump_core (char *string, ...)$/
+file_command	exec.c	/^file_command (arg, from_tty)$/
+filename_completer	top.c	/^filename_completer (text, word)$/
+fill_in_vptr_fieldno	gdbtypes.c	/^fill_in_vptr_fieldno (type)$/
+fill_symbuf	dbxread.c	/^fill_symbuf (sym_bfd)$/
+find_abstract_symbol_in_list	dwarf2read.c	/^find_abstract_symbol_in_list (name, die)$/
+find_addr_symbol	symtab.c	/^find_addr_symbol (addr, symtabp, symaddrp)$/
+find_core_target	target.c	/^find_core_target ()$/
+find_corresponding_bincl_psymtab	dbxread.c	/^find_corresponding_bincl_psymtab (name, instance)$/
+find_default_attach	target.c	/^find_default_attach (args, from_tty)$/
+find_default_create_inferior	target.c	/^find_default_create_inferior (exec_file, allargs, /
+find_default_run_target	target.c	/^find_default_run_target (do_mesg)$/
+find_frame_addr_in_frame_chain	blockframe.c	/^find_frame_addr_in_frame_chain (frame_addr)$/
+find_function_addr	valops.c	/^find_function_addr (function, retval_type)$/
+find_function_start_sal	symtab.c	/^find_function_start_sal (sym, funfirstline)$/
+find_line_common	symtab.c	/^find_line_common (l, lineno, exact_match)$/
+find_line_pc	symtab.c	/^find_line_pc (symtab, line)$/
+find_line_pc_range	symtab.c	/^find_line_pc_range (sal, startptr, endptr)$/
+find_line_symtab	symtab.c	/^find_line_symtab (symtab, line, linetable, index, /
+find_linenos	coffread.c	/^find_linenos (abfd, asect, vpinfo)$/
+find_lowest_section	symfile.c	/^find_lowest_section (abfd, sect, obj)$/
+find_main_psymtab	symtab.c	/^find_main_psymtab ()$/
+find_methods	symtab.c	/^find_methods (t, name, sym_arr)$/
+find_pc_function	blockframe.c	/^find_pc_function (pc)$/
+find_pc_line	symtab.c	/^find_pc_line (pc, notcurrent)$/
+find_pc_line_pc_range	symtab.c	/^find_pc_line_pc_range (pc, startptr, endptr)$/
+find_pc_partial_function	blockframe.c	/^find_pc_partial_function (pc, name, address, endad/
+find_pc_psymbol	symtab.c	/^find_pc_psymbol (psymtab, pc)$/
+find_pc_psymtab	symtab.c	/^find_pc_psymtab (pc)$/
+find_pc_section	objfiles.c	/^find_pc_section(pc)$/
+find_pc_symtab	symtab.c	/^find_pc_symtab (pc)$/
+find_procinfo	procfs.c	/^find_procinfo (pid, okfail)$/
+find_relative_frame	stack.c	/^find_relative_frame (frame, level_offset_ptr)$/
+find_saved_register	findvar.c	/^find_saved_register (frame, regnum, alias_reg)$/
+find_solib	solib.c	/^find_solib (so_list_ptr)$/
+find_solib_trampoline_target	minsyms.c	/^find_solib_trampoline_target (pc)$/
+find_source_lines	source.c	/^find_source_lines (s, desc)$/
+find_sym_fns	symfile.c	/^find_sym_fns (objfile)$/
+find_symbol_in_list	buildsym.c	/^find_symbol_in_list (list, name, length)$/
+find_thread_id	thread.c	/^find_thread_id (num)$/
+finish_block	buildsym.c	/^finish_block (symbol, listhead, old_blocks, start,/
+finish_command	infcmd.c	/^finish_command (arg, from_tty)$/
+finish_global_stabs	stabsread.c	/^finish_global_stabs (objfile)$/
+first_link_map_member	solib.c	/^first_link_map_member ()$/
+fix_common_block	stabsread.c	/^fix_common_block (sym, valu)$/
+fixup_breakpoints	breakpoint.c	/^fixup_breakpoints (low, high, delta)$/
+float_handler	top.c	/^float_handler (signo)$/
+float_info	infcmd.c	/^float_info (addr_exp, from_tty)$/
+float_type	language.c	/^float_type (type)$/
+flush_cached_frames	blockframe.c	/^flush_cached_frames ()$/
+follow_types	parse.c	/^follow_types (follow_type)$/
+force_to_range_type	gdbtypes.c	/^force_to_range_type (type)$/
+forget_cached_source_info	source.c	/^forget_cached_source_info ()$/
+fork_inferior	fork-child.c	/^fork_inferior (exec_file, allargs, env, traceme_fu/
+forward_search_command	source.c	/^forward_search_command (regex, from_tty)$/
+fprintf_filtered	utils.c	/^fprintf_filtered (FILE *stream, char *format, ...)/
+fprintf_ftype	dis-asm.h	12
+fprintf_symbol_filtered	utils.c	/^fprintf_symbol_filtered (stream, name, lang, arg_m/
+fprintf_unfiltered	utils.c	/^fprintf_unfiltered (FILE *stream, char *format, ../
+fprintfi_filtered	utils.c	/^fprintfi_filtered (int spaces, FILE *stream, char /
+fputc_unfiltered	utils.c	/^fputc_unfiltered (c, stream)$/
+fputs_filtered	utils.c	/^fputs_filtered (linebuffer, stream)$/
+fputs_maybe_filtered	utils.c	/^fputs_maybe_filtered (linebuffer, stream, filter)$/
+fputs_unfiltered	main.c	/^fputs_unfiltered (linebuffer, stream)$/
+frame_args_address	i960-tdep.c	/^frame_args_address (fi, must_be_correct)$/
+frame_chain_valid	i960-tdep.c	/^frame_chain_valid (chain, curframe)$/
+frame_command	stack.c	/^frame_command (level_exp, from_tty)$/
+frame_find_saved_regs	i960-tdep.c	/^frame_find_saved_regs (fi, fsr, ra)$/
+frame_in_dummy	breakpoint.c	/^frame_in_dummy (frame)$/
+frame_info	stack.c	/^frame_info (addr_exp, from_tty)$/
+frame_struct_result_address	i960-tdep.c	/^frame_struct_result_address (fi)$/
+frameless_look_for_prologue	blockframe.c	/^frameless_look_for_prologue (frame)$/
+free_abstract_symbol_list	dwarf2read.c	/^free_abstract_symbol_list()$/
+free_all_objfiles	objfiles.c	/^free_all_objfiles ()$/
+free_all_values	values.c	/^free_all_values ()$/
+free_bincl_list	dbxread.c	/^free_bincl_list (objfile)$/
+free_command_lines	top.c	/^free_command_lines (lptr)$/
+free_current_contents	utils.c	/^free_current_contents (location)$/
+free_display	printcmd.c	/^free_display (d)$/
+free_dwarfinfo	dwarf2read.c	/^free_dwarfinfo(ptr)$/
+free_elfinfo	elfread.c	/^free_elfinfo (objp)$/
+free_environ	environ.c	/^free_environ (e)$/
+free_fieldlist	dwarf2read.c	/^free_fieldlist(ptr)$/
+free_funcalls	parse.c	/^free_funcalls ()$/
+free_header_files	dbxread.c	/^free_header_files ()$/
+free_linetab	coffread.c	/^free_linetab ()$/
+free_named_symtabs	symfile.c	/^free_named_symtabs (name)$/
+free_objfile	objfiles.c	/^free_objfile (objfile)$/
+free_stacks	c-exp.c	/^static void free_stacks() {$/
+free_stringtab	coffread.c	/^free_stringtab ()$/
+free_symtab	symmisc.c	/^free_symtab (s)$/
+free_symtab_block	symmisc.c	/^free_symtab_block (objfile, b)$/
+free_typelist	dwarf2read.c	/^free_typelist(ptr)$/
+free_utypes	dwarf2read.c	/^free_utypes (dummy)$/
+fromhex	remote.c	/^fromhex (a)$/
+functions_info	symtab.c	/^functions_info (regexp, from_tty)$/
+gdb_flush	utils.c	/^gdb_flush (stream)$/
+gdb_fopen	utils.c	/^gdb_fopen (name, mode)$/
+gdb_has_a_terminal	inflow.c	/^gdb_has_a_terminal ()$/
+gdb_init	top.c	/^gdb_init ()$/
+gdb_mangle_name	symtab.c	/^gdb_mangle_name (type, i, j)$/
+gdb_print_address	utils.c	/^gdb_print_address (addr, stream)$/
+gdb_printchar	utils.c	/^gdb_printchar (c, stream, quoter)$/
+gdb_readline	top.c	/^gdb_readline (prrompt)$/
+gdb_serial_close	serial.c	/^gdb_serial_close(scb)$/
+gdb_serial_open	serial.c	/^gdb_serial_open(name)$/
+gdb_setpgid	inflow.c	/^gdb_setpgid ()$/
+generic_load	symfile.c	/^generic_load (filename, from_tty)$/
+generic_mourn_inferior	target.c	/^generic_mourn_inferior ()$/
+generic_reset	i960-tdep.c	/^generic_reset(args,from_tty)$/
+generic_search	core.c	/^generic_search (len, data, mask, startaddr, increm/
+get_catch_sals	breakpoint.c	/^get_catch_sals (this_level_only)$/
+get_current_block	blockframe.c	/^get_current_block ()$/
+get_current_frame	blockframe.c	/^get_current_frame ()$/
+get_dwarf_frame_register_information	dwarf2read.c	/^struct frame_saved_regs *get_dwarf_frame_register_/
+get_exec_file	core.c	/^get_exec_file (err)$/
+get_filename_and_charpos	source.c	/^get_filename_and_charpos (s, fullname)$/
+get_frame_block	blockframe.c	/^get_frame_block (frame)$/
+get_frame_function	blockframe.c	/^get_frame_function (frame)$/
+get_frame_info	blockframe.c	/^get_frame_info (frame)$/
+get_frame_language	stack.c	/^get_frame_language()$/
+get_frame_pc	blockframe.c	/^get_frame_pc (frame)$/
+get_frame_saved_regs	blockframe.c	/^get_frame_saved_regs (frame_info_addr, saved_regs_/
+get_in_environ	environ.c	/^get_in_environ (e, var)$/
+get_next_frame	blockframe.c	/^get_next_frame (frame)$/
+get_number	breakpoint.c	/^get_number (pp)$/
+get_offsets	remote.c	/^get_offsets ()$/
+get_pc_function_start	blockframe.c	/^get_pc_function_start (pc)$/
+get_pix_options	i960-tdep.c	/^get_pix_options(argv)$/
+get_prev_frame	blockframe.c	/^get_prev_frame (frame)$/
+get_prev_frame_info	blockframe.c	/^get_prev_frame_info (next_frame)$/
+get_register	dwarf2read.c	/^static unsigned long get_register(reg,frame,value)/
+get_saved_register	findvar.c	/^get_saved_register (raw_buffer, optimized, addrp, /
+get_selected_block	stack.c	/^get_selected_block ()$/
+get_tty_state	ser-unix.c	/^get_tty_state(scb, state)$/
+getivec	ser-go32.c	/^getivec (int which)$/
+getnextarg	remote-hdi.c	/^getnextarg(app)$/
+getpkt	remote.c	/^getpkt (buf, forever)$/
+getsymname	coffread.c	/^getsymname (symbol_entry)$/
+gmu_command	i960-tdep.c	/^gmu_command (args, from_tty)$/
+gmu_command_1	i960-tdep.c	/^gmu_command_1 (subcmd, action, args, from_user, fr/
+gmu_decode_access	i960-tdep.c	/^gmu_decode_access(buf)$/
+gmu_detect_command	i960-tdep.c	/^gmu_detect_command (args, from_tty)$/
+gmu_detect_define_command	i960-tdep.c	/^gmu_detect_define_command (args, from_tty)$/
+gmu_detect_disable_command	i960-tdep.c	/^gmu_detect_disable_command (args, from_tty)$/
+gmu_detect_enable_command	i960-tdep.c	/^gmu_detect_enable_command (args, from_tty)$/
+gmu_protect_command	i960-tdep.c	/^gmu_protect_command (args, from_tty)$/
+gmu_protect_define_command	i960-tdep.c	/^gmu_protect_define_command (args, from_tty)$/
+gmu_protect_disable_command	i960-tdep.c	/^gmu_protect_disable_command (args, from_tty)$/
+gmu_protect_enable_command	i960-tdep.c	/^gmu_protect_enable_command (args, from_tty)$/
+go32_close	ser-go32.c	/^go32_close (scb)$/
+go32_get_tty_state	ser-go32.c	/^go32_get_tty_state (scb)$/
+go32_noflush_set_tty_state	ser-go32.c	/^go32_noflush_set_tty_state (scb, new_ttystate, old/
+go32_noop	ser-go32.c	/^go32_noop (scb)$/
+go32_open	ser-go32.c	/^go32_open (scb, name)$/
+go32_print_tty_state	ser-go32.c	/^go32_print_tty_state (scb, ttystate)$/
+go32_raw	ser-go32.c	/^go32_raw (scb)$/
+go32_readchar	ser-go32.c	/^go32_readchar (scb, timeout)$/
+go32_set_tty_state	ser-go32.c	/^go32_set_tty_state (scb, ttystate)$/
+go32_setbaudrate	ser-go32.c	/^go32_setbaudrate (scb, rate)$/
+go32_write	ser-go32.c	/^go32_write (scb, str, len)$/
+growbuf_by_size	ch-exp.c	/^growbuf_by_size (count)$/
+handle_command	infrun.c	/^handle_command (args, from_tty)$/
+handle_producer	dwarf2read.c	/^handle_producer (producer)$/
+handle_sigio	inflow.c	/^handle_sigio (signo)$/
+hardwire_close	ser-unix.c	/^hardwire_close(scb)$/
+hardwire_flush_input	ser-unix.c	/^hardwire_flush_input (scb)$/
+hardwire_flush_output	ser-unix.c	/^hardwire_flush_output (scb)$/
+hardwire_get_tty_state	ser-unix.c	/^hardwire_get_tty_state(scb)$/
+hardwire_noflush_set_tty_state	ser-unix.c	/^hardwire_noflush_set_tty_state (scb, new_ttystate,/
+hardwire_open	ser-unix.c	/^hardwire_open(scb, name)$/
+hardwire_print_tty_state	ser-unix.c	/^hardwire_print_tty_state (scb, ttystate)$/
+hardwire_raw	ser-unix.c	/^hardwire_raw(scb)$/
+hardwire_readchar	ser-unix.c	/^hardwire_readchar(scb, timeout)$/
+hardwire_send_break	ser-unix.c	/^hardwire_send_break (scb)$/
+hardwire_set_tty_state	ser-unix.c	/^hardwire_set_tty_state(scb, ttystate)$/
+hardwire_setbaudrate	ser-unix.c	/^hardwire_setbaudrate(scb, rate)$/
+hardwire_write	ser-unix.c	/^hardwire_write(scb, str, len)$/
+hashname	buildsym.c	/^hashname (name)$/
+have_full_symbols	objfiles.c	/^have_full_symbols ()$/
+have_minimal_symbols	objfiles.c	/^have_minimal_symbols ()$/
+have_partial_symbols	objfiles.c	/^have_partial_symbols ()$/
+hbreak_command	breakpoint.c	/^hbreak_command (arg, from_tty)$/
+hdi_get_cmd_line	remote-hdi.c	/^hdi_get_cmd_line(cmdline, len)$/
+hdi_put_line	remote-hdi.c	/^hdi_put_line(p)$/
+hdi_user_get_line	remote-hdi.c	/^hdi_user_get_line(buf, size)$/
+hdi_user_put_line	remote-hdi.c	/^hdi_user_put_line(cp, len)$/
+help_cmd	command.c	/^help_cmd (command, stream)$/
+help_cmd_list	command.c	/^help_cmd_list (list, class, prefix, recurse, strea/
+help_command	top.c	/^help_command (command, from_tty)$/
+help_list	command.c	/^help_list (list, cmdtype, class, stream)$/
+helpcmp	maint.c	/^helpcmp(p1, p2)$/
+hook_stop_stub	infrun.c	/^hook_stop_stub (cmd)$/
+hw_breakpoint_used_count	breakpoint.c	/^hw_breakpoint_used_count()$/
+hw_watchpoint_used_count	breakpoint.c	/^hw_watchpoint_used_count(type, other_type_used)$/
+i960_fault_to_signal	i960-tdep.c	/^i960_fault_to_signal (fault)$/
+identify_source_line	source.c	/^identify_source_line (s, line, mid_statement, pc)$/
+ieee_address_descriptor_type	ieee.h	20
+ieee_module_begin_type	ieee.h	10
+ieee_record_enum_type	ieee.h	118
+ieee_section_type	ieee.h	128
+ieee_w_variable_type	ieee.h	34
+if	exec.c	/^    else if (memaddr >= reg_stack_start && memaddr/
+ignore	exec.c	/^ignore (addr, contents)$/
+ignore_command	breakpoint.c	/^ignore_command (args, from_tty)$/
+in_plt_section	objfiles.c	/^in_plt_section(pc, name)$/
+in_thread_list	thread.c	/^in_thread_list (pid)$/
+info_command	top.c	/^info_command (arg, from_tty)$/
+info_gmu	i960-tdep.c	/^info_gmu(args, from_tty)$/
+info_proc	procfs.c	/^info_proc (args, from_tty)$/
+info_proc_faults	procfs.c	/^info_proc_faults (pip, summary)$/
+info_proc_flags	procfs.c	/^info_proc_flags (pip, summary)$/
+info_proc_mappings	procfs.c	/^info_proc_mappings (pip, summary)$/
+info_proc_siginfo	procfs.c	/^info_proc_siginfo (pip, summary)$/
+info_proc_signals	procfs.c	/^info_proc_signals (pip, summary)$/
+info_proc_stop	procfs.c	/^info_proc_stop (pip, summary)$/
+info_proc_syscalls	procfs.c	/^info_proc_syscalls (pip, summary)$/
+info_sharedlibrary_command	solib.c	/^info_sharedlibrary_command (ignore, from_tty)$/
+info_threads_command	thread.c	/^info_threads_command (arg, from_tty)$/
+init_bincl_list	dbxread.c	/^init_bincl_list (number, objfile)$/
+init_cmd_lists	top.c	/^init_cmd_lists ()$/
+init_entry_point_info	symfile.c	/^init_entry_point_info (objfile)$/
+init_environ	environ.c	/^init_environ (e)$/
+init_fault_name_table	i960-tdep.c	/^init_fault_name_table()$/
+init_gmu_cmd_cache	i960-tdep.c	/^init_gmu_cmd_cache()$/
+init_hdi_reg_map	remote-hdi.c	/^static void init_hdi_reg_map()$/
+init_header_files	dbxread.c	/^init_header_files ()$/
+init_history	top.c	/^init_history()$/
+init_i960_architecture	remote-hdi.c	/^init_i960_architecture(arch_type)$/
+init_lineno	coffread.c	/^init_lineno (chan, offset, size)$/
+init_location_stack	dwarf2read.c	/^init_location_stack()$/
+init_main	top.c	/^init_main ()$/
+init_malloc	utils.c	/^init_malloc (md)$/
+init_minimal_symbol_collection	minsyms.c	/^init_minimal_symbol_collection ()$/
+init_proc	main.c	/^init_proc ()$/
+init_psymbol_list	dbxread.c	/^init_psymbol_list (objfile)$/
+init_reg_names	i960-tdep.c	/^init_reg_names()$/
+init_signals	top.c	/^init_signals ()$/
+init_source_path	source.c	/^init_source_path ()$/
+init_stringtab	coffread.c	/^init_stringtab (chan, offset)$/
+init_syntax_once	regex.c	/^init_syntax_once ()$/
+init_syscall_table	procfs.c	/^init_syscall_table ()$/
+init_thread_list	thread.c	/^init_thread_list ()$/
+init_type	gdbtypes.c	/^init_type (code, length, flags, name, objfile)$/
+init_wait_for_inferior	infrun.c	/^init_wait_for_inferior ()$/
+initialize_all_files	init.c	/^void initialize_all_files () {$/
+input_from_terminal_p	top.c	/^input_from_terminal_p ()$/
+insert_breakpoints	breakpoint.c	/^insert_breakpoints ()$/
+insert_jump	regex.c	/^insert_jump (op, from, to, current_end)$/
+inside_entry_file	blockframe.c	/^inside_entry_file (addr)$/
+inside_entry_func	blockframe.c	/^inside_entry_func (pc)$/
+inside_main_func	blockframe.c	/^inside_main_func (pc)$/
+inspect_command	printcmd.c	/^inspect_command (exp, from_tty)$/
+install_minimal_symbols	minsyms.c	/^install_minimal_symbols (objfile)$/
+int	dwarfread.c	182
+integral_type	language.c	/^integral_type (type)$/
+internalvar_name	values.c	/^internalvar_name (var)$/
+interrupt_query	remote.c	/^interrupt_query ()$/
+invalid	i960-dis.c	/^invalid( word1 )$/
+isslash	source.c	/^#define isslash(a) ((a) == '\/')$/
+jump_command	infcmd.c	/^jump_command (arg, from_tty)$/
+kill_command	inflow.c	/^kill_command (arg, from_tty)$/
+kill_inferior_fast	i960-tdep.c	/^kill_inferior_fast()$/
+kill_or_be_killed	target.c	/^kill_or_be_killed (from_tty)$/
+language_def	language.c	/^language_def(lang)$/
+language_info	language.c	/^language_info (quietly)$/
+language_str	language.c	/^language_str(lang)$/
+leafproc_return	i960-tdep.c	/^leafproc_return (ip)$/
+length_of_subexp	parse.c	/^length_of_subexp (expr, endpos)$/
+libiberty_voidfn	libiberty.h	82
+line_info	source.c	/^line_info (arg, from_tty)$/
+list_command	source.c	/^list_command (arg, from_tty)$/
+list_symbols	symtab.c	/^list_symbols (regexp, class, bpt, from_tty)$/
+lmadr_command	i960-tdep.c	/^lmadr_command (args, from_tty)$/
+lmmr_command	i960-tdep.c	/^lmmr_command (args, from_tty)$/
+load_command	symfile.c	/^load_command (arg, from_tty)$/
+load_stub	remote-nindy.c	/^load_stub (arg)$/
+local_binary_format	language.h	/^#define local_binary_format() \\$/
+local_binary_format_prefix	language.h	/^#define local_binary_format_prefix() \\$/
+local_binary_format_specifier	language.h	/^#define local_binary_format_specifier() \\$/
+local_binary_format_suffix	language.h	/^#define local_binary_format_suffix() \\$/
+local_decimal_format	language.h	/^#define local_decimal_format() \\$/
+local_decimal_format_custom	language.c	/^local_decimal_format_custom(pre)$/
+local_decimal_format_prefix	language.h	/^#define local_decimal_format_prefix() \\$/
+local_decimal_format_specifier	language.h	/^#define local_decimal_format_specifier() \\$/
+local_decimal_format_suffix	language.h	/^#define local_decimal_format_suffix() \\$/
+local_hex_format	language.h	/^#define local_hex_format() \\$/
+local_hex_format_custom	language.c	/^local_hex_format_custom(pre)$/
+local_hex_format_prefix	language.h	/^#define local_hex_format_prefix() \\$/
+local_hex_format_specifier	language.h	/^#define local_hex_format_specifier() \\$/
+local_hex_format_suffix	language.h	/^#define local_hex_format_suffix() \\$/
+local_hex_string	language.c	/^local_hex_string (num)$/
+local_hex_string_custom	language.c	/^local_hex_string_custom(num,pre)$/
+local_octal_format	language.h	/^#define local_octal_format() \\$/
+local_octal_format_custom	language.c	/^local_octal_format_custom(pre)$/
+local_octal_format_prefix	language.h	/^#define local_octal_format_prefix() \\$/
+local_octal_format_specifier	language.h	/^#define local_octal_format_specifier() \\$/
+local_octal_format_suffix	language.h	/^#define local_octal_format_suffix() \\$/
+locals_info	stack.c	/^locals_info (args, from_tty)$/
+locate_base	solib.c	/^locate_base ()$/
+locate_var_value	findvar.c	/^locate_var_value (var, frame)$/
+locpop	dwarf2read.c	/^locpop()$/
+locpush	dwarf2read.c	/^locpush(elem)$/
+locval	dwarfread.c	/^locval (loc)$/
+long	dwarf2read.c	365
+longest_float	language.h	/^#define	longest_float()		(*current_language->la_lo/
+longest_to_int	valprint.c	/^longest_to_int (arg)$/
+look_for_base	solib.c	/^look_for_base (fd, baseaddr)$/
+lookup_block_symbol	symtab.c	/^lookup_block_symbol (block, name, namespace)$/
+lookup_cmd	command.c	/^lookup_cmd (line, list, cmdtype, allow_unknown, ig/
+lookup_cmd_1	command.c	/^lookup_cmd_1 (text, clist, result_list, ignore_hel/
+lookup_enum	gdbtypes.c	/^lookup_enum (name, block)$/
+lookup_function_type	gdbtypes.c	/^lookup_function_type (type)$/
+lookup_fundamental_type	gdbtypes.c	/^lookup_fundamental_type (objfile, typeid)$/
+lookup_internalvar	values.c	/^lookup_internalvar (name)$/
+lookup_member_type	gdbtypes.c	/^lookup_member_type (type, domain)$/
+lookup_minimal_symbol	minsyms.c	/^lookup_minimal_symbol (name, objf)$/
+lookup_minimal_symbol_by_pc	minsyms.c	/^lookup_minimal_symbol_by_pc (pc)$/
+lookup_partial_symbol	symtab.c	/^lookup_partial_symbol (pst, name, global, namespac/
+lookup_partial_symtab	symtab.c	/^lookup_partial_symtab (name)$/
+lookup_pointer_type	gdbtypes.c	/^lookup_pointer_type (type)$/
+lookup_primitive_typename	gdbtypes.c	/^lookup_primitive_typename (name)$/
+lookup_reference_type	gdbtypes.c	/^lookup_reference_type (type)$/
+lookup_signed_typename	gdbtypes.c	/^lookup_signed_typename (name)$/
+lookup_solib_trampoline_symbol_by_pc	minsyms.c	/^lookup_solib_trampoline_symbol_by_pc (pc)$/
+lookup_struct	gdbtypes.c	/^lookup_struct (name, block)$/
+lookup_struct_elt_type	gdbtypes.c	/^lookup_struct_elt_type (type, name, noerr)$/
+lookup_symbol	symtab.c	/^lookup_symbol (name, block, namespace, is_a_field_/
+lookup_symtab	symtab.c	/^lookup_symtab (name)$/
+lookup_symtab_1	symtab.c	/^lookup_symtab_1 (name)$/
+lookup_template_type	gdbtypes.c	/^lookup_template_type (name, type, block)$/
+lookup_typename	gdbtypes.c	/^lookup_typename (name, block, noerr)$/
+lookup_union	gdbtypes.c	/^lookup_union (name, block)$/
+lookup_unsigned_typename	gdbtypes.c	/^lookup_unsigned_typename (name)$/
+lookup_utype	dwarf2read.c	/^lookup_utype (die)$/
+lookupdesc	procfs.c	/^lookupdesc (transp, val)$/
+lookupname	procfs.c	/^lookupname (transp, val, prefix)$/
+maintenance_address_info	dwarf2read.c	/^maintenance_address_info(exp, from_tty)$/
+maintenance_backtrace	i960-tdep.c	/^maintenance_backtrace(args, from_tty)$/
+maintenance_check_symtabs	symmisc.c	/^maintenance_check_symtabs (ignore, from_tty)$/
+maintenance_command	maint.c	/^maintenance_command (args, from_tty)$/
+maintenance_demangle	maint.c	/^maintenance_demangle (args, from_tty)$/
+maintenance_dump_me	maint.c	/^maintenance_dump_me (args, from_tty)$/
+maintenance_info_breakpoints	breakpoint.c	/^maintenance_info_breakpoints (bnum_exp, from_tty)$/
+maintenance_info_command	maint.c	/^maintenance_info_command (arg, from_tty)$/
+maintenance_info_gmu	i960-tdep.c	/^maintenance_info_gmu(args, from_tty)$/
+maintenance_info_sections	maint.c	/^maintenance_info_sections (arg, from_tty)$/
+maintenance_print_command	maint.c	/^maintenance_print_command (arg, from_tty)$/
+maintenance_print_help	maint.c	/^maintenance_print_help(dummy1, dummy2)$/
+maintenance_print_msymbols	symmisc.c	/^maintenance_print_msymbols (args, from_tty)$/
+maintenance_print_objfiles	symmisc.c	/^maintenance_print_objfiles (ignore, from_tty)$/
+maintenance_print_psymbols	symmisc.c	/^maintenance_print_psymbols (args, from_tty)$/
+maintenance_print_symbols	symmisc.c	/^maintenance_print_symbols (args, from_tty)$/
+maintenance_print_type	typeprint.c	/^maintenance_print_type (typename, from_tty)$/
+maintenance_raw_backtrace	i960-tdep.c	/^maintenance_raw_backtrace(args, from_tty)$/
+make_blockvector	buildsym.c	/^make_blockvector (objfile)$/
+make_cleanup	utils.c	/^make_cleanup (function, arg)$/
+make_command	command.c	/^make_command (arg, from_tty)$/
+make_environ	environ.c	/^make_environ ()$/
+make_function_type	gdbtypes.c	/^make_function_type (type, typeptr)$/
+make_pointer_type	gdbtypes.c	/^make_pointer_type (type, typeptr)$/
+make_reference_type	gdbtypes.c	/^make_reference_type (type, typeptr)$/
+make_symbol_completion_list	symtab.c	/^make_symbol_completion_list (text, word)$/
+malloc_botch	utils.c	/^malloc_botch ()$/
+map_breakpoint_numbers	breakpoint.c	/^map_breakpoint_numbers (args, function)$/
+map_catch_names	breakpoint.c	/^map_catch_names (args, function)$/
+map_register	dwarf2read.c	/^static int map_register(reg)$/
+map_to_address	objfiles.c	/^map_to_address ()$/
+mappingflags	procfs.c	/^mappingflags (flags)$/
+mark_breakpoints_out	breakpoint.c	/^mark_breakpoints_out ()$/
+matchDevice	remote-hdi.c	/^matchDevice(suffix)$/
+matchParallelDevice	remote-hdi.c	/^matchParallelDevice(device)$/
+match_bitstring_literal	ch-exp.c	/^match_bitstring_literal ()$/
+match_character_literal	ch-exp.c	/^match_character_literal ()$/
+match_dollar_tokens	ch-exp.c	/^match_dollar_tokens ()$/
+match_float_literal	ch-exp.c	/^match_float_literal ()$/
+match_integer_literal	ch-exp.c	/^match_integer_literal ()$/
+match_simple_name_string	ch-exp.c	/^match_simple_name_string ()$/
+match_string_literal	ch-exp.c	/^match_string_literal ()$/
+max	environ.c	/^#define max(a, b) ((a) > (b) ? (a) : (b))$/
+maybe_kill_then_attach	target.c	/^maybe_kill_then_attach (args, from_tty)$/
+maybe_kill_then_create_inferior	target.c	/^maybe_kill_then_create_inferior (exec, args, env)$/
+mcon_command	i960-tdep.c	/^mcon_command (args, from_tty)$/
+mem	i960-dis.c	/^mem( memaddr, word1, word2, noprint )$/
+memcmp_translate	regex.c	/^memcmp_translate (s1, s2, len, translate)$/
+memory_error	core.c	/^memory_error (status, memaddr)$/
+memory_insert_breakpoint	mem-break.c	/^memory_insert_breakpoint (addr, contents_cache)$/
+memory_insert_hw_breakpoint	mem-break.c	/^memory_insert_hw_breakpoint (addr, save)$/
+memory_insert_watchpoint	mem-break.c	/^memory_insert_watchpoint (addr, len, type)$/
+memory_remove_breakpoint	mem-break.c	/^memory_remove_breakpoint (addr, contents_cache)$/
+memory_remove_hw_breakpoint	mem-break.c	/^memory_remove_hw_breakpoint (addr, save)$/
+memory_remove_watchpoint	mem-break.c	/^memory_remove_watchpoint (addr, len, type)$/
+memory_stopped_data_address	mem-break.c	/^memory_stopped_data_address()$/
+mention	breakpoint.c	/^mention (b)$/
+methods_info	symtab.c	/^methods_info (regexp)$/
+mfree	utils.c	/^mfree (md, ptr)$/
+min	environ.c	/^#define min(a, b) ((a) < (b) ? (a) : (b))$/
+mmalloc	utils.c	/^mmalloc (md, size)$/
+mod_path	source.c	/^mod_path (dirname, which_path)$/
+modify_field	values.c	/^modify_field (addr, fieldval, bitpos, bitsize)$/
+mon960_arch	remote-hdi.c	/^mon960_arch()$/
+mon960_check_hardware_resources	remote-hdi.c	/^mon960_check_hardware_resources(type, count)$/
+mon960_clear_symtab_users	remote-hdi.c	/^mon960_clear_symtab_users()$/
+mon960_close	remote-hdi.c	/^mon960_close (quitFlag)$/
+mon960_connected	remote-hdi.c	/^mon960_connected()$/
+mon960_convert_to_raw	remote-hdi.c	/^mon960_convert_to_raw(regnum,from,to)$/
+mon960_convert_to_virtual	remote-hdi.c	/^mon960_convert_to_virtual(regnum,from,to)$/
+mon960_create_inferior	remote-hdi.c	/^mon960_create_inferior (execfile, args, env)$/
+mon960_detach	remote-hdi.c	/^mon960_detach (args, from_tty)$/
+mon960_dis_asm_read_memory	remote-hdi.c	/^mon960_dis_asm_read_memory (memaddr, myaddr, len, /
+mon960_fetch_registers	remote-hdi.c	/^mon960_fetch_registers(regno)$/
+mon960_files_info	remote-hdi.c	/^mon960_files_info (t)$/
+mon960_frame_chain_valid	remote-hdi.c	/^mon960_frame_chain_valid (chain, curframe)$/
+mon960_insert_breakpoint	remote-hdi.c	/^mon960_insert_breakpoint(addr,prev_val,hw)$/
+mon960_insert_hw_breakpoint	remote-hdi.c	/^mon960_insert_hw_breakpoint(addr, prev_val)$/
+mon960_insert_watchpoint	remote-hdi.c	/^mon960_insert_watchpoint(addr, len, type)$/
+mon960_kill	remote-hdi.c	/^mon960_kill()$/
+mon960_load	remote-hdi.c	/^mon960_load( filename, from_tty )$/
+mon960_mourn_inferior	remote-hdi.c	/^mon960_mourn_inferior ()$/
+mon960_open	remote-hdi.c	/^mon960_open (other_args, from_tty)$/
+mon960_prepare_to_store	remote-hdi.c	/^mon960_prepare_to_store()$/
+mon960_registers	remote-hdi.c	/^mon960_registers(regno,action)$/
+mon960_remove_breakpoint	remote-hdi.c	/^mon960_remove_breakpoint(addr,prev_val)$/
+mon960_remove_hw_breakpoint	remote-hdi.c	/^mon960_remove_hw_breakpoint(addr, prev_val)$/
+mon960_remove_watchpoint	remote-hdi.c	/^mon960_remove_watchpoint(addr, len, type)$/
+mon960_reset	remote-hdi.c	/^mon960_reset(args,from_tty)$/
+mon960_resume	remote-hdi.c	/^mon960_resume(pid, step, siggnal)$/
+mon960_signal_handler	remote-hdi.c	/^mon960_signal_handler(sig)$/
+mon960_stopped_data_address	remote-hdi.c	/^mon960_stopped_data_address()$/
+mon960_store_registers	remote-hdi.c	/^mon960_store_registers(regno)$/
+mon960_wait	remote-hdi.c	/^mon960_wait( pid, status )$/
+mon960_xfer_memory	remote-hdi.c	/^mon960_xfer_memory(memaddr, myaddr, len, write, t)/
+mrealloc	utils.c	/^mrealloc (md, ptr, size)$/
+msavestring	utils.c	/^msavestring (md, ptr, size)$/
+mstrsave	utils.c	/^mstrsave (md, ptr)$/
+myread	utils.c	/^myread (desc, addr, len)$/
+n_spaces	utils.c	/^n_spaces (n)$/
+new_inline	dwarf2read.c	/^new_inline(concrete, objfile)$/
+new_symbol	dwarf2read.c	/^new_symbol (die)$/
+new_symfile_objfile	symfile.c	/^new_symfile_objfile (objfile, mainline, verbo)$/
+new_tty	inflow.c	/^new_tty ()$/
+new_tty_prefork	inflow.c	/^new_tty_prefork (ttyname)$/
+next_command	infcmd.c	/^next_command (count_string, from_tty)$/
+next_insn	i960-pinsn.c	/^next_insn (memaddr, pword1, pword2)$/
+next_symbol_text	buildsym.h	/^#define next_symbol_text() (*next_symbol_text_func/
+nexti_command	infcmd.c	/^nexti_command (count_string, from_tty)$/
+nindy_before_main_loop	remote-nindy.c	/^nindy_before_main_loop ()$/
+nindy_close	remote-nindy.c	/^nindy_close (quitting)$/
+nindy_create_inferior	remote-nindy.c	/^nindy_create_inferior (execfile, args, env)$/
+nindy_detach	remote-nindy.c	/^nindy_detach (name, from_tty)$/
+nindy_fetch_registers	remote-nindy.c	/^nindy_fetch_registers(dummy)$/
+nindy_fetch_word	remote-nindy.c	/^nindy_fetch_word (addr)$/
+nindy_file_not_loaded	remote-nindy.c	/^	nindy_file_not_loaded()$/
+nindy_files_info	remote-nindy.c	/^nindy_files_info (dummy)$/
+nindy_frame_chain_valid	remote-nindy.c	/^nindy_frame_chain_valid (chain, curframe)$/
+nindy_get_target_byte_order	remote-nindy.c	/^nindy_get_target_byte_order()$/
+nindy_kill	remote-nindy.c	/^nindy_kill ()$/
+nindy_load	remote-nindy.c	/^nindy_load( filename, from_tty )$/
+nindy_mourn_inferior	remote-nindy.c	/^nindy_mourn_inferior ()$/
+nindy_open	remote-hdi.c	/^nindy_open(args, from_tty)$/
+nindy_open_stub	remote-nindy.c	/^nindy_open_stub (arg)$/
+nindy_prepare_to_store	remote-nindy.c	/^nindy_prepare_to_store()$/
+nindy_resume	remote-nindy.c	/^nindy_resume (pid, step, siggnal)$/
+nindy_store_registers	remote-nindy.c	/^nindy_store_registers(dummy)$/
+nindy_store_word	remote-nindy.c	/^nindy_store_word (addr, word)$/
+nindy_wait	remote-nindy.c	/^nindy_wait( pid, status )$/
+nindy_xfer_inferior_memory	remote-nindy.c	/^nindy_xfer_inferior_memory(memaddr, myaddr, len, w/
+nl_msg	c-exp.c	/^#define nl_msg(i,s) (s)$/
+nofp_registers_info	infcmd.c	/^nofp_registers_info (addr_exp, from_tty)$/
+nomem	utils.c	/^nomem (size)$/
+nomemory	target.c	/^nomemory (memaddr, myaddr, len, write)$/
+non_dle	remote-nindy.c	/^non_dle( buf, n )$/
+noop_completer	top.c	/^noop_completer (text, prefix)$/
+noprocess	target.c	/^noprocess ()$/
+normal_pid_to_str	target.c	/^normal_pid_to_str (pid)$/
+normal_stop	infrun.c	/^normal_stop ()$/
+nosymbol	target.c	/^nosymbol (name, addrp)$/
+not_just_help_class_command	command.c	/^not_just_help_class_command (args, from_tty)$/
+notice_quit	utils.c	/^void notice_quit()$/
+null_cleanup	utils.c	/^null_cleanup (arg)$/
+numeric_type	language.c	/^numeric_type (type)$/
+obconcat	symfile.c	/^obconcat (obstackp, s1, s2, s3)$/
+objfile_relocate	objfiles.c	/^objfile_relocate (objfile, new_offsets)$/
+obsavestring	symfile.c	/^obsavestring (ptr, size, obstackp)$/
+obstack_1grow	obstack.h	/^#define obstack_1grow(OBSTACK,datum)					\\$/
+obstack_1grow_fast	obstack.h	/^#define obstack_1grow_fast(h,achar) (*((h)->next_f/
+obstack_alignment_mask	obstack.h	/^#define obstack_alignment_mask(h) ((h)->alignment_/
+obstack_alloc	obstack.h	/^#define obstack_alloc(OBSTACK,length)					\\$/
+obstack_base	obstack.h	/^#define obstack_base(h) ((h)->alloc_failed ? 0 : (/
+obstack_begin	obstack.h	/^#define obstack_begin(h, size) \\$/
+obstack_blank	obstack.h	/^#define obstack_blank(OBSTACK,length)					\\$/
+obstack_blank_fast	obstack.h	/^#define obstack_blank_fast(h,n) ((h)->next_free +=/
+obstack_chunk_size	obstack.h	/^#define obstack_chunk_size(h) ((h)->chunk_size)$/
+obstack_chunkfun	obstack.h	/^#define obstack_chunkfun(h, newchunkfun) \\$/
+obstack_copy	obstack.h	/^#define obstack_copy(OBSTACK,where,length)				\\$/
+obstack_copy0	obstack.h	/^#define obstack_copy0(OBSTACK,where,length)				\\$/
+obstack_finish	obstack.h	/^#define obstack_finish(OBSTACK)  					\\$/
+obstack_free	obstack.h	/^#define obstack_free(OBSTACK, OBJ)					\\$/
+obstack_freefun	obstack.h	/^#define obstack_freefun(h, newfreefun) \\$/
+obstack_grow	obstack.h	/^#define obstack_grow(OBSTACK,where,length)				\\$/
+obstack_grow0	obstack.h	/^#define obstack_grow0(OBSTACK,where,length)				\\$/
+obstack_init	obstack.h	/^#define obstack_init(h) \\$/
+obstack_int_grow	obstack.h	/^#define obstack_int_grow(OBSTACK,datum)					\\$/
+obstack_int_grow_fast	obstack.h	/^#define obstack_int_grow_fast(h,aint) (*((int *)(h/
+obstack_next_free	obstack.h	/^#define obstack_next_free(h)	((h)->alloc_failed ? /
+obstack_object_size	obstack.h	/^#define obstack_object_size(OBSTACK)					\\$/
+obstack_ptr_grow	obstack.h	/^#define obstack_ptr_grow(OBSTACK,datum)					\\$/
+obstack_ptr_grow_fast	obstack.h	/^#define obstack_ptr_grow_fast(h,aptr) (*((void **)/
+obstack_room	obstack.h	/^#define obstack_room(OBSTACK)						\\$/
+obstack_specify_allocation	obstack.h	/^#define obstack_specify_allocation(h, size, alignm/
+obstack_specify_allocation_with_arg	obstack.h	/^#define obstack_specify_allocation_with_arg(h, siz/
+op_error	language.c	/^op_error (fmt,op,fatal)$/
+op_string	expprint.c	/^op_string(op)$/
+open_existing_mapped_file	objfiles.c	/^open_existing_mapped_file (symsfilename, mtime, ma/
+open_mapped_file	objfiles.c	/^open_mapped_file (filename, mtime, mapped)$/
+open_proc_file	procfs.c	/^open_proc_file (pid, pip, mode)$/
+open_source_file	source.c	/^open_source_file (s)$/
+openp	source.c	/^openp (path, try_cwd_first, string, mode, prot, fi/
+operator_chars	symtab.c	/^operator_chars (p, end)$/
+ordered_type	language.c	/^ordered_type (type)$/
+os9k_init_type_vector	stabsread.c	/^os9k_init_type_vector(tv)$/
+output_command	printcmd.c	/^output_command (exp, from_tty)$/
+output_source_filename	symtab.c	/^output_source_filename (name, first)$/
+parse_and_eval	eval.c	/^parse_and_eval (exp)$/
+parse_and_eval_address	eval.c	/^parse_and_eval_address (exp)$/
+parse_and_eval_address_1	eval.c	/^parse_and_eval_address_1 (expptr)$/
+parse_and_eval_type	eval.c	/^parse_and_eval_type (p, length)$/
+parse_binary_operation	command.c	/^parse_binary_operation (arg)$/
+parse_escape	utils.c	/^parse_escape (string_ptr)$/
+parse_exp_1	parse.c	/^parse_exp_1 (stringptr, block, comma)$/
+parse_expression	parse.c	/^parse_expression (string)$/
+parse_frame_specification	stack.c	/^parse_frame_specification (frame_exp)$/
+parse_number	c-exp.c	/^parse_number (p, len, parsed_float, putithere)$/
+parse_to_comma_and_eval	eval.c	/^parse_to_comma_and_eval (expp)$/
+pass_signal	inflow.c	/^pass_signal (signo)$/
+patch_block_stabs	stabsread.c	/^patch_block_stabs (symbols, stabs, objfile)$/
+patch_opaque_types	coffread.c	/^patch_opaque_types (s)$/
+patch_subfile_names	buildsym.c	/^patch_subfile_names (subfile, name)$/
+patch_type	coffread.c	/^patch_type (type, real_type)$/
+path_command	infcmd.c	/^path_command (dirname, from_tty)$/
+path_info	infcmd.c	/^path_info (args, from_tty)$/
+pc_is_inline	blockframe.c	/^pc_is_inline(pc)$/
+perror_with_name	utils.c	/^perror_with_name (string)$/
+pick	dwarf2read.c	/^pick(index)$/
+pid_to_thread_id	thread.c	/^pid_to_thread_id (pid)$/
+pinsn	i960-dis.c	/^pinsn( memaddr, word1, word2 )$/
+pointer_type	language.c	/^pointer_type(type)$/
+pollquit	utils.c	/^pollquit()$/
+pop_context	buildsym.h	/^#define	pop_context() (&context_stack[--context_st/
+pop_frame	i960-tdep.c	/^pop_frame ()$/
+pop_fsrs	dwarf2read.c	/^static struct frame_saved_regs *pop_fsrs()$/
+pop_subfile	buildsym.c	/^pop_subfile ()$/
+pop_target	target.c	/^pop_target ()$/
+pop_type	parse.c	/^pop_type ()$/
+pop_type_int	parse.c	/^pop_type_int ()$/
+prefixify_expression	parse.c	/^prefixify_expression (expr)$/
+prefixify_subexp	parse.c	/^prefixify_subexp (inexpr, outexpr, inend, outbeg)$/
+prim_record_minimal_symbol	minsyms.c	/^prim_record_minimal_symbol (name, address, ms_type/
+prim_record_minimal_symbol_and_info	minsyms.c	/^prim_record_minimal_symbol_and_info (name, address/
+print_addr	i960-dis.c	/^print_addr(a)$/
+print_address	printcmd.c	/^print_address (addr, stream)$/
+print_address_demangle	printcmd.c	/^print_address_demangle (addr, stream, do_demangle)/
+print_address_numeric	printcmd.c	/^print_address_numeric (addr, use_local, stream)$/
+print_address_symbolic	printcmd.c	/^print_address_symbolic (addr, stream, do_demangle,/
+print_arg_types	gdbtypes.c	/^print_arg_types (args, spaces)$/
+print_args_stub	stack.c	/^print_args_stub (args)$/
+print_bit_vector	gdbtypes.c	/^print_bit_vector (bits, nbits)$/
+print_block_frame_labels	stack.c	/^print_block_frame_labels (b, have_default, stream)/
+print_block_frame_locals	stack.c	/^print_block_frame_locals (b, frame, stream)$/
+print_buf	regex.c	/^print_buf (bufp)$/
+print_command	printcmd.c	/^print_command (exp, from_tty)$/
+print_command_1	printcmd.c	/^print_command_1 (exp, inspect, voidprint)$/
+print_cplus_stuff	gdbtypes.c	/^print_cplus_stuff (type, spaces)$/
+print_doc_line	command.c	/^print_doc_line (stream, str)$/
+print_expression	expprint.c	/^print_expression (exp, stream)$/
+print_floating	valprint.c	/^print_floating (valaddr, type, stream)$/
+print_formatted	printcmd.c	/^print_formatted (val, format, size)$/
+print_frame_arg_vars	stack.c	/^print_frame_arg_vars (frame, stream)$/
+print_frame_args	printcmd.c	/^print_frame_args (func, fi, num, stream)$/
+print_frame_info	stack.c	/^print_frame_info (fi, level, source, args)$/
+print_frame_label_vars	stack.c	/^print_frame_label_vars (frame, this_level_only, st/
+print_frame_local_vars	stack.c	/^print_frame_local_vars (frame, stream)$/
+print_frame_nameless_args	printcmd.c	/^print_frame_nameless_args (fi, start, num, first, /
+print_gdb_version	top.c	/^print_gdb_version (stream)$/
+print_gnu_advertisement	top.c	/^print_gnu_advertisement ()$/
+print_hex_chars	valprint.c	/^print_hex_chars (stream, valaddr, len)$/
+print_insn	i960-pinsn.c	/^print_insn (memaddr, stream)$/
+print_insn_i960	i960-dis.c	/^print_insn_i960 (memaddr, info_arg)$/
+print_it_done	breakpoint.c	/^print_it_done (bs)$/
+print_it_noop	breakpoint.c	/^print_it_noop (bs)$/
+print_it_normal	breakpoint.c	/^print_it_normal (bs)$/
+print_longest	valprint.c	/^print_longest (stream, format, use_local, val_long/
+print_out_fault_type	remote-hdi.c	/^print_out_fault_type(sr)$/
+print_out_stop_record	remote-hdi.c	/^print_out_stop_record()$/
+print_partial_symbol	symmisc.c	/^print_partial_symbol (p, count, what, outfile)$/
+print_prompt	top.c	/^print_prompt ()$/
+print_reg	i960-tdep.c	/^print_reg(regnum)$/
+print_scalar_formatted	printcmd.c	/^print_scalar_formatted (valaddr, type, format, siz/
+print_section_info	exec.c	/^print_section_info (t, abfd)$/
+print_section_table	maint.c	/^print_section_table (abfd, asect, ignore)$/
+print_simple_m2_func	expprint.c	/^print_simple_m2_func(s,exp,pos,stream)$/
+print_source_lines	source.c	/^print_source_lines (s, line, stopline, noerror)$/
+print_spaces	utils.c	/^print_spaces (n, file)$/
+print_spaces_filtered	utils.c	/^print_spaces_filtered (n, stream)$/
+print_stack_frame	stack.c	/^print_stack_frame (frame, level, source)$/
+print_stack_frame_stub	stack.c	/^print_stack_frame_stub (args)$/
+print_subexp	expprint.c	/^print_subexp (exp, pos, stream, prec)$/
+print_symbol	symmisc.c	/^print_symbol (args)$/
+print_sys_errmsg	utils.c	/^print_sys_errmsg (string, errcode)$/
+print_type_scalar	typeprint.c	/^print_type_scalar (type, val, stream)$/
+print_value_flags	annotate.c	/^print_value_flags (t)$/
+print_variable_value	printcmd.c	/^print_variable_value (var, frame, stream)$/
+printchar	regex.c	/^printchar (c)$/
+printf_command	printcmd.c	/^printf_command (arg, from_tty)$/
+printf_filtered	utils.c	/^printf_filtered (char *format, ...)$/
+printf_unfiltered	utils.c	/^printf_unfiltered (char *format, ...)$/
+printfi_filtered	utils.c	/^printfi_filtered (int spaces, char *format, ...)$/
+proc_address_to_fd	procfs.c	/^proc_address_to_fd (pi, addr, complain)$/
+proc_base_address	procfs.c	/^proc_base_address (addr)$/
+proc_init_failed	procfs.c	/^proc_init_failed (pi, why)$/
+proc_iterate_over_mappings	procfs.c	/^proc_iterate_over_mappings (func)$/
+proc_remove_foreign	main.c	/^proc_remove_foreign (pid)$/
+proc_set_exec_trap	procfs.c	/^proc_set_exec_trap ()$/
+proc_wait	main.c	/^proc_wait (pid, status)$/
+proceed	infrun.c	/^proceed (addr, siggnal, step)$/
+process_children	dwarf2read.c	/^process_children (firstchild, parentptr)$/
+process_coff_symbol	coffread.c	/^process_coff_symbol (cs, aux, objfile)$/
+process_die	dwarf2read.c	/^process_die (die, parentptr)$/
+process_dies	dwarfread.c	/^process_dies (thisdie, enddie, objfile)$/
+process_insns	dwarf2read.c	/^static void process_insns(n_insns,insns,fi,next_fr/
+process_one_symbol	dbxread.c	/^process_one_symbol (type, desc, valu, name, sectio/
+procfs_attach	procfs.c	/^procfs_attach (args, from_tty)$/
+procfs_can_run	procfs.c	/^procfs_can_run ()$/
+procfs_create_inferior	procfs.c	/^procfs_create_inferior (exec_file, allargs, env)$/
+procfs_detach	procfs.c	/^procfs_detach (args, from_tty)$/
+procfs_fetch_registers	procfs.c	/^procfs_fetch_registers (regno)$/
+procfs_files_info	procfs.c	/^procfs_files_info (ignore)$/
+procfs_init_inferior	procfs.c	/^procfs_init_inferior (pid)$/
+procfs_kill_inferior	procfs.c	/^procfs_kill_inferior ()$/
+procfs_mourn_inferior	procfs.c	/^procfs_mourn_inferior ()$/
+procfs_notice_signals	procfs.c	/^procfs_notice_signals (pid)$/
+procfs_open	procfs.c	/^procfs_open (arg, from_tty)$/
+procfs_prepare_to_store	procfs.c	/^procfs_prepare_to_store ()$/
+procfs_resume	procfs.c	/^procfs_resume (pid, step, signo)$/
+procfs_set_sproc_trap	procfs.c	/^procfs_set_sproc_trap (pi)$/
+procfs_set_watchpoint	procfs.c	/^procfs_set_watchpoint(pid, addr, len, rw)$/
+procfs_stopped_by_watchpoint	procfs.c	/^procfs_stopped_by_watchpoint(pid)$/
+procfs_store_registers	procfs.c	/^procfs_store_registers (regno)$/
+procfs_wait	procfs.c	/^procfs_wait (pid, ourstatus)$/
+procfs_xfer_memory	procfs.c	/^procfs_xfer_memory (memaddr, myaddr, len, dowrite,/
+profile_clear_command	i960-tdep.c	/^profile_clear_command(filename, from_tty)$/
+profile_command	i960-tdep.c	/^profile_command(args, from_tty)$/
+profile_command_1	i960-tdep.c	/^void profile_command_1(subcmd, filename, from_tty)/
+profile_get_command	i960-tdep.c	/^profile_get_command(filename, from_tty)$/
+profile_put_command	i960-tdep.c	/^profile_put_command(filename, from_tty)$/
+program_info	infcmd.c	/^program_info (args, from_tty)$/
+prompt_for_continue	utils.c	/^prompt_for_continue ()$/
+prune_threads	thread.c	/^prune_threads ()$/
+psymtab_to_symtab	symfile.c	/^psymtab_to_symtab (pst)$/
+psymtab_to_symtab_1	dwarf2read.c	/^psymtab_to_symtab_1 (pst)$/
+ptype_command	typeprint.c	/^ptype_command (typename, from_tty)$/
+ptype_eval	typeprint.c	/^ptype_eval (exp)$/
+push_bytes	valops.c	/^push_bytes (sp, buffer, len)$/
+push_context	buildsym.c	/^push_context (desc, valu)$/
+push_dummy_arguments	i960-tdep.c	/^void push_dummy_arguments(nargs, args, sp, struct_/
+push_dummy_frame	i960-tdep.c	/^void push_dummy_frame(nargs,args)$/
+push_fsrs	dwarf2read.c	/^static struct frame_saved_regs *push_fsrs(fsr)$/
+push_subfile	buildsym.c	/^push_subfile ()$/
+push_target	target.c	/^push_target (t)$/
+push_type	parse.c	/^push_type (tp)$/
+push_type_int	parse.c	/^push_type_int (n)$/
+push_word	valops.c	/^push_word (sp, word)$/
+put_abs	i960-dis.c	/^put_abs( word1, word2 )$/
+putc_unfiltered	utils.c	/^putc_unfiltered (c)$/
+putchar_unfiltered	defs.h	/^#define putchar_unfiltered(C)  putc_unfiltered(C)$/
+putenv	putenv.c	/^putenv( entry )$/
+putpkt	remote.c	/^putpkt (buf)$/
+puts_filtered	utils.c	/^puts_filtered (string)$/
+puts_unfiltered	utils.c	/^puts_unfiltered (string)$/
+pwd_command	top.c	/^pwd_command (args, from_tty)$/
+query	utils.c	/^query (char *ctlstr, ...)$/
+quit	utils.c	/^quit ()$/
+quit_command	top.c	/^quit_command (args, from_tty)$/
+quit_cover	top.c	/^quit_cover (s)$/
+range_error	language.c	/^range_error (char *string, ...)$/
+range_op_error	language.h	/^#define range_op_error(f,o) \\$/
+rate_to_code	ser-unix.c	/^rate_to_code(rate)$/
+raw_symbol	dwarf2read.c	/^raw_symbol(name, class)$/
+rbreak_command	symtab.c	/^rbreak_command (regexp, from_tty)$/
+re_comp	regex.c	/^re_comp (s)$/
+re_compile_fastmap	regex.c	/^re_compile_fastmap (bufp)$/
+re_compile_pattern	regex.c	/^re_compile_pattern (pattern, size, bufp)$/
+re_exec	regex.c	/^re_exec (s)$/
+re_match	regex.c	/^re_match (pbufp, string, size, pos, regs)$/
+re_match_2	regex.c	/^re_match_2 (pbufp, string1, size1, string2, size2,/
+re_search	regex.c	/^re_search (pbufp, string, size, startpos, range, r/
+re_search_2	regex.c	/^re_search_2 (pbufp, string1, size1, string2, size2/
+re_set_syntax	regex.c	/^re_set_syntax (syntax)$/
+read_args	stabsread.c	/^read_args (pp, end, objfile)$/
+read_array_type	dwarf2read.c	/^read_array_type (array)$/
+read_base_type	dwarf2read.c	/^read_base_type (die)$/
+read_baseclasses	stabsread.c	/^read_baseclasses (fip, pp, type, objfile)$/
+read_coff_symtab	coffread.c	/^read_coff_symtab (symtab_offset, nsyms, objfile)$/
+read_command_file	top.c	/^read_command_file (stream)$/
+read_command_lines	top.c	/^read_command_lines ()$/
+read_cpp_abbrev	stabsread.c	/^read_cpp_abbrev (fip, pp, type, objfile)$/
+read_dbx_dynamic_symtab	dbxread.c	/^read_dbx_dynamic_symtab (section_offsets, objfile)/
+read_dbx_symtab	dbxread.c	/^read_dbx_symtab (section_offsets, objfile, text_ad/
+read_enum_type	dwarf2read.c	/^read_enum_type (die)$/
+read_enumeration	dwarfread.c	/^read_enumeration (dip, thisdie, enddie, objfile)$/
+read_enumerator_type	dwarf2read.c	/^read_enumerator_type (die, parentptr)$/
+read_file_hdr	coffread.c	/^read_file_hdr (chan, file_hdr)$/
+read_file_scope	dwarf2read.c	/^read_file_scope ()$/
+read_fp	findvar.c	/^read_fp ()$/
+read_frame	remote.c	/^read_frame (buf)$/
+read_func_scope	dwarf2read.c	/^read_func_scope (die)$/
+read_huge_number	stabsread.c	/^read_huge_number (pp, end, bits)$/
+read_lexical_block_scope	dwarf2read.c	/^read_lexical_block_scope (die)$/
+read_member_functions	stabsread.c	/^read_member_functions (fip, pp, type, objfile)$/
+read_member_type	dwarf2read.c	/^read_member_type (die, parentptr)$/
+read_memory	core.c	/^read_memory (memaddr, myaddr, len)$/
+read_memory_integer	core.c	/^read_memory_integer (memaddr, len)$/
+read_memory_nobpt	breakpoint.c	/^read_memory_nobpt (memaddr, myaddr, len)$/
+read_memory_unsigned_integer	core.c	/^read_memory_unsigned_integer (memaddr, len)$/
+read_ofile_symtab	dbxread.c	/^read_ofile_symtab (pst)$/
+read_one_struct_field	stabsread.c	/^read_one_struct_field (fip, pp, p, type, objfile)$/
+read_one_sym	coffread.c	/^read_one_sym (cs, sym, aux)$/
+read_pc	findvar.c	/^read_pc ()$/
+read_pc_pid	findvar.c	/^read_pc_pid (pid)$/
+read_range_type	stabsread.c	/^read_range_type (pp, typenums, objfile)$/
+read_register	findvar.c	/^read_register (regno)$/
+read_register_bytes	findvar.c	/^read_register_bytes (regbyte, myaddr, len)$/
+read_register_gen	findvar.c	/^read_register_gen (regno, myaddr)$/
+read_register_pid	findvar.c	/^read_register_pid (regno, pid)$/
+read_relative_register_raw_bytes	findvar.c	/^read_relative_register_raw_bytes (regnum, myaddr)$/
+read_sp	findvar.c	/^read_sp ()$/
+read_struct_fields	stabsread.c	/^read_struct_fields (fip, pp, type, objfile)$/
+read_struct_type	dwarf2read.c	/^read_struct_type (die)$/
+read_structure_scope	dwarfread.c	/^read_structure_scope (dip, thisdie, enddie, objfil/
+read_subrange_type	dwarf2read.c	/^read_subrange_type (die, parentptr)$/
+read_subroutine_type	dwarf2read.c	/^read_subroutine_type (die)$/
+read_sun_builtin_type	stabsread.c	/^read_sun_builtin_type (pp, typenums, objfile)$/
+read_sun_floating_type	stabsread.c	/^read_sun_floating_type (pp, typenums, objfile)$/
+read_tag_pointer_type	dwarfread.c	/^read_tag_pointer_type (dip)$/
+read_tag_string_type	dwarf2read.c	/^read_tag_string_type (die)$/
+read_tilde_fields	stabsread.c	/^read_tilde_fields (fip, pp, type, objfile)$/
+read_type	stabsread.c	/^read_type (pp, objfile)$/
+read_type_modifier	dwarf2read.c	/^read_type_modifier(die)$/
+read_type_number	stabsread.c	/^read_type_number (pp, typenums)$/
+read_var_value	findvar.c	/^read_var_value (var, frame)$/
+read_variable	dwarf2read.c	/^read_variable (die)$/
+readchar	remote.c	/^readchar (timeout)$/
+really_free_pendings	buildsym.c	/^really_free_pendings (foo)$/
+record_latest_value	values.c	/^record_latest_value (val)$/
+record_line	buildsym.c	/^record_line (subfile, line, column, pc)$/
+record_minimal_symbol	coffread.c	/^record_minimal_symbol (name, address, type, objfil/
+record_minimal_symbol_and_info	elfread.c	/^record_minimal_symbol_and_info (name, address, ms_/
+record_selected_frame	stack.c	/^record_selected_frame (frameaddrp, levelp)$/
+recursive_dump_type	gdbtypes.c	/^recursive_dump_type (type, spaces)$/
+reg	i960-dis.c	/^reg( word1 )$/
+registers_changed	findvar.c	/^registers_changed ()$/
+registers_fetched	findvar.c	/^registers_fetched ()$/
+registers_info	infcmd.c	/^registers_info (addr_exp, fpregs)$/
+regop	i960-dis.c	/^regop( mode, spec, reg, fp )$/
+regs_command	i960-tdep.c	/^regs_command(expr, from_tty)$/
+reinit_frame_cache	blockframe.c	/^reinit_frame_cache ()$/
+reinitialize_more_filter	utils.c	/^reinitialize_more_filter ()$/
+release_value	values.c	/^release_value (val)$/
+relocate_coff_symbol	coffread.c	/^#define relocate_coff_symbol(cs, objfile) \\$/
+relocate_elf_symbol	elfread.c	/^#define relocate_elf_symbol(sym, objfile) \\$/
+relocate_linetab	symtab.c	/^relocate_linetab(objfile)$/
+relop	dwarf2read.c	/^relop (op)$/
+remote_close	remote.c	/^remote_close (quitting)$/
+remote_detach	remote.c	/^remote_detach (args, from_tty)$/
+remote_fetch_registers	remote.c	/^remote_fetch_registers (regno)$/
+remote_fetch_word	remote.c	/^remote_fetch_word (addr)$/
+remote_files_info	remote.c	/^remote_files_info (ignore)$/
+remote_insert_breakpoint	remote.c	/^remote_insert_breakpoint (addr, contents_cache)$/
+remote_interrupt	remote.c	/^remote_interrupt (signo)$/
+remote_interrupt_twice	remote.c	/^remote_interrupt_twice (signo)$/
+remote_kill	remote.c	/^remote_kill ()$/
+remote_mourn	remote.c	/^remote_mourn ()$/
+remote_open	remote.c	/^remote_open (name, from_tty)$/
+remote_prepare_to_store	remote.c	/^remote_prepare_to_store ()$/
+remote_read_bytes	remote.c	/^remote_read_bytes (memaddr, myaddr, len)$/
+remote_remove_breakpoint	remote.c	/^remote_remove_breakpoint (addr, contents_cache)$/
+remote_resume	remote.c	/^remote_resume (pid, step, siggnal)$/
+remote_search	remote.c	/^remote_search (len, data, mask, startaddr, increme/
+remote_send	remote.c	/^remote_send (buf)$/
+remote_start_remote	remote.c	/^remote_start_remote (dummy)$/
+remote_store_registers	remote.c	/^remote_store_registers (regno)$/
+remote_store_word	remote.c	/^remote_store_word (addr, word)$/
+remote_wait	remote.c	/^remote_wait (pid, status)$/
+remote_write_bytes	remote.c	/^remote_write_bytes (memaddr, myaddr, len)$/
+remote_xfer_memory	remote.c	/^remote_xfer_memory(memaddr, myaddr, len, should_wr/
+remove_breakpoint	breakpoint.c	/^remove_breakpoint (b)$/
+remove_breakpoints	breakpoint.c	/^remove_breakpoints ()$/
+remove_fd	procfs.c	/^remove_fd (pi)$/
+reopen_exec_file	core.c	/^reopen_exec_file ()$/
+reprogram_gmu	i960-tdep.c	/^reprogram_gmu()$/
+request_quit	utils.c	/^request_quit (signo)$/
+reread_symbols	symfile.c	/^reread_symbols ()$/
+reset_command	remote-nindy.c	/^reset_command(args, from_tty)$/
+resolve_sal_pc	breakpoint.c	/^resolve_sal_pc (sal)$/
+restore_cleanups	utils.c	/^restore_cleanups (chain)$/
+restore_current_thread	thread.c	/^restore_current_thread (pid)$/
+restore_inferior_status	infrun.c	/^restore_inferior_status (inf_status)$/
+restore_selected_frame	infrun.c	/^restore_selected_frame (args)$/
+restore_tty	remote-nindy.c	/^restore_tty()$/
+resume	infrun.c	/^resume (step, sig)$/
+resume_cleanups	infrun.c	/^resume_cleanups (arg)$/
+return_command	stack.c	/^return_command (retval_exp, from_tty)$/
+return_mask	defs.h	657
+return_to_top_level	top.c	/^return_to_top_level (reason)$/
+return_zero	target.c	/^return_zero ()$/
+reverse_search_command	source.c	/^reverse_search_command (regex, from_tty)$/
+rot	dwarf2read.c	/^rot(n)$/
+rs6000_builtin_type	stabsread.c	/^rs6000_builtin_type (typenum)$/
+run_command	infcmd.c	/^run_command (args, from_tty)$/
+run_stack_dummy	infcmd.c	/^run_stack_dummy (addr, buffer)$/
+rwatch_command	breakpoint.c	/^static void rwatch_command (arg, from_tty)$/
+safe_strerror	utils.c	/^safe_strerror (errnum)$/
+safe_strsignal	utils.c	/^safe_strsignal (signo)$/
+same_type	language.c	/^same_type (arg1, arg2)$/
+save_cleanups	utils.c	/^save_cleanups ()$/
+save_inferior_status	infrun.c	/^save_inferior_status (inf_status, restore_stack_in/
+saved_pc_after_call	i960-tdep.c	/^saved_pc_after_call (frame)$/
+savestring	utils.c	/^savestring (ptr, size)$/
+scan_compilation_units	dwarf2read.c	/^scan_compilation_units ()$/
+scan_file_globals	stabsread.c	/^scan_file_globals (objfile)$/
+scan_partial_symbols	dwarf2read.c	/^scan_partial_symbols (cu)$/
+search_struct_field	valops.c	/^search_struct_field (name, arg1, offset, type, loo/
+search_struct_method	valops.c	/^search_struct_method (name, arg1p, args, offset, s/
+select_frame	stack.c	/^select_frame (frame, level)$/
+select_frame_command	stack.c	/^select_frame_command (level_exp, from_tty)$/
+select_source_symtab	source.c	/^select_source_symtab (s)$/
+serial_add_interface	serial.c	/^serial_add_interface(optable)$/
+serial_close	serial.c	/^serial_close(scb)$/
+serial_fdopen	serial.c	/^serial_fdopen(fd)$/
+serial_interface_lookup	serial.c	/^serial_interface_lookup (name)$/
+serial_open	serial.c	/^serial_open (name)$/
+serial_t	serial.h	41
+serial_ttystate	serial.h	25
+set_backtrace_limit_command	stack.c	/^set_backtrace_limit_command (count_exp, from_tty)$/
+set_break_insn	mem-break.c	/^int set_break_insn(insn)$/
+set_breakpoint	breakpoint.c	/^set_breakpoint (s, line, tempflag, addr_string)$/
+set_breakpoint_count	breakpoint.c	/^set_breakpoint_count (num)$/
+set_check	language.c	/^set_check (ignore, from_tty)$/
+set_command	printcmd.c	/^set_command (exp, from_tty)$/
+set_cu_language	dwarf2read.c	/^set_cu_language (die)$/
+set_current_frame	blockframe.c	/^set_current_frame (frame)$/
+set_default_breakpoint	breakpoint.c	/^set_default_breakpoint (valid, addr, symtab, line)/
+set_demangling_command	demangle.c	/^set_demangling_command (ignore, from_tty, c)$/
+set_demangling_style	demangle.c	/^set_demangling_style (style)$/
+set_environment_command	infcmd.c	/^set_environment_command (arg, from_tty)$/
+set_gnutarget	core.c	/^set_gnutarget (newtarget)$/
+set_gnutarget_command	core.c	/^set_gnutarget_command (ignore, from_tty, c)$/
+set_history	top.c	/^set_history (args, from_tty)$/
+set_history_size_command	top.c	/^set_history_size_command (args, from_tty, c)$/
+set_ignore_count	breakpoint.c	/^set_ignore_count (bptnum, count, from_tty)$/
+set_in_environ	environ.c	/^set_in_environ (e, var, value)$/
+set_initial_language	symfile.c	/^set_initial_language ()$/
+set_input_radix	valprint.c	/^set_input_radix (args, from_tty, c)$/
+set_input_radix_1	valprint.c	/^set_input_radix_1 (from_tty, radix)$/
+set_internalvar	values.c	/^set_internalvar (var, val)$/
+set_internalvar_component	values.c	/^set_internalvar_component (var, offset, bitpos, bi/
+set_lang_str	language.c	/^set_lang_str()$/
+set_language	language.c	/^set_language(lang)$/
+set_language_command	language.c	/^set_language_command (ignore, from_tty)$/
+set_longjmp_resume_breakpoint	breakpoint.c	/^set_longjmp_resume_breakpoint(pc, frame)$/
+set_momentary_breakpoint	breakpoint.c	/^set_momentary_breakpoint (sal, frame, type)$/
+set_mon_priority	remote-hdi.c	/^set_mon_priority (arg)$/
+set_next_address	printcmd.c	/^set_next_address (addr)$/
+set_no_reset	remote-hdi.c	/^set_no_reset (dummy)$/
+set_output_radix	valprint.c	/^set_output_radix (args, from_tty, c)$/
+set_output_radix_1	valprint.c	/^set_output_radix_1 (from_tty, radix)$/
+set_print	valprint.c	/^set_print (arg, from_tty)$/
+set_proc_siginfo	procfs.c	/^set_proc_siginfo (pip, signo)$/
+set_radix	valprint.c	/^set_radix (arg, from_tty)$/
+set_range_command	language.c	/^set_range_command(ignore, from_tty)$/
+set_range_str	language.c	/^set_range_str()$/
+set_raw_breakpoint	breakpoint.c	/^set_raw_breakpoint (sal)$/
+set_reset_time	remote-hdi.c	/^set_reset_time (arg)$/
+set_return_value	values.c	/^set_return_value (val)$/
+set_section_command	exec.c	/^set_section_command (args, from_tty)$/
+set_sigint_trap	inflow.c	/^set_sigint_trap()$/
+set_sigio_trap	inflow.c	/^set_sigio_trap ()$/
+set_tint	remote-hdi.c	/^set_tint (arg)$/
+set_tty_state	ser-unix.c	/^set_tty_state(scb, state)$/
+set_type_command	language.c	/^set_type_command(ignore, from_tty)$/
+set_type_range	language.c	/^set_type_range()$/
+set_type_str	language.c	/^set_type_str()$/
+set_verbose	top.c	/^set_verbose (args, from_tty, c)$/
+set_width_command	utils.c	/^set_width_command (args, from_tty, c)$/
+setup_arbitrary_frame	i960-tdep.c	/^setup_arbitrary_frame (argc, argv)$/
+sharedlibrary_command	solib.c	/^sharedlibrary_command (args, from_tty)$/
+shell_escape	command.c	/^shell_escape (arg, from_tty)$/
+show_check	language.c	/^show_check (ignore, from_tty)$/
+show_command	top.c	/^show_command (arg, from_tty)$/
+show_commands	top.c	/^show_commands (args, from_tty)$/
+show_convenience	values.c	/^show_convenience (ignore, from_tty)$/
+show_copying_command	copying.c	/^show_copying_command (ignore, from_tty)$/
+show_directories	source.c	/^show_directories (ignore, from_tty)$/
+show_history	top.c	/^show_history (args, from_tty)$/
+show_language_command	language.c	/^show_language_command (ignore, from_tty)$/
+show_print	valprint.c	/^show_print (args, from_tty)$/
+show_radix	valprint.c	/^show_radix (arg, from_tty)$/
+show_range_command	language.c	/^show_range_command(ignore, from_tty)$/
+show_type_command	language.c	/^show_type_command(ignore, from_tty)$/
+show_user	command.c	/^show_user (args, from_tty)$/
+show_user_1	command.c	/^show_user_1 (c, stream)$/
+show_values	values.c	/^show_values (num_exp, from_tty)$/
+show_version	top.c	/^show_version (args, from_tty)$/
+show_warranty_command	copying.c	/^show_warranty_command (ignore, from_tty)$/
+sig_call	i960-tdep.c	/^(*sig_call (sig, disp)) ()$/
+sig_print_header	infrun.c	/^sig_print_header ()$/
+sig_print_info	infrun.c	/^sig_print_info (oursig)$/
+sigcodedesc	procfs.c	/^sigcodedesc (sip)$/
+sigcodename	procfs.c	/^sigcodename (sip)$/
+signal_command	infcmd.c	/^signal_command (signum_exp, from_tty)$/
+signal_pass_state	infrun.c	/^int signal_pass_state (signo)$/
+signal_print_state	infrun.c	/^int signal_print_state (signo)$/
+signal_stop_state	infrun.c	/^int signal_stop_state (signo)$/
+signalname	procfs.c	/^signalname (signo)$/
+signals_info	infrun.c	/^signals_info (signum_exp, from_tty)$/
+sigsetmask	go32-xdep.c	/^sigsetmask (mask)$/
+sigtramp_saved_pc	blockframe.c	/^sigtramp_saved_pc (frame)$/
+simple_type	language.c	/^simple_type(type)$/
+skip_prologue	i960-tdep.c	/^skip_prologue (ip)$/
+skip_quoted	top.c	/^skip_quoted (str)$/
+smash_to_member_type	gdbtypes.c	/^smash_to_member_type (type, domain, to_type)$/
+smash_to_method_type	gdbtypes.c	/^smash_to_method_type (type, domain, to_type, args)/
+solib_add	solib.c	/^solib_add (arg_string, from_tty, target)$/
+solib_add_common_symbols	solib.c	/^solib_add_common_symbols (rtc_symp, objfile)$/
+solib_address	solib.c	/^solib_address (address)$/
+solib_create_inferior_hook	solib.c	/^solib_create_inferior_hook()$/
+solib_map_sections	solib.c	/^solib_map_sections (so)$/
+sort_block_syms	symfile.c	/^sort_block_syms (b)$/
+sort_pst_symbols	symfile.c	/^sort_pst_symbols (pst)$/
+sort_symtab_syms	symfile.c	/^sort_symtab_syms (s)$/
+source_charpos_line	source.c	/^source_charpos_line (s, chr)$/
+source_cleanup	top.c	/^source_cleanup (stream)$/
+source_cleanup_lines	top.c	/^source_cleanup_lines (args)$/
+source_command	top.c	/^source_command (args, from_tty)$/
+source_info	source.c	/^source_info (ignore, from_tty)$/
+source_line_charpos	source.c	/^source_line_charpos (s, line)$/
+sources_info	symtab.c	/^sources_info (ignore, from_tty)$/
+special_symbol_handling	solib.c	/^special_symbol_handling (so)$/
+specify_exec_file_hook	core.c	/^specify_exec_file_hook (hook)$/
+stabsect_build_psymtabs	dbxread.c	/^stabsect_build_psymtabs (objfile, section_offsets,/
+stabsread_init	stabsread.c	/^stabsread_init ()$/
+stabsread_new_init	stabsread.c	/^stabsread_new_init ()$/
+stackelem	dwarf2read.c	365
+start_arglist	parse.c	/^start_arglist ()$/
+start_psymtab	dbxread.c	/^start_psymtab (objfile, section_offsets,$/
+start_psymtab_common	symfile.c	/^start_psymtab_common (objfile, section_offsets,$/
+start_remote	infrun.c	/^start_remote ()$/
+start_stabs	stabsread.c	/^void start_stabs ()$/
+start_subfile	buildsym.c	/^start_subfile (name, dirname)$/
+start_symtab	buildsym.c	/^start_symtab (name, dirname, start_addr)$/
+startup_inferior	fork-child.c	/^startup_inferior (ntraps)$/
+status	libiberty.h	82
+step_1	infcmd.c	/^step_1 (skip_subroutines, single_inst, count_strin/
+step_command	infcmd.c	/^step_command (count_string, from_tty)$/
+stepi_command	infcmd.c	/^stepi_command (count_string, from_tty)$/
+stop_sig	top.c	/^stop_sig (signo)$/
+store_address	findvar.c	/^store_address (addr, len, val)$/
+store_floating	findvar.c	/^store_floating (addr, len, val)$/
+store_jump	regex.c	/^store_jump (from, opcode, to)$/
+store_signed_integer	findvar.c	/^store_signed_integer (addr, len, val)$/
+store_unsigned_integer	findvar.c	/^store_unsigned_integer (addr, len, val)$/
+store_waitstatus	target.c	/^store_waitstatus (ourstatus, hoststatus)$/
+strcmp_iw	utils.c	/^strcmp_iw (string1, string2)$/
+string_type	language.c	/^string_type (type)$/
+strlwr	go32-xdep.c	/^strlwr (str)$/
+strsave	utils.c	/^strsave (ptr)$/
+struct_type	dwarfread.c	/^struct_type (dip, thisdie, enddie, objfile)$/
+structured_type	language.c	/^structured_type(type)$/
+supply_register	findvar.c	/^supply_register (regno, val)$/
+swap_le_and_host	utils.c	/^swap_le_and_host(buffer, len)$/
+swap_le_and_target	utils.c	/^swap_le_and_target(buffer, len)$/
+swap_regvals	remote-hdi.c	/^static void swap_regvals(regvals)$/
+swap_target_and_host	utils.c	/^swap_target_and_host(buffer, len)$/
+switch	partial-stab.h	/^      switch (CUR_SYMBOL_TYPE)$/
+symbol_add_stub	solib.c	/^symbol_add_stub (arg)$/
+symbol_completion_function	top.c	/^symbol_completion_function (text, matches)$/
+symbol_file_add	symfile.c	/^symbol_file_add (name, from_tty, addr, mainline, m/
+symbol_file_command	symfile.c	/^symbol_file_command (args, from_tty)$/
+symbol_read_needs_frame	findvar.c	/^symbol_read_needs_frame (sym)$/
+symfile_bfd_open	symfile.c	/^symfile_bfd_open (name)$/
+syms_from_objfile	symfile.c	/^syms_from_objfile (objfile, addr, mainline, verbo)/
+synthesize_typedef	dwarf2read.c	/^synthesize_typedef (die, type)$/
+syscallname	procfs.c	/^syscallname (syscallnum)$/
+target_attach	target.h	/^#define	target_attach(args, from_tty)	\\$/
+target_can_run	target.h	/^#define target_can_run(t) \\$/
+target_close	target.h	/^#define	target_close(quitting)	\\$/
+target_command	target.c	/^target_command (arg, from_tty)$/
+target_create_inferior	target.h	/^#define	target_create_inferior(exec_file, args, en/
+target_decode_dwarf_basereg	dwarf2read.c	/^target_decode_dwarf_basereg(regcode)$/
+target_decode_dwarf_regx	dwarf2read.c	/^target_decode_dwarf_regx(regcode)$/
+target_detach	target.c	/^target_detach (args, from_tty)$/
+target_fetch_registers	target.h	/^#define	target_fetch_registers(regno)	\\$/
+target_files_info	target.h	/^#define	target_files_info()	\\$/
+target_info	target.c	/^target_info (args, from_tty)$/
+target_insert_breakpoint	target.h	/^#define	target_insert_breakpoint(addr, save)	\\$/
+target_insert_hw_breakpoint	target.h	/^#define	target_insert_hw_breakpoint(addr, save)	\\$/
+target_insert_watchpoint	target.h	/^#define	target_insert_watchpoint(addr, len, type)	/
+target_kill	target.h	/^#define target_kill() \\$/
+target_link	target.c	/^target_link (modname, t_reloc)$/
+target_load	target.h	/^#define target_load(arg, from_tty) \\$/
+target_lookup_symbol	target.h	/^#define target_lookup_symbol(name, addrp) 	\\$/
+target_mourn_inferior	target.h	/^#define	target_mourn_inferior()	\\$/
+target_notice_signals	target.h	/^#define target_notice_signals(pid) \\$/
+target_open	target.h	/^#define	target_open(name, from_tty)	\\$/
+target_pid_to_str	target.h	/^#define target_pid_to_str(PID) \\$/
+target_preopen	target.c	/^target_preopen (from_tty)$/
+target_prepare_to_store	target.h	/^#define	target_prepare_to_store()	\\$/
+target_read_memory	target.c	/^target_read_memory (memaddr, myaddr, len)$/
+target_read_memory_partial	target.c	/^target_read_memory_partial (memaddr, myaddr, len, /
+target_read_string	target.c	/^target_read_string (memaddr, string, len, errnop)$/
+target_remove_breakpoint	target.h	/^#define	target_remove_breakpoint(addr, save)	\\$/
+target_remove_hw_breakpoint	target.h	/^#define	target_remove_hw_breakpoint(addr, save)	\\$/
+target_remove_watchpoint	target.h	/^#define	target_remove_watchpoint(addr, len, type)	/
+target_resume	target.h	/^#define	target_resume(pid, step, siggnal)	\\$/
+target_signal_from_host	target.c	/^target_signal_from_host (hostsig)$/
+target_signal_from_name	target.c	/^target_signal_from_name (name)$/
+target_signal_to_host	target.c	/^target_signal_to_host (oursig)$/
+target_signal_to_name	target.c	/^target_signal_to_name (sig)$/
+target_signal_to_string	target.c	/^target_signal_to_string (sig)$/
+target_stopped_data_address	target.h	/^#define target_stopped_data_address() \\$/
+target_store_registers	target.h	/^#define	target_store_registers(regs)	\\$/
+target_terminal_inferior	target.h	/^#define target_terminal_inferior() \\$/
+target_terminal_info	target.h	/^#define target_terminal_info(arg, from_tty) \\$/
+target_terminal_init	target.h	/^#define target_terminal_init() \\$/
+target_terminal_ours	target.h	/^#define target_terminal_ours() \\$/
+target_terminal_ours_for_output	target.h	/^#define target_terminal_ours_for_output() \\$/
+target_to_host	dwarfread.c	/^target_to_host (from, nbytes, signextend, objfile)/
+target_wait	target.h	/^#define	target_wait(pid, status)		\\$/
+target_write_memory	target.c	/^target_write_memory (memaddr, myaddr, len)$/
+target_xfer_memory	target.c	/^target_xfer_memory (memaddr, myaddr, len, write)$/
+tbreak_command	breakpoint.c	/^tbreak_command (arg, from_tty)$/
+tcomplain	target.c	/^tcomplain ()$/
+tcp_close	ser-tcp.c	/^tcp_close(scb)$/
+tcp_get_tty_state	ser-tcp.c	/^tcp_get_tty_state(scb)$/
+tcp_noflush_set_tty_state	ser-tcp.c	/^tcp_noflush_set_tty_state (scb, new_ttystate, old_/
+tcp_open	ser-tcp.c	/^tcp_open(scb, name)$/
+tcp_print_tty_state	ser-tcp.c	/^tcp_print_tty_state (scb, ttystate)$/
+tcp_raw	ser-tcp.c	/^tcp_raw(scb)$/
+tcp_readchar	ser-tcp.c	/^tcp_readchar(scb, timeout)$/
+tcp_return_0	ser-tcp.c	/^tcp_return_0 (scb)$/
+tcp_set_tty_state	ser-tcp.c	/^tcp_set_tty_state(scb, ttystate)$/
+tcp_setbaudrate	ser-tcp.c	/^tcp_setbaudrate(scb, rate)$/
+tcp_write	ser-tcp.c	/^tcp_write(scb, str, len)$/
+term_info	inflow.c	/^term_info (arg, from_tty)$/
+terminal_inferior	inflow.c	/^terminal_inferior ()$/
+terminal_init_inferior	inflow.c	/^terminal_init_inferior ()$/
+terminal_ours	inflow.c	/^terminal_ours ()$/
+terminal_ours_1	inflow.c	/^terminal_ours_1 (output_only)$/
+terminal_ours_for_output	inflow.c	/^terminal_ours_for_output ()$/
+thbreak_command	breakpoint.c	/^thbreak_command (arg, from_tty)$/
+thread_apply_all_command	thread.c	/^thread_apply_all_command (cmd, from_tty)$/
+thread_apply_command	thread.c	/^thread_apply_command (tidlist, from_tty)$/
+thread_command	thread.c	/^thread_command (tidstr, from_tty)$/
+thread_switch	thread.c	/^thread_switch (pid)$/
+tohex	remote.c	/^tohex (nib)$/
+tokenize	i960-tdep.c	/^tokenize(buf, argcp, argvp)$/
+tty_command	infcmd.c	/^tty_command (file, from_tty)$/
+type_error	language.c	/^type_error (char *string, ...)$/
+type_name_no_tag	gdbtypes.c	/^type_name_no_tag (type)$/
+type_op_error	language.h	/^#define type_op_error(f,o) \\$/
+type_print	typeprint.c	/^type_print (type, varstring, stream, show)$/
+typecmp	valops.c	/^typecmp (staticp, t1, t2)$/
+types_info	symtab.c	/^types_info (regexp, from_tty)$/
+unconditionally_kill_inferior	procfs.c	/^unconditionally_kill_inferior (pi)$/
+undef_cmd_error	command.c	/^undef_cmd_error (cmdtype, q)$/
+undisplay_command	printcmd.c	/^undisplay_command (args, from_tty)$/
+unk_lang_create_fundamental_type	language.c	/^unk_lang_create_fundamental_type (objfile, typeid)/
+unk_lang_error	language.c	/^unk_lang_error (msg)$/
+unk_lang_parser	language.c	/^unk_lang_parser ()$/
+unk_lang_print_type	language.c	/^unk_lang_print_type (type, varstring, stream, show/
+unk_lang_printchar	language.c	/^unk_lang_printchar (c, stream)$/
+unk_lang_printstr	language.c	/^unk_lang_printstr (stream, string, length, force_e/
+unk_lang_val_print	language.c	/^unk_lang_val_print (type, valaddr, address, stream/
+unk_lang_value_print	language.c	/^unk_lang_value_print (val, stream, format, pretty)/
+unlink_objfile	objfiles.c	/^unlink_objfile (objfile)$/
+unop	dwarf2read.c	/^unop (op)$/
+unop_type_check	language.h	/^#define unop_type_check(v,o) binop_type_check((v),/
+unop_user_defined_p	valarith.c	/^int unop_user_defined_p (op, arg1)$/
+unpack_double	values.c	/^unpack_double (type, valaddr, invp)$/
+unpack_field_as_long	values.c	/^unpack_field_as_long (type, valaddr, fieldno)$/
+unpack_long	values.c	/^unpack_long (type, valaddr)$/
+unpack_pointer	values.c	/^unpack_pointer (type, valaddr)$/
+unpush_target	target.c	/^unpush_target (t)$/
+unset_command	infcmd.c	/^unset_command (args, from_tty)$/
+unset_environment_command	infcmd.c	/^unset_environment_command (var, from_tty)$/
+unset_in_environ	environ.c	/^unset_in_environ (e, var)$/
+until_break_command	breakpoint.c	/^until_break_command (arg, from_tty)$/
+until_command	infcmd.c	/^until_command (arg, from_tty)$/
+until_next_command	infcmd.c	/^until_next_command (from_tty)$/
+up_command	stack.c	/^up_command (count_exp, from_tty)$/
+up_silently_command	stack.c	/^up_silently_command (count_exp, from_tty)$/
+upstack_create_inferior	target.c	/^upstack_create_inferior (exec, args, env)$/
+user_defined_command	top.c	/^user_defined_command (ignore, from_tty)$/
+using_struct_return	values.c	/^using_struct_return (function, funcaddr, value_typ/
+val_print	valprint.c	/^val_print (type, valaddr, address, stream, format,/
+val_print_array_elements	valprint.c	/^val_print_array_elements (type, valaddr, address, /
+val_print_string	valprint.c	/^val_print_string (addr, len, stream)$/
+val_print_type_code_int	valprint.c	/^val_print_type_code_int (type, valaddr, stream)$/
+valid_thread_id	thread.c	/^valid_thread_id (num)$/
+validate_comname	top.c	/^validate_comname (comname)$/
+validate_files	core.c	/^validate_files ()$/
+validate_format	printcmd.c	/^validate_format (fmt, cmdname)$/
+value_add	valarith.c	/^value_add (arg1, arg2)$/
+value_addr	valops.c	/^value_addr (arg1)$/
+value_arg_coerce	valops.c	/^value_arg_coerce (arg)$/
+value_arg_push	valops.c	/^value_arg_push (sp, arg)$/
+value_array	valops.c	/^value_array (lowbound, highbound, elemvec)$/
+value_as_double	values.c	/^value_as_double (val)$/
+value_as_long	values.c	/^value_as_long (val)$/
+value_as_pointer	values.c	/^value_as_pointer (val)$/
+value_assign	valops.c	/^value_assign (toval, fromval)$/
+value_at	valops.c	/^value_at (type, addr)$/
+value_at_lazy	valops.c	/^value_at_lazy (type, addr)$/
+value_being_returned	values.c	/^value_being_returned (valtype, retbuf, struct_retu/
+value_binop	valarith.c	/^value_binop (arg1, arg2, op)$/
+value_bit_index	valarith.c	/^value_bit_index (type, valaddr, index)$/
+value_cast	valops.c	/^value_cast (type, arg2)$/
+value_coerce_array	valops.c	/^value_coerce_array (arg1)$/
+value_coerce_function	valops.c	/^value_coerce_function (arg1)$/
+value_complement	valarith.c	/^value_complement (arg1)$/
+value_concat	valarith.c	/^value_concat (arg1, arg2)$/
+value_copy	values.c	/^value_copy (arg)$/
+value_equal	valarith.c	/^value_equal (arg1, arg2)$/
+value_fetch_lazy	valops.c	/^value_fetch_lazy (val)$/
+value_field	values.c	/^value_field (arg1, fieldno)$/
+value_fn_field	values.c	/^value_fn_field (arg1p, f, j, type, offset)$/
+value_free	value.h	/^#define value_free(val) free ((PTR)val)$/
+value_free_to_mark	values.c	/^value_free_to_mark (mark)$/
+value_from_double	values.c	/^value_from_double (type, num)$/
+value_from_longest	values.c	/^value_from_longest (type, num)$/
+value_from_register	findvar.c	/^value_from_register (type, regnum, frame)$/
+value_from_vtable_info	values.c	/^value_from_vtable_info (arg, type)$/
+value_headof	values.c	/^value_headof (in_arg, btype, dtype)$/
+value_in	valarith.c	/^value_in (element, set)$/
+value_ind	valops.c	/^value_ind (arg1)$/
+value_less	valarith.c	/^value_less (arg1, arg2)$/
+value_logical_not	valarith.c	/^value_logical_not (arg1)$/
+value_mark	values.c	/^value_mark ()$/
+value_neg	valarith.c	/^value_neg (arg1)$/
+value_of_internalvar	values.c	/^value_of_internalvar (var)$/
+value_of_register	findvar.c	/^value_of_register (regnum)$/
+value_of_this	valops.c	/^value_of_this (complain)$/
+value_of_variable	valops.c	/^value_of_variable (var, b)$/
+value_primitive_field	values.c	/^value_primitive_field (arg1, offset, fieldno, arg_/
+value_print	valprint.c	/^value_print (val, stream, format, pretty)$/
+value_print_array_elements	valprint.c	/^value_print_array_elements (val, stream, format, p/
+value_ptr	value.h	112
+value_push	valops.c	/^value_push (sp, arg)$/
+value_release_to_mark	values.c	/^value_release_to_mark (mark)$/
+value_repeat	valops.c	/^value_repeat (arg1, count)$/
+value_string	valops.c	/^value_string (ptr, len)$/
+value_struct_elt	valops.c	/^value_struct_elt (argp, args, name, static_memfunc/
+value_struct_elt_for_reference	valops.c	/^value_struct_elt_for_reference (domain, offset, cu/
+value_sub	valarith.c	/^value_sub (arg1, arg2)$/
+value_subscript	valarith.c	/^value_subscript (array, idx)$/
+value_subscripted_rvalue	valarith.c	/^value_subscripted_rvalue (array, idx)$/
+value_true	language.c	/^value_true (val)$/
+value_virtual_fn_field	values.c	/^value_virtual_fn_field (arg1p, f, j, type, offset)/
+value_x_binop	valarith.c	/^value_x_binop (arg1, arg2, op, otherop)$/
+value_x_unop	valarith.c	/^value_x_unop (arg1, op)$/
+value_zero	valops.c	/^value_zero (type, lv)$/
+var_types	command.h	56
+variables_info	symtab.c	/^variables_info (regexp, from_tty)$/
+vb_match	values.c	/^vb_match (type, index, basetype)$/
+vfprintf_filtered	utils.c	/^vfprintf_filtered (stream, format, args)$/
+vfprintf_maybe_filtered	utils.c	/^vfprintf_maybe_filtered (stream, format, args, fil/
+vfprintf_unfiltered	utils.c	/^vfprintf_unfiltered (stream, format, args)$/
+vprintf_filtered	utils.c	/^vprintf_filtered (format, args)$/
+vprintf_unfiltered	utils.c	/^vprintf_unfiltered (format, args)$/
+wait_fd	procfs.c	/^wait_fd ()$/
+wait_for	ser-tcp.c	/^wait_for(scb, timeout)$/
+wait_for_inferior	infrun.c	/^wait_for_inferior ()$/
+warning	utils.c	/^warning (char *string, ...)$/
+warning_setup	utils.c	/^warning_setup ()$/
+watch_command	breakpoint.c	/^static void watch_command (arg, from_tty)$/
+watch_command_1	breakpoint.c	/^watch_command_1 (arg, accessflag, from_tty)$/
+watchpoint_check	breakpoint.c	/^watchpoint_check (p)$/
+whatis_command	typeprint.c	/^whatis_command (exp, from_tty)$/
+whatis_exp	typeprint.c	/^whatis_exp (exp, show)$/
+which_regno	remote-hdi.c	/^which_regno(regno)$/
+wrap_here	utils.c	/^wrap_here(indent)$/
+write_exp_bitstring	parse.c	/^write_exp_bitstring (str)$/
+write_exp_elt	parse.c	/^write_exp_elt (expelt)$/
+write_exp_elt_block	parse.c	/^write_exp_elt_block (b)$/
+write_exp_elt_dblcst	parse.c	/^write_exp_elt_dblcst (expelt)$/
+write_exp_elt_intern	parse.c	/^write_exp_elt_intern (expelt)$/
+write_exp_elt_longcst	parse.c	/^write_exp_elt_longcst (expelt)$/
+write_exp_elt_opcode	parse.c	/^write_exp_elt_opcode (expelt)$/
+write_exp_elt_sym	parse.c	/^write_exp_elt_sym (expelt)$/
+write_exp_elt_type	parse.c	/^write_exp_elt_type (expelt)$/
+write_exp_msymbol	parse.c	/^write_exp_msymbol (msymbol, text_symbol_type, data/
+write_exp_string	parse.c	/^write_exp_string (str)$/
+write_fp	findvar.c	/^write_fp (val)$/
+write_int	i960-tdep.c	/^static void write_int(a,v)$/
+write_memory	core.c	/^write_memory (memaddr, myaddr, len)$/
+write_pc	findvar.c	/^write_pc (val)$/
+write_pc_pid	findvar.c	/^write_pc_pid (val, pid)$/
+write_register	findvar.c	/^write_register (regno, val)$/
+write_register_bytes	findvar.c	/^write_register_bytes (regbyte, myaddr, len)$/
+write_register_pid	findvar.c	/^write_register_pid (regno, val, pid)$/
+write_sp	findvar.c	/^write_sp (val)$/
+wwatch_command	breakpoint.c	/^static void wwatch_command (arg, from_tty)$/
+x_command	printcmd.c	/^x_command (exp, from_tty)$/
+xfer_memory	exec.c	/^xfer_memory (memaddr, myaddr, len, write, target)$/
+xmalloc	utils.c	/^xmalloc (size)$/
+xmmalloc	utils.c	/^xmmalloc (md, size)$/
+xmrealloc	utils.c	/^xmrealloc (md, ptr, size)$/
+xrealloc	utils.c	/^xrealloc (ptr, size)$/
+yyerror	c-exp.c	/^yyerror (msg)$/
+yylex	c-exp.c	/^yylex ()$/
+yyparse	c-exp.c	/^yyparse()$/
+yytabelem	c-exp.c	160
+yytoktype	c-exp.c	1146

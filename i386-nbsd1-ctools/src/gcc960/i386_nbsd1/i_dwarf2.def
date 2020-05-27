@@ -1,0 +1,604 @@
+/* Define encodings and information related to DWARF version 2.
+
+   This file doesn't declare or define, in the C sense, any objects.
+   It references preprocessor macros that can be defined, before
+   including this file, to extract the appropriate information.
+   These macros are automatically #undef'd at the end of this file, so
+   this file can be included multiple times.
+ */
+
+
+/* DEFLNSOPCODE lists information associated with each DWARF line number
+   'standard' opcode used in the .debug_line section.
+
+   The first argument is a placeholder which allows us to define
+   an enumeration that defines DWARF_OPCODE_BASE correctly.
+   DWARF_OPCODE_BASE is the first "special" opcode, and is one greater
+   than the last "standard" opcode.
+
+   The second argument is the DWARF DW_LNS_* identifier for the opcode.
+
+   The third argument is the number of LEB128 operands associated with
+   the opcode.  Note that DW_LNS_fixed_advance_pc takes one operand which
+   IS NOT in LEB128 format, it is an unsigned 2-byte integer.
+ */
+
+#if defined(DEFLNSOPCODE)
+
+  DEFLNSOPCODE(dwarf_lns_op1, DW_LNS_copy, 0)
+  DEFLNSOPCODE(dwarf_lns_op2, DW_LNS_advance_pc, 1)
+  DEFLNSOPCODE(dwarf_lns_op3, DW_LNS_advance_line, 1)
+  DEFLNSOPCODE(dwarf_lns_op4, DW_LNS_set_file, 1)
+  DEFLNSOPCODE(dwarf_lns_op5, DW_LNS_set_column, 1)
+  DEFLNSOPCODE(dwarf_lns_op6, DW_LNS_negate_stmt, 0)
+  DEFLNSOPCODE(dwarf_lns_op7, DW_LNS_set_basic_block, 0)
+  DEFLNSOPCODE(dwarf_lns_op8, DW_LNS_const_add_pc, 0)
+  DEFLNSOPCODE(dwarf_lns_op9, DW_LNS_fixed_advance_pc, 1)
+
+#endif
+
+/* DEFATTRENCODE lists information associated with each DWARF attribute.
+
+   The first argument is a 2-character string which we use as an internal
+   encoding for the attribute.  By concatenating these strings, we can encode
+   a list of attributes.
+
+   The second argument is the DWARF DW_AT_* identifier for the attribute.
+
+   The third argument is a string'ized form of the DWARF DW_AT_* identifier,
+   used for printing its name.
+*/
+
+#if defined(DEFATTRENCODE)
+
+  /* Keep this list sorted by the encoded name to help prevent
+     inadvertently using a given encoding multiple times.
+   */
+
+  DEFATTRENCODE("ac", DW_AT_accessibility, "DW_AT_accessibility")
+  DEFATTRENCODE("ad", DW_AT_address_class, "DW_AT_address_class")
+  DEFATTRENCODE("ao", DW_AT_abstract_origin, "DW_AT_abstract_origin")
+  DEFATTRENCODE("ar", DW_AT_artificial, "DW_AT_artificial")
+  DEFATTRENCODE("bo", DW_AT_bit_offset, "DW_AT_bit_offset")
+  DEFATTRENCODE("bs", DW_AT_bit_size, "DW_AT_bit_size")
+  DEFATTRENCODE("bt", DW_AT_base_types, "DW_AT_base_types")
+  DEFATTRENCODE("by", DW_AT_byte_size, "DW_AT_byte_size")
+  DEFATTRENCODE("cc", DW_AT_calling_convention, "DW_AT_calling_convention")
+  DEFATTRENCODE("cd", DW_AT_comp_dir, "DW_AT_comp_dir")
+  DEFATTRENCODE("cl", DW_AT_decl_column, "DW_AT_decl_column")
+  DEFATTRENCODE("cn", DW_AT_count, "DW_AT_count")
+  DEFATTRENCODE("cr", DW_AT_common_reference, "DW_AT_common_reference")
+  DEFATTRENCODE("ct", DW_AT_containing_type, "DW_AT_containing_type")
+  DEFATTRENCODE("cv", DW_AT_const_value, "DW_AT_const_value")
+  DEFATTRENCODE("de", DW_AT_declaration, "DW_AT_declaration")
+  DEFATTRENCODE("df", DW_AT_default_value, "DW_AT_default_value")
+  DEFATTRENCODE("di", DW_AT_discr, "DW_AT_discr")
+  DEFATTRENCODE("dl", DW_AT_discr_list, "DW_AT_discr_list")
+  DEFATTRENCODE("dm", DW_AT_data_member_location, "DW_AT_data_member_location")
+  DEFATTRENCODE("dv", DW_AT_discr_value, "DW_AT_discr_value")
+  DEFATTRENCODE("en", DW_AT_encoding, "DW_AT_encoding")
+  DEFATTRENCODE("ex", DW_AT_external, "DW_AT_external")
+  DEFATTRENCODE("fb", DW_AT_frame_base, "DW_AT_frame_base")
+  DEFATTRENCODE("fi", DW_AT_decl_file, "DW_AT_decl_file")
+  DEFATTRENCODE("fr", DW_AT_friend, "DW_AT_friend")
+  DEFATTRENCODE("hp", DW_AT_high_pc, "DW_AT_high_pc")
+  DEFATTRENCODE("hu", DW_AT_hi_user, "DW_AT_hi_user")
+  DEFATTRENCODE("ic", DW_AT_identifier_case, "DW_AT_identifier_case")
+  DEFATTRENCODE("im", DW_AT_import, "DW_AT_import")
+  DEFATTRENCODE("in", DW_AT_inline, "DW_AT_inline")
+  DEFATTRENCODE("io", DW_AT_is_optional, "DW_AT_is_optional")
+  DEFATTRENCODE("la", DW_AT_language, "DW_AT_language")
+  DEFATTRENCODE("lb", DW_AT_lower_bound, "DW_AT_lower_bound")
+  DEFATTRENCODE("le", DW_AT_string_length, "DW_AT_string_length")
+  DEFATTRENCODE("li", DW_AT_decl_line, "DW_AT_decl_line")
+  DEFATTRENCODE("lk", DW_AT_static_link, "DW_AT_static_link")
+  DEFATTRENCODE("lo", DW_AT_location, "DW_AT_location")
+  DEFATTRENCODE("lp", DW_AT_low_pc, "DW_AT_low_pc")
+  DEFATTRENCODE("lu", DW_AT_lo_user, "DW_AT_lo_user")
+  DEFATTRENCODE("mi", DW_AT_macro_info, "DW_AT_macro_info")
+  DEFATTRENCODE("na", DW_AT_name, "DW_AT_name")
+  DEFATTRENCODE("ni", DW_AT_namelist_item, "DW_AT_namelist_item")
+  DEFATTRENCODE("or", DW_AT_ordering, "DW_AT_ordering")
+  DEFATTRENCODE("pd", DW_AT_producer, "DW_AT_producer")
+  DEFATTRENCODE("pr", DW_AT_prototyped, "DW_AT_prototyped")
+  DEFATTRENCODE("py", DW_AT_priority, "DW_AT_priority")
+  DEFATTRENCODE("ra", DW_AT_return_addr, "DW_AT_return_addr")
+  DEFATTRENCODE("se", DW_AT_segment, "DW_AT_segment")
+  DEFATTRENCODE("si", DW_AT_sibling, "DW_AT_sibling")
+  DEFATTRENCODE("sl", DW_AT_stmt_list, "DW_AT_stmt_list")
+  DEFATTRENCODE("sp", DW_AT_specification, "DW_AT_specification")
+  DEFATTRENCODE("ss", DW_AT_start_scope, "DW_AT_start_scope")
+  DEFATTRENCODE("sz", DW_AT_stride_size, "DW_AT_stride_size")
+  DEFATTRENCODE("ty", DW_AT_type, "DW_AT_type")
+  DEFATTRENCODE("ub", DW_AT_upper_bound, "DW_AT_upper_bound")
+  DEFATTRENCODE("ul", DW_AT_use_location, "DW_AT_use_location")
+  DEFATTRENCODE("vp", DW_AT_variable_parameter, "DW_AT_variable_parameter")
+  DEFATTRENCODE("vr", DW_AT_virtuality, "DW_AT_virtuality")
+  DEFATTRENCODE("vs", DW_AT_visibility, "DW_AT_visibility")
+  DEFATTRENCODE("vt", DW_AT_vtable_elem_location, "DW_AT_vtable_elem_location")
+
+#endif
+
+/* DEFFORMCODE lists information associated with each DWARF attribute format.
+
+   The first argument is a 1-character string which we use as an internal
+   encoding for the format.  By concatenating these strings, we can encode
+   a list of attribute formats.
+
+   The second argument is the DWARF DW_FORM_* identifier for the format.
+
+   The third argument is a string'ized form of the DWARF DW_FORM_* identifier,
+   used for printing its name.
+*/
+
+#if defined(DEFFORMCODE)
+
+  DEFFORMCODE("a", DW_FORM_addr, "DW_FORM_addr")
+  DEFFORMCODE("s", DW_FORM_string, "DW_FORM_string")
+  DEFFORMCODE("S", DW_FORM_strp, "DW_FORM_strp")
+  DEFFORMCODE("y", DW_FORM_block1, "DW_FORM_block1")
+  DEFFORMCODE("z", DW_FORM_block2, "DW_FORM_block2")
+  DEFFORMCODE("b", DW_FORM_block4, "DW_FORM_block4")
+  DEFFORMCODE("B", DW_FORM_block, "DW_FORM_block")
+  DEFFORMCODE("1", DW_FORM_data1, "DW_FORM_data1")
+  DEFFORMCODE("2", DW_FORM_data2, "DW_FORM_data2")
+  DEFFORMCODE("4", DW_FORM_data4, "DW_FORM_data4")
+  DEFFORMCODE("8", DW_FORM_data8, "DW_FORM_data8")
+  DEFFORMCODE("i", DW_FORM_sdata, "DW_FORM_sdata")
+  DEFFORMCODE("u", DW_FORM_udata, "DW_FORM_udata")
+  DEFFORMCODE("f", DW_FORM_flag, "DW_FORM_flag")
+  DEFFORMCODE("m", DW_FORM_ref1, "DW_FORM_ref1")
+  DEFFORMCODE("n", DW_FORM_ref2, "DW_FORM_ref2")
+  DEFFORMCODE("o", DW_FORM_ref4, "DW_FORM_ref4")
+  DEFFORMCODE("p", DW_FORM_ref8, "DW_FORM_ref8")
+  DEFFORMCODE("q", DW_FORM_ref_udata, "DW_FORM_ref_udata")
+  DEFFORMCODE("r", DW_FORM_ref_addr, "DW_FORM_ref_addr")
+  DEFFORMCODE("t", DW_FORM_indirect, "DW_FORM_indirect")
+
+#endif
+
+/* DEFABBREVCODE defines all .debug_abbrev entries.
+
+   The first argument is an enumerator representing the abbreviation's code.
+   This is an internal id, the DWARF standard does not define these.
+
+   The second argument is the name of the abbreviation for printing purposes.
+
+   The third argument is the DIE tag to which the abbreviation applies.
+
+   The fourth argument is DW_CHILDREN_yes or DW_CHILDREN_no, indicating
+   whether DIE's described by this abbreviation have children.
+
+   The fifth argument is a string that encodes the names of the attributes
+   in the associated DIE.  The order of attributes in this string defines
+   the order of the attribute values in the DIE.
+
+   The sixth argument is a string paralleling the fifth argument, that encodes
+   the form of each attribute value.
+	In general there is only a single form used for any given attribute,
+	independent of the abbreviation in which the attribute is used.
+	An exception is the DW_AT_location attribute, for which the
+	DW_FORM_indirect form is generally used, but a DW_FORM_block*
+	form is sometimes used.
+
+   General comments:
+
+   DW_AT_sibling
+	Sibling attributes are used by a DWARF consumer to skip over a DIE
+	when searching through DIEs in the .debug_info section.
+	For small DIEs, it's probably as fast to just read through the DIE's
+	attributes.  So, we save a little space by not emitting a sibling
+	attribute in small DIEs.  We generally use the sibling attribute only
+	for large DIEs, typically those that have children DIEs.
+	When used, the sibling attribute is typically the first attribute
+	in a DIE.  This allows the consumer to quickly skip past the DIE if
+	he can make his 'skip decision' based on the DIE's tag.
+	The DW_AT_name and DW_AT_abstract_origin attributes are placed
+	early in a DIE for similar reasons.
+
+   DW_AT_decl_file
+   DW_AT_decl_line
+   DW_AT_decl_column
+	These attributes, when present, are always emitted contiguously.
+ */
+
+
+#if defined(DEFABBREVCODE)
+
+/* zero is an invalid abbreviation code.  It is used to mark the end of the
+   list of abbreviations in the .debug_abbrev section.  */
+DEFABBREVCODE(DW_ABBREV_NULL, "dw_abbrev_unused", 0, DW_CHILDREN_no, "", "")
+
+DEFABBREVCODE(DW_ABBREV_COMPILE_UNIT, "dw_abbrev_compile_unit",
+	DW_TAG_compile_unit, DW_CHILDREN_yes, "lphpnalaslmicdpd", "aasu44ss")
+
+/* Define formats for base type DIEs. */
+
+	/* Most base types have a name, encoding and byte size. */
+DEFABBREVCODE(DW_ABBREV_BASE_TYPE, "dw_abbrev_base_type",
+	DW_TAG_base_type, DW_CHILDREN_no, "naenby", "suu")
+
+	/* Some base types, such as 'long double', also have bit size and
+	   bit offset values, since they do not use all the bits in their
+	   representation.  */
+DEFABBREVCODE(DW_ABBREV_PADDED_BASE_TYPE, "dw_abbrev_padded_base_type",
+	DW_TAG_base_type, DW_CHILDREN_no, "naenbybsbo", "suuuu")
+
+/* Define formats for the type modifier DIEs */
+
+DEFABBREVCODE(DW_ABBREV_CONST_TYPE, "dw_abbrev_const_type",
+	DW_TAG_const_type, DW_CHILDREN_no, "ty", "o")
+
+DEFABBREVCODE(DW_ABBREV_VOLATILE_TYPE, "dw_abbrev_volatile_type",
+	DW_TAG_volatile_type, DW_CHILDREN_no, "ty", "o")
+
+DEFABBREVCODE(DW_ABBREV_POINTER_TYPE, "dw_abbrev_pointer_type",
+	DW_TAG_pointer_type, DW_CHILDREN_no, "ty", "o")
+
+	/* DW_ABBREV_TYPEDEF DIEs are used for file scope typedefs,
+	   for typedefs in abstract instance trees, and for typedefs
+	   in a normal function tree.
+	   DW_ABBREV_CONCRETE_TYPEDEF DIEs are used for typedefs in
+	   a concrete inlined or out-of-line instance tree.
+	 */
+DEFABBREVCODE(DW_ABBREV_TYPEDEF, "dw_abbrev_typedef",
+	DW_TAG_typedef, DW_CHILDREN_no, "nafiliclty", "suuuo")
+
+DEFABBREVCODE(DW_ABBREV_CONCRETE_TYPEDEF, "dw_abbrev_concrete_typedef",
+	DW_TAG_typedef, DW_CHILDREN_no, "ao", "o")
+
+/* Define formats for representing structure and union types. */
+
+	/* Incomplete struct and union DIEs have no children, and have
+	   only the DW_AT_name and DW_AT_declaration attributes. */
+
+DEFABBREVCODE(DW_ABBREV_INCOMPLETE_STRUCT, "dw_abbrev_incomplete_struct",
+	DW_TAG_structure_type, DW_CHILDREN_no, "nade", "sf")
+
+DEFABBREVCODE(DW_ABBREV_INCOMPLETE_UNION, "dw_abbrev_incomplete_union",
+	DW_TAG_union_type, DW_CHILDREN_no, "nade", "sf")
+
+	/* Concrete instances of struct and union type tags simply
+	   reference the abstract instance.
+	 */
+DEFABBREVCODE(DW_ABBREV_CONCRETE_STRUCT_TYPE, "dw_abbrev_concrete_struct_type",
+	DW_TAG_structure_type, DW_CHILDREN_no, "ao", "o")
+
+DEFABBREVCODE(DW_ABBREV_CONCRETE_UNION_TYPE, "dw_abbrev_concrete_union_type",
+	DW_TAG_union_type, DW_CHILDREN_no, "ao", "o")
+
+	/* Complete struct and union DIEs have an optional name (tag),
+	   and a size (in bytes).  They have child DIE's representing
+	   their members.
+	 */
+
+DEFABBREVCODE(DW_ABBREV_NAMED_STRUCT, "dw_abbrev_named_struct",
+	DW_TAG_structure_type, DW_CHILDREN_yes, "sinaby", "osu")
+
+DEFABBREVCODE(DW_ABBREV_ANON_STRUCT, "dw_abbrev_anon_struct",
+	DW_TAG_structure_type, DW_CHILDREN_yes, "siby", "ou")
+
+DEFABBREVCODE(DW_ABBREV_NAMED_UNION, "dw_abbrev_named_union",
+	DW_TAG_union_type, DW_CHILDREN_yes, "sinaby", "osu")
+
+DEFABBREVCODE(DW_ABBREV_ANON_UNION, "dw_abbrev_anon_union",
+	DW_TAG_union_type, DW_CHILDREN_yes, "siby", "ou")
+
+	/* A union data member has name and type attributes. */
+
+DEFABBREVCODE(DW_ABBREV_UNION_DATA_MEMBER, "dw_abbrev_union_data_member",
+	DW_TAG_member, DW_CHILDREN_no, "nafiliclty", "suuuo")
+
+	/* A structure data member has name, type and location attributes. */
+
+DEFABBREVCODE(DW_ABBREV_STRUCT_DATA_MEMBER, "dw_abbrev_struct_data_member",
+	DW_TAG_member, DW_CHILDREN_no, "nafilicltydm", "suuuoy")
+
+	/* A structure bit-field data member has name, type, location,
+	   byte size, bit offset and bit size attributes. */
+
+DEFABBREVCODE(DW_ABBREV_BIT_FIELD_MEMBER, "dw_abbrev_bit_field_member",
+	DW_TAG_member, DW_CHILDREN_no, "nafilicltydmbybobs", "suuuoyuuu")
+
+/* Define formats for representing an array type. */
+
+	/* Array types have a DW_AT_type attribute describing the element type,
+	   and zero or more children describing the array dimensions.
+	   We don't include the DW_AT_byte_size attribute, because that
+	   can be computed by the debugger if needed.
+	 */
+
+DEFABBREVCODE(DW_ABBREV_ARRAY_TYPE, "dw_abbrev_array_type",
+	DW_TAG_array_type, DW_CHILDREN_yes, "sity", "oo")
+
+/* Define formats for representing the bounds of an array dimension.
+   Each array dimension (for C and C++) implicitly has 0 as its lower bound.
+   We do not explicitly represent this zero in our DW_TAG_subrange_type.
+
+   We also do not explicitly represent the type of the index.  It is
+   implicitly 'int'.
+ */
+
+	/* A statically bounded array dimension has a DW_AT_upper_bound
+	   attribute whose value is an unsigned LEB128 number.
+	 */
+
+DEFABBREVCODE(DW_ABBREV_STATIC_ARRAY_BOUND, "dw_abbrev_static_array_bound",
+	DW_TAG_subrange_type, DW_CHILDREN_no, "ub", "u")
+
+	/* A subrange type lacking a DW_AT_upper_bound attribute is used
+	   to represent an incomplete array dimension.
+	 */
+DEFABBREVCODE(DW_ABBREV_UNKNOWN_ARRAY_BOUND, "dw_abbrev_unknown_array_bound",
+	DW_TAG_subrange_type, DW_CHILDREN_no, "", "")
+
+/* Define formats for representing an enumeration type. */
+
+/* Note that there is no DWARF attribute to specify whether an
+   enumeration type is signed or unsigned.  Perhaps we can add
+   a DW_AT_type attribute which references an appropriate signed
+   or unsigned base type, but this would require a change to the
+   DWARF specification.
+ */
+
+DEFABBREVCODE(DW_ABBREV_INCOMPLETE_ENUM, "dw_abbrev_incomplete_enum",
+	DW_TAG_enumeration_type, DW_CHILDREN_no, "nade", "sf")
+
+DEFABBREVCODE(DW_ABBREV_NAMED_ENUM, "dw_abbrev_named_enum",
+	DW_TAG_enumeration_type, DW_CHILDREN_yes, "sinaby", "osu")
+
+DEFABBREVCODE(DW_ABBREV_ANON_ENUM, "dw_abbrev_anon_enum",
+	DW_TAG_enumeration_type, DW_CHILDREN_yes, "siby", "ou")
+
+DEFABBREVCODE(DW_ABBREV_CONCRETE_ENUMERATION_TYPE,
+		"dw_abbrev_concrete_enumeration_type",
+	DW_TAG_enumeration_type, DW_CHILDREN_no, "ao", "o")
+
+DEFABBREVCODE(DW_ABBREV_ENUMERATOR, "dw_abbrev_enumerator",
+	DW_TAG_enumerator, DW_CHILDREN_no, "nacv", "si")
+
+/* Define formats for representing global and local variables. */
+
+	/* A DW_ABBREV_GLOBAL_VAR_DECL represents a non-defining
+	   file-scope variable declaration.
+	 */
+DEFABBREVCODE(DW_ABBREV_GLOBAL_VAR_DECL, "dw_abbrev_global_var_decl",
+	DW_TAG_variable, DW_CHILDREN_no, "nafilicltydeex", "suuuoff")
+
+	/* A DW_ABBREV_GLOBAL_VAR_CONSTANT represents a variable that has
+	   a known constant value, and does not exist in storage at runtime.
+	   It has the DW_AT_const_value attribute, but not DW_AT_location.
+	 */
+DEFABBREVCODE(DW_ABBREV_GLOBAL_VAR_CONSTANT, "dw_abbrev_global_var_constant",
+	DW_TAG_variable, DW_CHILDREN_no, "nafilicltyexcv", "suuuoft")
+
+	/* A DW_ABBREV_GLOBAL_VAR_DEFN represents a variable which either
+	   has runtime storage allocated, or has no runtime storage and
+	   is not constant.  It has a DW_AT_location attribute, which will
+	   be a NULL location if the variable has no runtime storage allocated.
+	   The location for a global variable can always be represented
+	   in a relatively small location expression, so we use form
+	   DW_FORM_block1 directly instead of the form DW_FORM_indirect.
+	 */
+DEFABBREVCODE(DW_ABBREV_GLOBAL_VAR_DEFN, "dw_abbrev_global_var_defn",
+	DW_TAG_variable, DW_CHILDREN_no, "nafilicltyexlo", "suuuofy")
+
+
+DEFABBREVCODE(DW_ABBREV_ABSTRACT_LOCAL_VAR, "dw_abbrev_abstract_local_var",
+	DW_TAG_variable, DW_CHILDREN_no, "nafiliclty", "suuuo")
+
+	/* The DW_ABBREV_CONCRETE_LOCAL_VAR_CONSTANT and
+	   DW_ABBREV_CONCRETE_LOCAL_VAR abbreviations represent a concrete
+	   inlined or out-of-line instance of some abstract local variable.
+	   The former represents a variable that has a known constant value,
+	   and does not exist in storage at runtime.  It has the
+	   DW_AT_const_value attribute, but not DW_AT_location.
+	   The latter has DW_AT_location, but not DW_AT_const_value.
+	 */
+DEFABBREVCODE(DW_ABBREV_CONCRETE_LOCAL_VAR_CONSTANT,
+	"dw_abbrev_concrete_local_var_constant",
+	DW_TAG_variable, DW_CHILDREN_no, "aocv", "ot")
+
+DEFABBREVCODE(DW_ABBREV_CONCRETE_LOCAL_VAR, "dw_abbrev_concrete_local_var",
+	DW_TAG_variable, DW_CHILDREN_no, "aolo", "ot")
+
+	/* The DW_ABBREV_LOCAL_VAR_CONSTANT and DW_ABBREV_LOCAL_VAR
+	   abbreviations are similar to their _CONCRETE_ varieties,
+	   except they apply to local variables from "normal" functions.
+	 */
+
+DEFABBREVCODE(DW_ABBREV_LOCAL_VAR_CONSTANT, "dw_abbrev_local_var_constant",
+	DW_TAG_variable, DW_CHILDREN_no, "nafilicltycv", "suuuot")
+
+DEFABBREVCODE(DW_ABBREV_LOCAL_VAR, "dw_abbrev_local_var",
+	DW_TAG_variable, DW_CHILDREN_no, "nafilicltylo", "suuuot")
+
+	/* The DW_ABBREV_LOCAL_VAR_DECL abbreviation represents a variable
+	   declared 'extern' within a function or block scope.  Since it
+	   has no location information, it can be used as an abstract instance
+	   DIE, and as a normal DIE.
+	 */
+DEFABBREVCODE(DW_ABBREV_LOCAL_VAR_DECL, "dw_abbrev_local_var_decl",
+	DW_TAG_variable, DW_CHILDREN_no, "nafilicltyde", "suuuof")
+
+	/* A concrete local var declaration DIE merely acts as a place-holder
+	   within a concrete instance tree.  All relevant information for
+	   the variable declaration can be found in the abstract instance DIE.
+	 */
+DEFABBREVCODE(DW_ABBREV_CONCRETE_LOCAL_VAR_DECL,
+	"dw_abbrev_concrete_local_var_decl",
+	DW_TAG_variable, DW_CHILDREN_no, "ao", "o")
+
+/* Define formats for representing FUNCTION_TYPEs.
+   Function types are anonymous, and thus never reside within concrete
+   instance trees.
+
+   We need to distinguish between function's returning void and functions
+   returning a value, because DWARF prohibits the former from having
+   a DW_AT_type attribute.
+ */
+
+DEFABBREVCODE(DW_ABBREV_VOID_FUNC_TYPE, "dw_abbrev_void_func_type",
+	DW_TAG_subroutine_type, DW_CHILDREN_yes, "sipr", "of")
+
+DEFABBREVCODE(DW_ABBREV_FUNC_TYPE, "dw_abbrev_func_type",
+	DW_TAG_subroutine_type, DW_CHILDREN_yes, "sitypr", "oof")
+
+/* Define formats for representing function parameters and their types. */
+
+DEFABBREVCODE(DW_ABBREV_UNSPECIFIED_PARAMETERS,
+		"dw_abbrev_unspecified_parameters",
+		DW_TAG_unspecified_parameters, DW_CHILDREN_no, "", "")
+
+DEFABBREVCODE(DW_ABBREV_PARAMETER_TYPE, "dw_abbrev_parameter_type",
+		DW_TAG_formal_parameter, DW_CHILDREN_no, "ty", "o")
+
+DEFABBREVCODE(DW_ABBREV_ABSTRACT_PARAMETER, "dw_abbrev_abstract_parameter",
+		DW_TAG_formal_parameter, DW_CHILDREN_no,
+		"nafiliclty", "suuuo")
+
+DEFABBREVCODE(DW_ABBREV_CONCRETE_PARAMETER_CONSTANT,
+		"dw_abbrev_concrete_parameter_constant",
+		DW_TAG_formal_parameter, DW_CHILDREN_no, "aocv", "ot")
+
+DEFABBREVCODE(DW_ABBREV_CONCRETE_PARAMETER, "dw_abbrev_concrete_parameter",
+		DW_TAG_formal_parameter, DW_CHILDREN_no, "aolo", "ot")
+
+DEFABBREVCODE(DW_ABBREV_PARAMETER_CONSTANT, "dw_abbrev_parameter_constant",
+		DW_TAG_formal_parameter, DW_CHILDREN_no,
+		"nafilicltycv", "suuuot")
+
+DEFABBREVCODE(DW_ABBREV_PARAMETER, "dw_abbrev_parameter",
+		DW_TAG_formal_parameter, DW_CHILDREN_no,
+		"nafilicltylo", "suuuot")
+
+/* Define formats for function declarations (not definitions).
+   Since these are not definitions, no storage is allocated and location
+   information is not needed.  Thus we don't need separate abbreviations
+   for file-scope function declarations, abstract-instance local function
+   declarations and normal local function declarations.
+ */
+
+DEFABBREVCODE(DW_ABBREV_VOID_FUNC_DECL, "dw_abbrev_void_func_decl",
+		DW_TAG_subprogram, DW_CHILDREN_yes,
+			"sinafilicldeexpr", "osuuufff")
+
+DEFABBREVCODE(DW_ABBREV_FUNC_DECL, "dw_abbrev_func_decl",
+		DW_TAG_subprogram, DW_CHILDREN_yes,
+			"sinafilicltydeexpr", "osuuuofff")
+
+	/* A concrete function declaration DIE merely acts as a place-holder
+	   within a concrete instance tree.  All relevant information for
+	   the funciton declaration can be found in the abstract instance DIE.
+	 */
+DEFABBREVCODE(DW_ABBREV_CONCRETE_FUNC_DECL, "dw_abbrev_concrete_func_decl",
+		DW_TAG_subprogram, DW_CHILDREN_no,
+			"ao", "o")
+
+/* Define formats for function definitions and "instances". */
+
+	/* We need to distinguish between functions returning void and
+	   functions returning a value, because DWARF prohibits the former
+	   from having a DW_AT_type attribute.
+	   Note that concrete instances will not have this duality, since
+	   they inherit their type information via DW_AT_abstract_origin.
+	 */
+
+DEFABBREVCODE(DW_ABBREV_VOID_ABSTRACT_FUNC_DEFN,
+		"dw_abbrev_void_abstract_func_defn",
+		DW_TAG_subprogram, DW_CHILDREN_yes,
+			"sinafiliclexprin", "osuuuff1")
+
+DEFABBREVCODE(DW_ABBREV_ABSTRACT_FUNC_DEFN,
+		"dw_abbrev_abstract_func_defn",
+		DW_TAG_subprogram, DW_CHILDREN_yes,
+			"sinafilicltyexprin", "osuuuoff1")
+
+	/* A concrete inlined instance represents an inlined function F at
+	   the point where it is inlined into some function G, AND code is
+	   being generated for G (ie, the function G is being compiled).
+
+	   An abstract inlined instance represents an inlined function F at
+	   the point where it is inlined into some function G, and we are
+	   emitting the abstract instance of G.
+	 */
+DEFABBREVCODE(DW_ABBREV_CONCRETE_INLINED_FUNC,
+		"dw_abbrev_concrete_inlined_func",
+		DW_TAG_inlined_subroutine, DW_CHILDREN_yes,
+		"siaolphp", "ooaa")
+
+#if 0
+DEFABBREVCODE(DW_ABBREV_ABSTRACT_INLINED_FUNC,
+		"dw_abbrev_abstract_inlined_func",
+		DW_TAG_inlined_subroutine, DW_CHILDREN_yes,
+		"siao", "oo")
+	/* This is not particulary valid DWARF.  It is really an artifact
+	   of the DWARF 1 extensions, and the fact that this compiler
+	   performs inlining before emitting the abstract instance DIE
+	   for a function.  So, don't use it.
+	 */
+#endif
+
+DEFABBREVCODE(DW_ABBREV_CONCRETE_OUT_OF_LINE_FUNC,
+		"dw_abbrev_concrete_out_of_line_func",
+		DW_TAG_subprogram, DW_CHILDREN_yes,
+		"siaolphp", "ooaa")
+
+	/* Define a format for a "normal" non-inlineable out-of-line function.
+	   Such a function is not an inline candidate, nor is it inlined.
+
+	   We *could* represent such beasts with both an abstract instance
+	   and a concrete out-of-line instance, but that would only waste
+	   space in the .debug_info section.  We might as well put all the
+	   information in one DIE.
+	 */
+
+DEFABBREVCODE(DW_ABBREV_VOID_FUNC_DEFN,
+		"dw_abbrev_void_func_defn",
+		DW_TAG_subprogram, DW_CHILDREN_yes,
+		"sinafiliclexprlphp", "osuuuffaa")
+
+DEFABBREVCODE(DW_ABBREV_FUNC_DEFN,
+		"dw_abbrev_func_defn",
+		DW_TAG_subprogram, DW_CHILDREN_yes,
+		"sinafilicltyexprlphp", "osuuuoffaa")
+
+/* Define formats for DW_TAG_lexical_block DIEs */
+
+	/* DW_ABBREV_ABSTRACT_BLOCK is a block within an abstract instance
+	   tree.  Note that, unlike other abstract/concrete relationships,
+	   a concrete instance of a block DOES NOT have an abstract origin
+	   attribute referencing the abtract instance of the block.
+	 */
+DEFABBREVCODE(DW_ABBREV_ABSTRACT_BLOCK, "dw_abbrev_abstract_block",
+		DW_TAG_lexical_block, DW_CHILDREN_yes,
+		"si", "o")
+
+	/* DW_ABBREV_BLOCK is used for all non-abstract-instance blocks. */
+DEFABBREVCODE(DW_ABBREV_BLOCK, "dw_abbrev_block",
+		DW_TAG_lexical_block, DW_CHILDREN_yes,
+		"silphp", "oaa")
+
+DEFABBREVCODE(DW_ABBREV_ABSTRACT_LABEL, "dw_abbrev_abstract_label",
+		DW_TAG_label, DW_CHILDREN_no, "nafilicl", "suuu")
+
+DEFABBREVCODE(DW_ABBREV_CONCRETE_LABEL, "dw_abbrev_concrete_label",
+		DW_TAG_label, DW_CHILDREN_no, "aolp", "oa")
+
+DEFABBREVCODE(DW_ABBREV_CONCRETE_DELETED_LABEL,
+		"dw_abbrev_concrete_deleted_label",
+		DW_TAG_label, DW_CHILDREN_no, "ao", "o")
+
+DEFABBREVCODE(DW_ABBREV_LABEL, "dw_abbrev_label",
+		DW_TAG_label, DW_CHILDREN_no, "nafilicllp", "suuua")
+
+DEFABBREVCODE(DW_ABBREV_DELETED_LABEL, "dw_abbrev_deleted_label",
+		DW_TAG_label, DW_CHILDREN_no, "nafilicl", "suuu")
+
+
+#endif	/* DEFABBREVCODE */
+
+#undef DEFLNSOPCODE
+#undef DEFATTRENCODE
+#undef DEFFORMCODE
+#undef DEFABBREVCODE

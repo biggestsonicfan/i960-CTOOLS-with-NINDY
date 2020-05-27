@@ -1,0 +1,12 @@
+s/alloca-botch\.h/allbotch\.h/g
+s/alloca-norm\.h/allnorm\.h/g
+s/cplus-dem\.c/cplusdem\.c/g
+s/floatformat\.c/fltform\.c/g
+s/getpagesize\.c/getpgsiz\.c/g
+s/getruntime\.c/getruntm\.c/g
+s/libiberty\.h/liberty\.h/g
+s/sigsetmask\.c/sigsetma\.c/g
+s/strcasecmp\.c/strccmp\.c/g
+s/strncasecmp\.c/strnccmp\.c/g
+s/strsignal\.c/strsig\.c/g
+s/vasprintf\.c/vasprint\.c/g

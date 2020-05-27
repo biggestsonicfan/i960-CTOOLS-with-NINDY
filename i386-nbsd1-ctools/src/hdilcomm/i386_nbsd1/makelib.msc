@@ -1,0 +1,3 @@
++dos_io.obj +serdos.obj +timer.obj +intvects.obj +dos_pci.obj +plx_pci.obj +pcirmode.obj &
++com.obj +packet.obj +autobaud.obj +getopt.obj +crcarray.obj +xltbaud.obj &
++seropt.obj +pciopt.obj +commopt.obj ;

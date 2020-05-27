@@ -1,0 +1,3 @@
++download.obj +hostcmds.obj +serve.obj +init.obj +brkpoint.obj &
++trgt_go.obj +memcache.obj +regs.obj +eeprom.obj +extendn.obj &
++errlist.obj +misc.obj +aplink.obj;

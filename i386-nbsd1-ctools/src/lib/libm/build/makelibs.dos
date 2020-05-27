@@ -1,0 +1,242 @@
+#*******************************************************************************
+# 
+# Copyright (c) 1993 Intel Corporation
+# 
+# Intel hereby grants you permission to copy, modify, and distribute this
+# software and its documentation.  Intel grants this permission provided
+# that the above copyright notice appears in all copies and that both the
+# copyright notice and this permission notice appear in supporting
+# documentation.  In addition, Intel grants this permission provided that
+# you prominently mark as "not part of the original" any modifications
+# made to this software or documentation, and that the name of Intel
+# Corporation not be used in advertising or publicity pertaining to
+# distribution of the software or the documentation without specific,
+# written prior permission.
+# 
+# Intel Corporation provides this AS IS, WITHOUT ANY WARRANTY, EXPRESS OR
+# IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY
+# OR FITNESS FOR A PARTICULAR PURPOSE.  Intel makes no guarantee or
+# representations regarding the use of, or the results of the use of,
+# the software and documentation in terms of correctness, accuracy,
+# reliability, currentness, or otherwise; and you rely on the software,
+# documentation and results solely at your own risk.
+#
+# IN NO EVENT SHALL INTEL BE LIABLE FOR ANY LOSS OF USE, LOSS OF BUSINESS,
+# LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES
+# OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
+# PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
+# 
+#*******************************************************************************
+
+MK		= $(MAKE) -f makelibs.dos IC=$(IC)
+
+%if "$(IC)" == ""
+	IC	= gcc960
+%endif
+
+LIB_DEBUG	=
+X960BASE	=
+%if $(IC) == gcc960
+	AR	= gar960
+	AS	= gas960e
+	OPT	= -O4 $(LIB_DEBUG) -fsigned-char -mic3.0-compat -mstrict-align -mpic
+	X960BASE= $(G960BASE)
+%elif $(IC) == ic960
+	AR	= arc960
+	AS	= gas960e
+	OPT	= -O2 $(LIB_DEBUG) -Wc,-fno-builtin,-mstrict-align -Gpc
+	X960BASE= $(I960BASE)
+%else
+%	abort "IC must be ic960 or gcc960"
+%endif
+
+%if "$(X960BASE)" == ""
+%	abort "Define I960BASE for ic960 or G960BASE for gcc960"
+%endif
+
+LIB_INSTALL	=
+%if "$(LIB_INSTALL)" == ""
+	LIB_INSTALL=$(X960BASE)\lib
+%endif
+
+IDIR		= -I$(X960BASE)\src\include
+EXTRACT		= $(AR) -xo
+FORMAT		= -Felf
+EXTRA		=
+CFLAGS		= $(ARCH) $(OPT) $(FORMAT) $(EXTRA) $(IDIR) $(VERB) -DIEEE
+AS_OPT		=
+ASFLAGS		= $(ARCH) $(AS_OPT)
+ARFLAGS		= -r
+VERB		=
+
+LIBM_GENERIC_OBJS	= _class.o constant.o square.o\
+	fabs.o fmod.o fp_exits.o _isnan.o _nan.o rem.o rmd.o round.o\
+	const_dp.o copysign.o environ.o scale.o ldexp.o sinh.o cosh.o\
+	tanh.o expf.o error.o _getac.o _setac.o\
+	_fltprnt.o _fltscan.o difftime.o\
+	afpcnvt.o atof.o ecvt.o fcvt.o gcvt.o\
+	hypot.o hypot_ut.o logb.o matherr.o modf.o a_expm1.o
+
+LIBM_LE_OBJS		= frexp.o
+
+LIBM_BE_OBJS		= frexp_c.o
+
+LIBM_A_OBJS		= a_log10.o a_asin.o a_acos.o a_ferr.o a_pow.o a_fpow.o\
+	ipow.o ipowf.o a_tan.o a_tanf.o a_atan.o a_atanf.o a_log.o a_logf.o\
+	a_exp.o a_expf.o sincos.o sincosf.o a_sqrt.o a_sqrtf.o a_sqrti.o\
+	a_sqrtfi.o afpcnans.o afpcnand.o clssfsi.o clsdfsi.o clstfsi.o
+
+LIBM_B_OBJS		= acoss.o acosd.o asins.o asind.o atan.o cos.o sin.o\
+	tan.o ceilf.o ceil.o ceill.o floorf.o floor.o floorl.o exp2m1.o\
+	exps.o expd.o log_sup.o logs.o logd.o loge.o pows.o powd.o sqrt.o
+
+.PRECIOUS:	lmca.a lmka.a lmkb.a\
+		lmcap.a lmkap.a lmkbp.a\
+		lmcab.a lmcae.a
+
+.SUFFIXES:
+.SUFFIXES:	.o .as .c
+
+.as.o:
+	copy $< temp.c
+	$(IC) @<<
+	-E $(CFLAGS) temp.c
+	<< ECHO > temp.s
+	$(AS) -j1 $(ASFLAGS) -o $*.o temp.s
+	@del temp.c
+	@del temp.s
+
+.c.o:
+	$(IC) @<<
+	-j1 -c $(CFLAGS) $<
+	<< ECHO
+
+all:
+	$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB)\
+		lib_elf_ca lib_elf_ka lib_elf_kb lib_elf_cap\
+		lib_elf_kap lib_elf_kbp lib_elf_cab lib_elf_cae
+
+install: all
+	%if ! %dir($(LIB_INSTALL))
+		mkdir $(LIB_INSTALL)
+	%endif
+	copy lmca.a	$(LIB_INSTALL)\libmca.a
+	copy lmka.a	$(LIB_INSTALL)\libmka.a
+	copy lmkb.a	$(LIB_INSTALL)\libmkb.a
+	copy lmcap.a	$(LIB_INSTALL)\libmca_p.a
+	copy lmkap.a	$(LIB_INSTALL)\libmka_p.a
+	copy lmkbp.a	$(LIB_INSTALL)\libmkb_p.a
+	copy lmcab.a	$(LIB_INSTALL)\libmca_b.a
+	copy lmcae.a	$(LIB_INSTALL)\libmca_e.a
+	%if %dir($(LIB_INSTALL)\libbout)
+	copy lmca.a	$(LIB_INSTALL)\libbout\libmgca.a
+	copy lmka.a	$(LIB_INSTALL)\libbout\libmgka.a
+	copy lmkb.a	$(LIB_INSTALL)\libbout\libmgkb.a
+	copy lmcap.a	$(LIB_INSTALL)\libbout\libmgcap.a
+	copy lmkap.a	$(LIB_INSTALL)\libbout\libmgkap.a
+	copy lmkbp.a	$(LIB_INSTALL)\libbout\libmgkbp.a
+	%endif
+	%if %dir($(LIB_INSTALL)\libcoff)
+	copy lmca.a	$(LIB_INSTALL)\libcoff\libmgca.a
+	copy lmka.a	$(LIB_INSTALL)\libcoff\libmgka.a
+	copy lmkb.a	$(LIB_INSTALL)\libcoff\libmgkb.a
+	copy lmcap.a	$(LIB_INSTALL)\libcoff\libmgcap.a
+	copy lmkap.a	$(LIB_INSTALL)\libcoff\libmgkap.a
+	copy lmkbp.a	$(LIB_INSTALL)\libcoff\libmgkbp.a
+	%endif
+	%if %dir($(LIB_INSTALL)\libcfbe)
+	copy lmcab.a	$(LIB_INSTALL)\libcfbe\libmgca.a
+	%endif
+
+objects:
+	if exist *.o del *.o
+	%if %file($(LIB))
+		$(EXTRACT) $(LIB)
+	%endif
+
+lib_elf_ca:
+	$(MK) LIB=lmca.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-mpid-safe ARCH=-ACA lmca.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpr ARCH=-ACA lmca.a
+	%endif
+
+lib_elf_cap:
+	$(MK) LIB=lmcap.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-mpid ARCH=-ACA lmcap.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpd ARCH=-ACA lmcap.a
+	%endif
+
+lib_elf_ka:
+	$(MK) LIB=lmka.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-mpid-safe ARCH=-AKA lmka.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpr ARCH=-AKA lmka.a
+	%endif
+
+lib_elf_kap:
+	$(MK) LIB=lmkap.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-mpid ARCH=-AKA lmkap.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpd ARCH=-AKA lmkap.a
+	%endif
+
+lib_elf_kb:
+	$(MK) LIB=lmkb.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-mpid-safe ARCH=-AKB lmkb.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpr ARCH=-AKB lmkb.a
+	%endif
+
+lib_elf_kbp:
+	$(MK) LIB=lmkbp.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-mpid ARCH=-AKB lmkbp.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpd ARCH=-AKB lmkbp.a
+	%endif
+
+lib_elf_cab:
+	$(MK) LIB=lmcab.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA="-mpid-safe -G" ARCH=-ACA AS_OPT=-G lmcab.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpr,be ARCH=-ACA AS_OPT=-G lmcab.a
+	%endif
+
+lib_elf_cae:
+	$(MK) LIB=lmcae.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA="-mpid -G" ARCH=-ACA AS_OPT=-G lmcae.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpd,be ARCH=-ACA AS_OPT=-G lmcae.a
+	%endif
+
+lmka.a lmkap.a lmca.a lmcap.a:	$(LIBM_GENERIC_OBJS) $(LIBM_LE_OBJS) $(LIBM_A_OBJS)
+	$(AR) @<<
+	$(ARFLAGS) $@ $(.SOURCES)
+	<<
+	if exist *.o del *.o
+
+lmcab.a lmcae.a:	$(LIBM_GENERIC_OBJS) $(LIBM_BE_OBJS) $(LIBM_A_OBJS)
+	$(AR) @<<
+	$(ARFLAGS) $@ $(.SOURCES)
+	<<
+	if exist *.o del *.o
+
+lmkb.a lmkbp.a: $(LIBM_GENERIC_OBJS) $(LIBM_LE_OBJS) $(LIBM_B_OBJS)
+	$(AR) @<<
+	$(ARFLAGS) $@ $(.SOURCES)
+	<<
+	if exist *.o del *.o
+
+clean:
+	if exist *.a del *.a
+	if exist *.o del *.o
+

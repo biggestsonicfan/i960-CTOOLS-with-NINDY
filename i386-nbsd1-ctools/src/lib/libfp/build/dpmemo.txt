@@ -1,0 +1,95 @@
+Dear U S Software Customer:
+
+Congratulations on your purchase of the F/DPAC Floating Point Library.
+
+We suggest that you consider the disk containing the F/DPAC source files
+to be a "master" disk.  Please copy the source files to another disk to
+produce working copies and save the master disk as a backup.
+
+The files comprising the F/DPAC delivery package are:
+
+    FPOPNS.S      Single precision floating point operations
+    FPFNCS.S      Single precision floating point functions
+    FPCNVT.S      Single precision conversion routines
+
+    DPOPNS.S      Double precision floating point operations
+    DPFNCS.S      Double precision floating point functions
+    DPCNVT.S      Double precision conversion routines
+
+    DPPAC.H       DPAC/FPAC Header File
+    DPTEST.C      Testbed/demonstration program
+    DPTEST.OUT    Executable module of DPTEST
+
+    DPOPNS.TST    Automatic tests for DP floating point operations
+    DPFNCS.TST    Automatic tests for DP floating point functions
+    DPCNVT.TST    Automatic tests for DP conversion routines
+    FPOPNS.TST    Automatic tests for SP floating point operations
+    FPFNCS.TST    Automatic tests for SP floating point functions
+    FPCNVT.TST    Automatic tests for SP conversion routines
+
+The floating point demonstration program allows the user to exercise
+the features of the DPAC/FPAC library and to experiment with them.  The
+program simulates a stack calculator with a four deep (maximum) stack,
+quite similar in fact to HP's hand held calculators.  Two stacks are
+maintained, one for single precision floating point numbers and the other
+for double precision floating point numbers.  Additionally, two sets of
+registers are maintained for the G and S commands.
+
+Binary operations are done between the top two items on the stack, with
+one item being consumed in performing the binary operation.  Functions
+and unary operations are performed on the top stack item.  Automatic
+testing may be initiated by using the B command.
+
+The testbed is designed to operate on an Intel 80960KB board within an
+IBM PC compatible platform.  The testbed may be initiated in this
+environment by entering the following:
+
+                sdm_kb              start 80960KB board
+                reset               reset 80960KB board
+                ~d dptest.out       download DPAC testbed
+                go 0x10000000       start DPAC testbed
+
+The user is prompted for a command.  After the command is entered; the
+specified command action is taken and a display of the stack contents is
+produced in hex representation and a decimal interpretation of that hex.
+The chart below shows the F/DPAC routine being exercised, the testbed
+command, and the command action.
+
+
+F/DPAC     CMD   ACTIONS               F/DPAC    CMD   ACTIONS
+---------  ----  ------------------    --------  ----  ------------------
+f/dascbin  fpn   X = fpn                         Q     QUIT 80960 TestBed
+           Hhex  X = hex                         B     Batch Test Mode
+           M     toggle SP/DP                    =     Batch compare X & Y
+f/dpadd    +     X = Y + X                       ?     X = compare X & Y
+f/dpsub    -     X = Y - X             f/dpsub   _     X = X - Y
+f/dpmul    *     X = Y * X             f/dpdiv   /     X = Y / X
+f/dpdiv    \     X = Y / X                       Ffpn  X = fpn
+                                       f/dpsqrt  FR    X = sqrt(X)
+f/daint    A     X = floor(X)          f/dpflt   Fint  X = int
+f/dint     I     X = int(X)            f/dpsin   FS    X = sin(X)
+f/dfix     Z     X = fix(X)            f/dpcos   FC    X = cos(X)
+f/dbinasc  C     X -> ASCII            f/dptan   FT    X = tan(X)
+sptodp     D     X = dp(X)             f/dpatn   FA    X = atn(X)
+dptosp     S     X = sp(X)             f/dpexp   FE    X = X to e pow
+           R     roll X>Y>Z>T>X        f/dpxtoi  F^int X = X to int pow
+           Gint  X = f/dreg[int]       f/dpln    FN    X = log e  (X)
+           Sint  f/dreg[int] = X       f/dllog   FL    X = log 10 (X)
+
+Notes:
+-----------------------------------------------------------------------
+1]  fpn is a floating point number
+2]  hex is a hexidecimal number
+3]  int is an integer
+4]  X is the top of the stack followed by Y,Z,T
+5]  Trigonometric functions deal with radian quantities
+6]  The dynamic range of single precision IEEE floating
+      point numbers is  +/- 1.2E-38 to 3.4E+38
+7]  The dynamic range of double precision IEEE floating
+      point numbers is  +/- 2.225E-308 to 1.797E+308
+8]  An invalid operation (zero divided by zero, log of a negative
+      number, etc...) will produce a Not-a-Number result (NaN)
+9]  Infinity is represented; it is printed as +/- INF
+
+
+Good programming!

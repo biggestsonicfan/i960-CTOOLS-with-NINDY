@@ -1,0 +1,79 @@
+#*******************************************************************************
+#*
+#* Copyright (c) 1993, 1994 Intel Corporation
+#*
+#* Intel hereby grants you permission to copy, modify, and distribute this
+#* software and its documentation.  Intel grants this permission provided
+#* that the above copyright notice appears in all copies and that both the
+#* copyright notice and this permission notice appear in supporting
+#* documentation.  In addition, Intel grants this permission provided that
+#* you prominently mark as "not part of the original" any modifications
+#* made to this software or documentation, and that the name of Intel
+#* Corporation not be used in advertising or publicity pertaining to
+#* distribution of the software or the documentation without specific,
+#* written prior permission.
+#*
+#* Intel Corporation provides this AS IS, WITHOUT ANY WARRANTY, EXPRESS OR
+#* IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY
+#* OR FITNESS FOR A PARTICULAR PURPOSE.  Intel makes no guarantee or
+#* representations regarding the use of, or the results of the use of,
+#* the software and documentation in terms of correctness, accuracy,
+#* reliability, currentness, or otherwise; and you rely on the software,
+#* documentation and results solely at your own risk.
+#*
+#* IN NO EVENT SHALL INTEL BE LIABLE FOR ANY LOSS OF USE, LOSS OF BUSINESS,
+#* LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES
+#* OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
+#* PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
+#*
+#******************************************************************************/
+# This makefile is for Microsoft C 7.0.
+#
+# This makefile has been tested with Microsoft's "nmake" make utility.
+# It's ability to work with other make utilities depends upon how the
+# make handles environment variables -- i.e., CL.
+#
+# In order for this makefile to work, you MUST have the environment
+# variable "CL" set prior to executing nmake!  If you don't already
+# have CL set, then you can set it by typing the following command:
+#       SET CL=-nologo
+#
+
+.SUFFIXES:
+.SUFFIXES: .obj .asm .c
+
+#
+## Compiler flags (cl.exe)
+#
+CC       = cl                # Microsoft C compiler
+
+MEMMODEL = M  # small memory model.
+OPT      = -Od  # Disable all optimization.
+ANSI     = -Za  # Enforce ANSI compatibility.
+#CV       = -Zi  # Codeview symbolic information.
+
+INC_DIR   = ..\..\include
+#DEBUG    =  -Ge    # -Ge is Stack probes on.
+DEBUG     =  -Gs    # -Gs is Stack probes off.
+DEFS      =  -DCC_16BIT -DHOST -DMSDOS $(DEBUG)
+
+#
+# The C compiler flags are put into the CL environment variable rather
+# than the CFLAGS make variable, because the command length is too long.
+#
+# In order for this to work, you MUST have the CL variable set prior
+# to executing this makefile!!
+#
+CL = -A$(MEMMODEL) $(PROC) -W3 $(ANSI) $(CV) $(OPT) \
+        $(DEFS) -I. -I$(INC_DIR)
+
+.c.obj:
+	$(CC) $(CL) -c $<
+
+OBJ = download.obj hostcmds.obj serve.obj init.obj brkpoint.obj \
+	trgt_go.obj memcache.obj regs.obj eeprom.obj \
+	misc.obj extendn.obj errlist.obj aplink.obj gmu.obj
+
+hdil.lib: $(OBJ)
+    del hdil.lib
+	lib hdil.lib @makelib.msc

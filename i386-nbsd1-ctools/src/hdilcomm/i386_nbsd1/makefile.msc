@@ -1,0 +1,92 @@
+#*******************************************************************************
+#*
+#* Copyright (c) 1993, 1994 Intel Corporation
+#*
+#* Intel hereby grants you permission to copy, modify, and distribute this
+#* software and its documentation.  Intel grants this permission provided
+#* that the above copyright notice appears in all copies and that both the
+#* copyright notice and this permission notice appear in supporting
+#* documentation.  In addition, Intel grants this permission provided that
+#* you prominently mark as "not part of the original" any modifications
+#* made to this software or documentation, and that the name of Intel
+#* Corporation not be used in advertising or publicity pertaining to
+#* distribution of the software or the documentation without specific,
+#* written prior permission.
+#*
+#* Intel Corporation provides this AS IS, WITHOUT ANY WARRANTY, EXPRESS OR
+#* IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY
+#* OR FITNESS FOR A PARTICULAR PURPOSE.  Intel makes no guarantee or
+#* representations regarding the use of, or the results of the use of,
+#* the software and documentation in terms of correctness, accuracy,
+#* reliability, currentness, or otherwise; and you rely on the software,
+#* documentation and results solely at your own risk.
+#*
+#* IN NO EVENT SHALL INTEL BE LIABLE FOR ANY LOSS OF USE, LOSS OF BUSINESS,
+#* LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES
+#* OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
+#* PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
+#*
+#******************************************************************************/
+# This makefile is for Microsoft C 7.0.
+#
+# This makefile has been tested with Microsoft's "nmake" make utility.
+#
+.SUFFIXES: .obj .asm .c
+
+HDI_INC = ..\..\hdil\common
+
+#
+## Compiler flags (cl.exe)
+#
+CC        = cl   # Microsoft C compiler
+
+MEMMODEL  = M    # medium memory model.
+OPT       = -Od  # Disable all optimization.
+#ANSI      = -Za  # Enforce ANSI compatibility.
+#CV        = -Zi  # Codeview symbolic information.
+
+INC       = -I. -I$(HDI_INC)
+DEBUG     = -Gs    # -Gs is Stack probes off.
+DEFS      = -DHOST -DMSDOS $(DEBUG)
+
+#
+# Nested include dependencies...
+#
+DOS_PCI_H        = dos_pci.h cyc9060.h $(HDI_INC)\hdi_com.h $(HDI_INC)\common.h
+
+
+#
+# The C compiler flags are put into the CL environment variable rather
+# than the CFLAGS make variable, because the command length is too long.
+#
+# In order for this to work, you MUST have the CL variable set prior
+# to executing this makefile!!
+#
+CFLAGS = -A$(MEMMODEL) -W3 $(ANSI) $(CV) $(OPT) $(DEFS) $(INC)
+
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+
+AS      = masm
+ASFLAGS = -ML -ZI
+
+.asm.obj:
+	$(AS) $(ASFLAGS) $< , $@ ,,,
+
+#AS      = ml
+#ASFLAGS = -nologo -Cp -Zi
+#
+#.asm.obj:
+#	$(AS) $(ASFLAGS) -c $<
+
+OBJ = dos_io.obj dos_pci.obj plx_pci.obj pcirmode.obj serdos.obj timer.obj intvects.obj
+COMM_OBJ = com.obj packet.obj autobaud.obj getopt.obj crcarray.obj \
+           pciopt.obj commopt.obj seropt.obj xltbaud.obj
+
+hdilcomm.lib: $(OBJ) $(COMM_OBJ)
+	del $@
+	lib $@ @makelib.msc
+
+pcirmode.asm: pcirmode.inc
+
+dos_pci.c:    $(DOS_PCI_H)

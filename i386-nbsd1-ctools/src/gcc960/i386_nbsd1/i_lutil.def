@@ -1,0 +1,206 @@
+/* Common code to be included from cccp.c and i_lister.c */
+
+#ifdef IN_ILISTER
+#define in_cc1960 1
+#define in_cpp960 0
+#endif
+#ifdef IN_CPP960
+#define in_cc1960 0
+#define in_cpp960 1
+#endif
+
+int   flag_fancy_errors;
+int   flag_mix_asm;
+char* sinfo_name;
+FILE* sinfo_file;
+
+static int   flag_list_asm;
+static int   flag_list_compiled_out;
+static int   flag_list_include;
+static int   flag_list_macro;
+static char* flag_list;
+static char* list_name;
+static char* ltmp_name;
+static FILE* list_file;
+static FILE* ltmp_file;
+
+#if !defined(DOS) && !defined(normalize_file_name)
+#define normalize_file_name(x)	(x)
+#endif
+
+int
+set_list_option(sw, p)
+char* sw;
+char* p;
+{
+  int ret = 1;
+
+  if (*sw != '-'
+#if defined(DOS)
+	&& *sw != '/'
+#endif
+      )
+    return 0;
+
+  if (!strcmp (sw+1, list_name_sw))
+    list_name = normalize_file_name(p);
+
+  else if (!strcmp (sw+1, ltmp_name_sw))
+    ltmp_name = normalize_file_name(p);
+
+  else if (!strcmp (sw+1, flag_list_sw))
+  { char c;
+
+    flag_list = sw;
+  
+    while (c = *p++)
+      if (c=='c')
+        flag_list_compiled_out = 1;
+      else if (c=='i')
+        flag_list_include = 1;
+      else if (c == 'o')
+        flag_list_asm = 1;
+      else if (c == 'm')
+        flag_list_macro = 1;
+  }
+  else
+    ret = 0;
+
+  return ret;
+}
+
+void
+open_listing_files()
+{
+  if (sinfo_name)
+    assert (sinfo_file);
+  else
+    if (flag_mix_asm||flag_fancy_errors||flag_list)
+      fatal ("-sinfo <file> is required");
+
+  if (ltmp_name && !(ltmp_file=fopen(ltmp_name,"w")))
+    pfatal_with_name (ltmp_name);
+
+  if (flag_list)
+    if (in_cc1960 && (!list_name || !ltmp_name))
+      fatal ("-%s requires -%s <file> and -%s <file>", flag_list_sw,
+               list_name_sw, ltmp_name_sw);
+
+  if (list_name)
+  { struct stat sbuf;
+    if (flag_ic960 && stat(list_name,&sbuf) == 0)
+    { if ((list_file = fopen (list_name, "a+")))
+        fputc ('\v', list_file);
+    }
+    else
+      list_file = fopen (list_name, "w");
+
+    if (list_file == 0)
+      pfatal_with_name (list_name);
+  }
+}
+
+void
+split_list_line (t, col, p, c, m)
+char* t;
+unsigned col;
+char* p;
+char* c;
+char* m;
+{
+  int i,ismac;
+  char* map;
+
+  i = strlen (t);
+  assert (t && i > LISTING_HEADER_SIZE && col >= 0 && t[i-1]=='\n');
+
+  ismac = (t[1]=='m');
+  t += LISTING_HEADER_SIZE;
+  i -= LISTING_HEADER_SIZE;
+
+  if (ismac)
+  { map = t;
+    t   = index(t,':')+1;
+    i  -= (t-map);
+  }
+
+  assert (i > 0);
+
+  if (p)
+    strcpy (p, t);
+
+  if (c)
+  { *c = 0;
+
+    if (col < MAX_LIST_COL)
+    {
+      strcpy (c, t);
+  
+      if (ismac)
+      { int base,pos,exp;
+        exp = *map++;
+        while ((base=atoi(map)) > col)
+        { map = index (map, ',')+1;
+          exp = *map++;
+        }
+
+        pos = atoi(index(map,' ')+1);
+        if (exp != 'm')
+          col = pos + (col-base);
+        else
+          col = pos;
+      }
+
+      if (col >= (i-1))
+      { c[i-1]='^';
+        c[i-0]='\n';
+        c[i+1]='\0';
+        i--;
+      }
+      while (--i >= 0)
+      { if (i == col)
+          c[i]='^';
+        else
+          if (c[i]!='\t' && c[i]!='\n')
+            c[i]=' ';
+      }
+    }
+  }
+
+  if (m)
+    *m = 0;
+}
+
+void
+abort_signal_handler (sig)
+{
+  internal_error ("caught signal %d", sig);
+}
+
+set_abort_signals(v)
+void (*v)();
+{
+  if (v == 0)
+    v = abort_signal_handler;
+
+#ifdef SIGSEGV
+  signal (SIGSEGV, v);
+#endif
+#ifdef SIGIOT
+  signal (SIGIOT, v);
+#endif
+#ifdef SIGILL
+  signal (SIGILL, v);
+#endif
+#ifdef SIGABRT
+  signal (SIGABRT, v);
+#endif
+#ifdef SIGBUS
+  signal (SIGBUS, v);
+#endif
+}
+
+set_abort_handler()
+{
+  set_abort_signals(abort_signal_handler);
+}

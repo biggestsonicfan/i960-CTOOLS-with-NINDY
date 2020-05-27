@@ -1,0 +1,9 @@
+for i in *; do
+  if test ! -d $i; then
+    grep "^$i\$" FILES >/dev/null 2>&1
+    if test $? -ne 0; then
+      echo "removing $i"
+      rm -f $i
+    fi
+  fi
+done

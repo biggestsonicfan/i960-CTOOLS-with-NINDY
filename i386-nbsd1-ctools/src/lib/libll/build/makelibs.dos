@@ -1,0 +1,207 @@
+#*******************************************************************************
+# 
+# Copyright (c) 1993 Intel Corporation
+# 
+# Intel hereby grants you permission to copy, modify, and distribute this
+# software and its documentation.  Intel grants this permission provided
+# that the above copyright notice appears in all copies and that both the
+# copyright notice and this permission notice appear in supporting
+# documentation.  In addition, Intel grants this permission provided that
+# you prominently mark as "not part of the original" any modifications
+# made to this software or documentation, and that the name of Intel
+# Corporation not be used in advertising or publicity pertaining to
+# distribution of the software or the documentation without specific,
+# written prior permission.
+# 
+# Intel Corporation provides this AS IS, WITHOUT ANY WARRANTY, EXPRESS OR
+# IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY
+# OR FITNESS FOR A PARTICULAR PURPOSE.  Intel makes no guarantee or
+# representations regarding the use of, or the results of the use of,
+# the software and documentation in terms of correctness, accuracy,
+# reliability, currentness, or otherwise; and you rely on the software,
+# documentation and results solely at your own risk.
+#
+# IN NO EVENT SHALL INTEL BE LIABLE FOR ANY LOSS OF USE, LOSS OF BUSINESS,
+# LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES
+# OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
+# PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
+# 
+#*******************************************************************************
+
+MK		= $(MAKE) -f makelibs.dos IC=$(IC)
+
+%if "$(IC)" == ""
+	IC	= gcc960
+%endif
+
+LIB_DEBUG	=
+X960BASE	=
+%if $(IC) == gcc960
+	AR	= gar960
+	AS	= gas960e
+	OPT	= -w -O4 $(LIB_DEBUG) -fsigned-char -mic3.0-compat -mstrict-align -mpic
+	X960BASE= $(G960BASE)
+%elif $(IC) == ic960
+	AR	= arc960
+	AS	= gas960e
+	OPT	= -w2 -O2 $(LIB_DEBUG) -Wc,-mstrict-align -Gpc
+	X960BASE= $(I960BASE)
+%else
+%	abort "IC must be ic960 or gcc960"
+%endif
+
+%if "$(X960BASE)" == ""
+%	abort "Define I960BASE for ic960 or G960BASE for gcc960"
+%endif
+
+LIB_INSTALL	=
+%if "$(LIB_INSTALL)" == ""
+	LIB_INSTALL=$(X960BASE)\lib
+%endif
+
+IDIR		= -I$(X960BASE)\src\include
+EXTRACT		= $(AR) -xo
+FORMAT		= -Felf
+EXTRA		=
+CFLAGS		= $(ARCH) $(OPT) $(FORMAT) $(EXTRA) $(IDIR) $(VERB)
+AS_OPT		=
+ASFLAGS		= $(ARCH) $(AS_OPT)
+ARFLAGS		= -r
+VERB		=
+
+OBJS		= _arg_ini.o _exit.o access.o brk.o close.o creat.o isatty.o\
+		lseek.o open.o read.o rename.o stat.o system.o time.o unlink.o\
+		write.o ll_init.o _create.o _def_sig.o _map_len.o _semaph.o\
+		_stdopen.o _tzset.o c_init.o c_term.o ioctl.o get_prcb.o\
+		ninobjs.o
+
+.PRECIOUS:	lll.a lllp.a lllb.a llle.a
+
+.SUFFIXES:
+.SUFFIXES:	.o .as .c
+
+.as.o:
+	copy $< temp.c
+	$(IC) @<<
+	-E $(CFLAGS) temp.c
+	<< ECHO > temp.s
+	$(AS) -j1 $(ASFLAGS) -o $*.o temp.s
+	@del temp.c
+	@del temp.s
+
+.c.o:
+	$(IC) @<<
+	-j1 -c $(CFLAGS) $<
+	<< ECHO
+
+all:
+	$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB)\
+		lib_elf_ka lib_elf_kap lib_elf_cab lib_elf_cae
+	$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB)\
+		crt_elf crt_elf_b
+
+install: all
+	%if ! %dir($(LIB_INSTALL))
+		mkdir $(LIB_INSTALL)
+	%endif
+	copy lll.a	$(LIB_INSTALL)\libll.a
+	copy lllp.a	$(LIB_INSTALL)\libll_p.a
+	copy lllb.a	$(LIB_INSTALL)\libll_b.a
+	copy llle.a	$(LIB_INSTALL)\libll_e.a
+	copy crt960.o	$(LIB_INSTALL)\crt960.o
+	copy crt960_p.o	$(LIB_INSTALL)\crt960_p.o
+	copy crt960_b.o	$(LIB_INSTALL)\crt960_b.o
+	copy crt960_e.o	$(LIB_INSTALL)\crt960_e.o
+	%if  %dir($(LIB_INSTALL)\libbout)
+	copy lll.a	$(LIB_INSTALL)\libbout\libllg.a
+	copy lllp.a	$(LIB_INSTALL)\libbout\libllgp.a
+	copy crt960.o	$(LIB_INSTALL)\libbout\crt960g.o
+	copy crt960_p.o	$(LIB_INSTALL)\libbout\crt960gp.o
+	%endif
+	%if  %dir($(LIB_INSTALL)\libcoff)
+	copy lll.a	$(LIB_INSTALL)\libcoff\libllg.a
+	copy lllp.a	$(LIB_INSTALL)\libcoff\libllgp.a
+	copy crt960.o	$(LIB_INSTALL)\libcoff\crt960g.o
+	copy crt960_p.o	$(LIB_INSTALL)\libcoff\crt960gp.o
+	%endif
+	%if  %dir($(LIB_INSTALL)\libcfbe)
+	copy lllb.a	$(LIB_INSTALL)\libcfbe\libllg.a
+	copy crt960_b.o	$(LIB_INSTALL)\libcfbe\crt960g.o
+	%endif
+
+objects:
+	if exist *.o del *.o
+	%if %file($(LIB))
+		$(EXTRACT) $(LIB)
+	%endif
+
+lib_elf_ka:
+	$(MK) LIB=lll.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-mpid-safe ARCH=-AKA lll.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpr ARCH=-AKA lll.a
+	%endif
+
+lib_elf_kap:
+	$(MK) LIB=lllp.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-mpid ARCH=-AKA lllp.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpd ARCH=-AKA lllp.a
+	%endif
+
+lib_elf_cab:
+	$(MK) LIB=lllb.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA="-mpid-safe -G" ARCH=-ACA AS_OPT=-G lllb.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpr,be ARCH=-ACA AS_OPT=-G lllb.a
+	%endif
+
+lib_elf_cae:
+	$(MK) LIB=llle.a objects
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA="-mpid -G" ARCH=-ACA AS_OPT=-G llle.a
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) EXTRA=-Gpd,be ARCH=-ACA AS_OPT=-G llle.a
+	%endif
+
+lll.a lllp.a lllb.a llle.a: $(OBJS)
+	$(AR) @<<
+	$(ARFLAGS) $@ $(.SOURCES)
+	<<
+	if exist *.o del *.o
+
+crt_elf:
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) crt960.o crt960_p.o
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) crt960.o crt960_p.o
+	%endif
+
+crt_elf_b:
+	%if $(IC) == gcc960
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) ARCH=-ACA BIG_ENDIAN=-G crt960_b.o crt960_e.o
+	%else
+		$(MK) LIB_DEBUG=$(LIB_DEBUG) VERB=$(VERB) ARCH=-ACA BIG_ENDIAN=-Gbe crt960_b.o crt960_e.o
+	%endif
+
+crt960.o crt960_b.o: crt960.s
+	copy crt960.s tmp.c
+	$(IC) -E tmp.c > tmp.s
+	$(IC) $(FORMAT) $(BIG_ENDIAN) $(ARCH) -j1 -c -o $@ tmp.s
+	del tmp.c
+	del tmp.s
+
+crt960_p.o crt960_e.o: crt960_p.s
+	copy crt960_p.s tmp.c
+	$(IC) -E tmp.c > tmp.s
+	$(IC) $(FORMAT) -j1 -c -o $@ tmp.s
+	del tmp.c
+	del tmp.s
+
+clean:
+	if exist *.a del *.a
+	if exist *.o del *.o
+

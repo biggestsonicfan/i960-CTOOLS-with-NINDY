@@ -1,0 +1,190 @@
+#------------------------------------------
+#     DOS Makefile for 80960 compiler
+#------------------------------------------
+
+# Essential under System V, harmless elsewhere
+SHELL   =/bin/sh
+
+MK      =make -m DOSXP=$(DOSXP) DOSXN=$(DOSXN)
+
+IDIR    =..\..\include
+BASEDIR =..\..\..\dos
+TOOLIB  =$(BASEDIR)\lib\toolib.lib
+CCINFO  =$(BASEDIR)\lib\cc_info.lib
+
+#------------  DEFAULTS  ----------------------
+CC      =cc
+CFLAGS1 =$(OPT) -I$(IDIR) $(DEFS) $(HOST_DEFS)
+CFLAGS  =$(CFLAGS1)
+DEFS    =-DIMSTG -DCROSS_COMPILE -DGCC20
+IOPT    =-O
+LFLAGS  =
+O       =o
+OPT     =-g
+
+CP      =cp
+RM      =rm -f
+WRITABLE=chmod 664
+
+#------------  DOS SPECIFICS  ------------------
+CC      =hc386
+CFIGFLAGS=-SAVEREGS -MAXVCPIMEM 0 -VMFILE VMMDRV.EXP
+CFLAGSRF=cflags.rf
+CFLAGS  =@$(CFLAGSRF)
+DOSXP   =c:\tnt
+DOSXN   =$(DOSXP)\bin\gotnt.exe
+HOST_DEFS=-Hnocopyr -fsoft -w0 -DONLY_INT_FIELDS -DPOSIX -DDOS
+IOPT    =-O3
+LFLAGS  =-Hldopt=-maxreal,0ffffh,-nostub,-unpriv
+O       =obj
+
+CP      =copy
+RM      =del
+WRITABLE=attrib -R
+
+
+# Define the amount of stack space needed by each program.
+# The drivers need much less stack than the compiler and preprocessor.
+
+IC_STK	=-Hldopt=-stack,40000h
+GCC_STK	=-Hldopt=-stack,40000h
+CPP_STK	=-Hldopt=-stack,100000h
+CC1_STK	=-Hldopt=-stack,100000h
+
+CC1_OBJS = alloca.$(O) \
+	bc-emit.$(O) bc-optab.$(O) dwarfout.$(O) \
+	c-parse.$(O) c-lang.$(O) c-lex.$(O) c-decl.$(O) c-typeck.$(O) \
+	c-conver.$(O) c-aux-in.$(O) c-common.$(O) i_c_misc.$(O) c-iter.$(O) \
+	aux-outp.$(O) \
+	caller-s.$(O) calls.$(O) combine.$(O) cse.$(O) \
+	dbxout.$(O) \
+	emit-rtl.$(O) explow.$(O) expmed.$(O) expr.$(O) \
+	final.$(O) fold-con.$(O) flow.$(O) function.$(O)\
+	global.$(O) getpwd.$(O) \
+	insn-att.$(O) insn-emi.$(O) insn-ext.$(O) insn-out.$(O) \
+	insn-pee.$(O) insn-rec.$(O) insn-opi.$(O) \
+	integrat.$(O) jump.$(O) local-al.$(O) loop.$(O) \
+	optabs.$(O) print-rt.$(O) print-tr.$(O) \
+	recog.$(O) regclass.$(O) reload.$(O) reload1.$(O) \
+	rtl.$(O) rtlanal.$(O) \
+	sched.$(O) sdbout.$(O) stor-lay.$(O) stmt.$(O) stupid.$(O) \
+	toplev.$(O) tree.$(O) unroll.$(O) \
+	varasm.$(O) version.$(O) convert.$(O) real.$(O) \
+	i_asmfnc.$(O) i_bbr.$(O) i_lister.$(O) \
+	i_cnstfi.$(O) i_cnstpr.$(O) \
+	i_cndxfm.$(O) i_coerce.$(O) i_cp_pro.$(O) \
+	i_datafl.$(O) i_df_ali.$(O) i_df_set.$(O) i_double.$(O) i_dwarf2.$(O)\
+	i_expect.$(O) i_forw_p.$(O) \
+	i_glob_d.$(O) i_glob_i.$(O) i_graph.$(O) \
+	i_input.$(O) i_list.$(O) i_misc1.$(O) i_mrd_in.$(O) \
+	i_pic.$(O) i_prof_f.$(O) i_profil.$(O) \
+	i_sblock.$(O) i_sched.$(O) i_shadow.$(O) i_shad2.$(O) i_size.$(O) \
+	i_symwal.$(O) i_deadel.$(O) \
+	obstack.$(O) cc_dinfo.$(O) cc_linfo.$(O) ver960.$(O)
+
+CPP_OBJS =cccp.$(O) cexp.$(O) version.$(O) obstack.$(O) alloca.$(O) ver960.$(O)
+
+IC_OBJS  =i_ic960.$(O) ver960.$(O)
+
+GCC_OBJS =gcc960.$(O) version.$(O) obstack.$(O) ver960.$(O)
+
+
+.c.$(O):
+	$(CC) -c $(CFLAGS) $<
+
+all: cc1.exe cpp.exe gcc960.exe ic960.exe
+
+install_ic:
+	$(MK) ic960.exe OPT="$(IOPT)"
+	$(CP) ic960.exe $(BASEDIR)\bin\ic960.exe
+	$(CP) ic960.exp $(BASEDIR)\bin\ic960.exp
+
+install_gcc:
+	$(MK) gcc960.exe OPT="$(IOPT)"
+	$(CP) gcc960.exe $(BASEDIR)\bin\gcc960.exe
+	$(CP) gcc960.exp $(BASEDIR)\bin\gcc960.exp
+
+install_cpp:
+	$(MK) cpp.exe OPT="$(IOPT)"
+	$(CP) cpp.exe $(BASEDIR)\lib\cpp.exe
+	$(CP) cpp.exp $(BASEDIR)\lib\cpp.exp
+
+install_cc1:
+	$(MK) cc1.exe OPT="$(IOPT)"
+	$(CP) cc1.exe $(BASEDIR)\lib\cc1.exe
+	$(CP) cc1.exp $(BASEDIR)\lib\cc1.exp
+
+install: install_cc1 install_cpp install_gcc install_ic
+
+cc1.exe: init $(CC1_OBJS)
+	echo $(LFLAGS) > cc1.rf
+	echo $(CC1_STK) >> cc1.rf
+	!foreach i $(CC1_OBJS)
+		echo $(i) >> cc1.rf
+	!end
+	echo -l$(CCINFO) >> cc1.rf
+	echo -l$(TOOLIB) >> cc1.rf
+	$(CC) $(CFLAGS) -e cc1 @cc1.rf
+	$(CP) /b $(DOSXN)+cc1.exp cc1.exe
+	$(DOSXP)\bin\cfig386 -clear cc1.exe $(CFIGFLAGS)
+
+cpp.exe: init $(CPP_OBJS)
+	echo $(LFLAGS) > cpp.rf
+	echo $(CPP_STK) >> cpp.rf
+	!foreach i $(CPP_OBJS)
+		echo $(i) >> cpp.rf
+	!end
+	echo -l$(CCINFO) >> cpp.rf
+	echo -l$(TOOLIB) >> cpp.rf
+	$(CC) $(CFLAGS) -e cpp @cpp.rf
+	$(CP) /b $(DOSXN)+cpp.exp cpp.exe
+	$(DOSXP)\bin\cfig386 -clear cpp.exe $(CFIGFLAGS)
+
+gcc960.exe: init $(GCC_OBJS)
+	echo $(LFLAGS) > gcc960.rf
+	echo $(GCC_STK) >> gcc960.rf
+	!foreach i $(GCC_OBJS)
+		echo $(i) >> gcc960.rf
+	!end
+	echo -l$(CCINFO) >> gcc960.rf
+	echo -l$(TOOLIB) >> gcc960.rf
+	$(CC) $(CFLAGS) -e gcc960 @gcc960.rf
+	$(CP) /b $(DOSXN)+gcc960.exp gcc960.exe
+	$(DOSXP)\bin\cfig386 -clear gcc960.exe $(CFIGFLAGS)
+	$(DOSXP)\bin\cfig386 gcc960.exe -MAXXMSMEM 180000H
+
+ic960.exe: init $(IC_OBJS)
+	echo $(LFLAGS) > ic960.rf
+	echo $(IC_STK) >> ic960.rf
+	!foreach i $(IC_OBJS)
+		echo $(i) >> ic960.rf
+	!end
+	echo -l$(CCINFO) >> ic960.rf
+	echo -l$(TOOLIB) >> ic960.rf
+	$(CC) $(CFLAGS) -e ic960 @ic960.rf
+	$(CP) /b $(DOSXN)+ic960.exp ic960.exe
+	$(DOSXP)\bin\cfig386 -clear ic960.exe $(CFIGFLAGS)
+	$(DOSXP)\bin\cfig386 ic960.exe -MAXXMSMEM 180000H
+
+# Create a local hc.pro file and $(CFLAGSRF) file
+# The local hc.pro file will consist of the tool-wide hc.pro file
+# plus several additional pragmas.
+init: $(IDIR)\sys\hc.pro
+	$(CP) $(IDIR,/=\)\sys\hc.pro .
+	$(WRITABLE) hc.pro
+	echo \#pragma Off(Recognize_library) >> hc.pro
+	echo \#pragma Off(Optimize_FP) >> hc.pro
+	echo \#pragma Off(Postpone_arg_pops) >> hc.pro
+	echo \#pragma Off(Callee_pops_when_possible) >> hc.pro
+	$(RM) $(CFLAGSRF)
+	!foreach i $(CFLAGS1)
+		echo $(i) >> $(CFLAGSRF)
+	!end
+
+clean :
+	$(RM) *.$(O)
+	$(RM) *.rf
+	$(RM) *.exp
+	$(RM) *.exe
+	$(RM) *.map
+	$(RM) hc.pro

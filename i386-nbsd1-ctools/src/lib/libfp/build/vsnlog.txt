@@ -1,0 +1,9 @@
+80960 FPAC/DPAC
+V2.0C   07/20/90 FPAC/DPAC       Compare changed for C
+V2.0B   04/24/90 FPAC/DPAC       Changes for Gnu Assembler
+V2.0A   04/19/90 FPAC/DPAC       Numerous Fixes/Changes
+V1.0E   04/09/90 DPFNCS/EPTODP   0/Unnormalized Improperly Handled
+V1.0D   04/06/90 FPFNCS/ATN      ATN(near 0) Accuracy Problem
+V1.0C   04/06/90 FPFNCS/ATN      ATN(-1) Sign Error
+V1.0B   02/13/90 FPAC/DPAC       Add GNU-C Entry Points
+V1.0A   01/31/90 FPAC/DPAC       Initial Release
